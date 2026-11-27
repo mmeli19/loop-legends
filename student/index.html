@@ -1,0 +1,1290 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Loop Legends for Students</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Lexend:wght@400;500;700&family=Fira+Code:wght@400;600&display=swap">
+<style>
+/* Layout: a student's lab notebook. One column, tabbed sections (Learn / Practice / Games / Progress); highlighter marks key terms; code blocks switch between Python and Java */
+:root{
+  --bg:#f3f6f1; --surface:#ffffff; --ink:#17201c; --muted:#5a6862; --line:#d6ded8;
+  --accent:#0b7a63; --accent-ink:#ffffff; --hi:#ffd23f; --hi-ink:#17201c;
+  --good:#1d8a4e; --good-bg:#e1f3e7; --bad:#c43f2b; --bad-bg:#fbe5e0; --code-bg:#eef2ec;
+  --display:"Unbounded", "Arial Black", "Segoe UI", sans-serif;
+  --body:"Lexend", "Segoe UI", system-ui, sans-serif;
+  --mono:"Fira Code", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1513; --surface:#17201d; --ink:#e6eee9; --muted:#98a8a1; --line:#28362f;
+  --accent:#3fd1ab; --accent-ink:#0f1513; --hi:#f5cf3a; --hi-ink:#17201c;
+  --good:#5bd68e; --good-bg:#14301f; --bad:#ff8b76; --bad-bg:#3a1e19; --code-bg:#111a16; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1513; --surface:#17201d; --ink:#e6eee9; --muted:#98a8a1; --line:#28362f;
+  --accent:#3fd1ab; --accent-ink:#0f1513; --hi:#f5cf3a; --hi-ink:#17201c;
+  --good:#5bd68e; --good-bg:#14301f; --bad:#ff8b76; --bad-bg:#3a1e19; --code-bg:#111a16; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:16px 56px}
+.wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+h1,h2,h3{margin:0;line-height:1.15;text-wrap:balance}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,6vw,2.1rem);letter-spacing:-.01em}
+h2{font-family:var(--display);font-weight:600;font-size:1.2rem}
+h3{font-size:1.05rem;font-weight:700}
+p{margin:0}
+.muted{color:var(--muted)}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+mark{background:linear-gradient(transparent 35%,var(--hi) 35%,var(--hi) 90%,transparent 90%);color:inherit;padding:0 2px}
+:root[data-theme="dark"] mark{color:var(--hi-ink);background:var(--hi);border-radius:3px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) mark{color:var(--hi-ink);background:var(--hi);border-radius:3px}}
+code{font-family:var(--mono);font-size:.9em;background:var(--code-bg);padding:1px 5px;border-radius:5px}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0;overflow-x:auto;font-family:var(--mono);font-size:.86rem;line-height:1.6}
+pre code{background:none;padding:0;font-size:inherit}
+.cm{color:var(--muted)}
+button{font:inherit;color:inherit;cursor:pointer}
+input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.btn{background:var(--accent);color:var(--accent-ink);border:0;border-radius:12px;padding:12px 18px;font-weight:700}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn.small{padding:8px 12px;font-size:.9rem}
+.btn:disabled{opacity:.45;cursor:default}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.between{justify-content:space-between}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+
+/* header */
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.brand{display:flex;flex-direction:column;gap:2px}
+.lang{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;padding:3px;background:var(--surface)}
+.lang button{border:0;background:transparent;border-radius:999px;padding:6px 14px;font-weight:600;font-size:.9rem}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.xp{display:flex;align-items:center;gap:10px;font-size:.85rem}
+.xpbar{flex:1;height:8px;background:var(--code-bg);border-radius:4px;overflow:hidden;min-width:80px}
+.xpbar i{display:block;height:100%;background:var(--accent)}
+.tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:5px}
+.tabs button{border:0;background:transparent;border-radius:10px;padding:9px 4px;font-weight:600;font-size:.9rem}
+.tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+
+/* unit list */
+.units{display:flex;flex-direction:column;gap:10px}
+.unit{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:14px}
+.unit:hover{border-color:var(--accent)}
+.unit .n{font-family:var(--display);font-weight:800;font-size:1.3rem;width:2.2ch;text-align:center;color:var(--accent)}
+.unit small{display:block;color:var(--muted);font-size:.82rem}
+.pill{font-size:.72rem;font-weight:700;border-radius:999px;padding:4px 10px;white-space:nowrap;border:1.5px solid var(--line);color:var(--muted)}
+.pill.done{background:var(--good-bg);border-color:var(--good);color:var(--good)}
+.pill.going{background:var(--code-bg);color:var(--ink)}
+
+/* lesson */
+.lesson-sec{display:flex;flex-direction:column;gap:10px}
+.lesson-sec p{max-width:66ch}
+.lesson-sec ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.codehead{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-bottom:-6px;padding:0 4px}
+.terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.term{border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.9rem}
+.term b{display:block}
+@media (max-width:520px){.terms{grid-template-columns:1fr}}
+
+/* grid of tiles */
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tile{text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.tile:hover{border-color:var(--accent)}
+.tile b{font-family:var(--display);font-weight:600;font-size:1rem}
+.tile .tag{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+.tile.wide{grid-column:1/-1}
+.tile:disabled{opacity:.5;cursor:default}
+@media (max-width:520px){.tiles{grid-template-columns:1fr}}
+
+/* quiz */
+.hud{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:.88rem}
+.progress{height:6px;background:var(--code-bg);border-radius:3px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--accent);transition:width .3s}
+.qtext{font-size:1.1rem;font-weight:700}
+.choices{display:flex;flex-direction:column;gap:10px}
+.choice{text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;gap:12px;align-items:flex-start}
+.choice:hover:not(:disabled){border-color:var(--accent)}
+.choice .k{font-family:var(--mono);font-weight:600;color:var(--muted);flex:none}
+.choice span:last-child{min-width:0;overflow-wrap:anywhere}
+.choice.right{background:var(--good-bg);border-color:var(--good)}
+.choice.wrong{background:var(--bad-bg);border-color:var(--bad)}
+.choice:disabled{cursor:default}
+.fb{border-left:4px solid var(--good);background:var(--good-bg);border-radius:0 12px 12px 0;padding:10px 14px;display:flex;flex-direction:column;gap:4px}
+.fb.miss{border-color:var(--bad);background:var(--bad-bg)}
+.answer{display:flex;gap:8px;flex-wrap:wrap}
+.answer input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--surface);font-family:var(--mono)}
+.big{font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:1}
+
+/* bug hunt + code order */
+.lines{display:flex;flex-direction:column;gap:4px;background:var(--code-bg);border:1px solid var(--line);border-radius:12px;padding:8px;overflow-x:auto}
+.line{display:flex;gap:10px;text-align:left;border:1.5px solid transparent;background:transparent;border-radius:8px;padding:5px 8px;font-family:var(--mono);font-size:.86rem;white-space:pre;min-width:max-content}
+.line .ln{color:var(--muted);width:2ch;text-align:right;flex:none}
+.line:hover:not(:disabled){border-color:var(--accent)}
+.line.right{background:var(--good-bg);border-color:var(--good)}
+.line.wrong{background:var(--bad-bg);border-color:var(--bad)}
+.line:disabled{cursor:default}
+.pool{display:flex;flex-direction:column;gap:6px}
+.pool .line{background:var(--surface);border-color:var(--line)}
+.slot{min-height:44px}
+.empty{color:var(--muted);font-size:.85rem;padding:8px}
+
+/* match */
+.match{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:10px}
+.match .col{display:flex;flex-direction:column;gap:8px}
+.mbtn{text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.88rem;min-height:52px;overflow-wrap:anywhere}
+.mbtn.sel{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent)}
+.mbtn.ok{background:var(--good-bg);border-color:var(--good);opacity:.6}
+.mbtn.no{background:var(--bad-bg);border-color:var(--bad)}
+.mbtn b{font-weight:700}
+
+/* progress page */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;text-align:center}
+.stats div{border:1px solid var(--line);border-radius:12px;padding:12px 6px}
+.stats strong{display:block;font-family:var(--display);font-size:1.35rem}
+.stats small{color:var(--muted);font-size:.75rem}
+.bars{display:flex;flex-direction:column;gap:10px}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;font-size:.88rem}
+.bar .track{grid-column:1/-1;height:8px;background:var(--code-bg);border-radius:4px;overflow:hidden}
+.bar .fill{height:100%;background:var(--accent);border-radius:4px}
+.num{font-variant-numeric:tabular-nums}
+.pop{animation:pop .35s ease}
+@keyframes pop{40%{transform:scale(1.12)}}
+.field{display:flex;flex-direction:column;gap:4px;flex:1;min-width:140px;font-size:.85rem}
+.field input,.field select,textarea{border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--surface);color:var(--ink);font:inherit}
+textarea{width:100%;font-family:var(--mono);font-size:.8rem;resize:vertical}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-size:.85rem}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:.85rem;min-width:max-content}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:var(--surface)}
+th button{border:0;background:none;padding:0;font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit}
+th button[aria-pressed="true"]{color:var(--accent)}
+td.c{text-align:center;font-variant-numeric:tabular-nums}
+td.hi{background:var(--good-bg);color:var(--good);font-weight:700}
+td.mid{background:color-mix(in srgb,var(--hi) 28%,transparent)}
+td.lo{background:var(--bad-bg);color:var(--bad)}
+tr.avg td{font-weight:700;border-top:2px solid var(--line)}
+.lb{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.lb li{display:grid;grid-template-columns:2.6ch minmax(0,1fr) auto;gap:12px;align-items:center;padding:9px 12px;border-radius:12px}
+.lb li:nth-child(-n+3){background:var(--code-bg)}
+.lb .rk{font-family:var(--display);font-weight:800;color:var(--accent)}
+.lb .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb.huge li{font-size:clamp(1.1rem,4vw,1.7rem);padding:14px 16px}
+.linkbtn{border:0;background:none;padding:0;color:var(--accent);font-weight:700;text-decoration:underline}
+.badge{font-family:var(--body);font-size:.42em;font-weight:700;letter-spacing:.02em;vertical-align:middle;background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:5px 12px;margin-left:4px;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <span class="eyebrow">Computer Science I · Grades 9–12</span>
+      <h1>Loop Legends <span class="badge">Students</span></h1>
+    </div>
+    <div class="lang" id="lang" role="group" aria-label="Programming language">
+      <button id="lang-py" data-l="py">Python</button>
+      <button id="lang-java" data-l="java">Java</button>
+    </div>
+  </header>
+  <div class="xp" id="xp"></div>
+  <nav class="tabs" role="tablist" id="tabs">
+    <button role="tab" data-tab="learn">Learn</button>
+    <button role="tab" data-tab="practice">Practice</button>
+    <button role="tab" data-tab="games">Games</button>
+    <button role="tab" data-tab="progress">Progress</button>
+  </nav>
+  <main id="app" class="wrap" style="gap:16px"></main>
+</div>
+
+<script>
+/* ======================= CURRICULUM ======================= */
+const UNITS=[
+{id:"u1",title:"Computational Thinking",blurb:"Decompose problems and write algorithms.",
+lesson:[
+{h:"Thinking like a computer scientist",p:"Before writing code, programmers think through the problem. There are four big skills:",list:["<mark>Decomposition</mark>: break a big problem into smaller parts.","<mark>Pattern recognition</mark>: notice what repeats or is similar.","<mark>Abstraction</mark>: ignore details that don't matter right now.","<mark>Algorithm</mark>: write clear step-by-step instructions that always finish."]},
+{h:"Pseudocode",p:"<mark>Pseudocode</mark> describes an algorithm in plain, code-like English. It isn't a real language, so anyone can read it. Here's an algorithm to find the average of test scores:",code:{all:`SET total TO 0
+FOR EACH score IN scores
+    ADD score TO total
+END FOR
+SET average TO total / COUNT(scores)
+DISPLAY average`}},
+{h:"Flowcharts",p:"A <mark>flowchart</mark> draws an algorithm with shapes:",list:["Oval: start or end","Rectangle: a process (do something)","Diamond: a decision (yes/no question)","Parallelogram: input or output"]},
+{h:"Three control structures",p:"Every program is built from three structures: <mark>sequence</mark> (steps in order), <mark>selection</mark> (choosing with if), and <mark>iteration</mark> (repeating with loops). You'll learn each one in this course."}],
+terms:[["Decomposition","Breaking a problem into smaller, manageable parts"],["Pattern recognition","Finding similarities or repeated steps"],["Abstraction","Hiding details that aren't needed to solve the problem"],["Algorithm","A precise, step-by-step set of instructions that finishes"],["Pseudocode","Plain-language description of an algorithm's steps"],["Flowchart","Diagram of an algorithm using shapes and arrows"],["Sequence","Steps run one after another, in order"],["Selection","Choosing a path based on a condition (if)"],["Iteration","Repeating steps (loops)"]],
+qs:[
+{id:"u1q1",q:"Planning a school dance by splitting it into music, food, and decorations is an example of:",c:["Abstraction","Decomposition","Iteration","Debugging"],a:1,e:"Splitting a big job into smaller parts is decomposition."},
+{id:"u1q2",q:"In a flowchart, what does a diamond shape mean?",c:["Start or end","A process","A decision","Input or output"],a:2,e:"Diamonds ask a yes/no question and branch."},
+{id:"u1q3",q:"A traffic simulation treats every car as a moving dot and ignores color and brand. This is:",c:["Abstraction","Decomposition","Selection","Pattern recognition"],a:0,e:"Abstraction removes details that don't matter for the problem."},
+{id:"u1q4",q:"Which are the three basic control structures?",c:["Input, output, storage","Sequence, selection, iteration","Variables, loops, lists","Syntax, runtime, logic"],a:1,e:"Every algorithm can be built from sequence, selection, and iteration."},
+{id:"u1q5",q:"Which is the best example of an algorithm?",c:["\"Make the drawing look nice.\"","\"Do some math until it feels right.\"","\"Add the two numbers, divide by 2, display the result.\"","\"Think about the problem.\""],a:2,e:"An algorithm has clear, precise steps that end."},
+{id:"u1q6",q:"In a flowchart, the parallelogram shape represents:",c:["A decision","Input or output","A loop counter","The end of the program"],a:1,e:"Parallelograms are used for input (get data) and output (show data)."},
+{id:"u1q7",q:"To draw a square you notice \"move forward, turn right\" happens 4 times. Noticing this is:",c:["Pattern recognition","Abstraction","Decomposition","Encryption"],a:0,e:"Spotting a repeated step is pattern recognition, and it hints you can use a loop."},
+{id:"u1q8",q:"Why do programmers write pseudocode before coding?",c:["Computers run pseudocode faster","To plan the logic without worrying about syntax","It's required by every language","It replaces testing"],a:1,e:"Pseudocode lets you focus on the steps first, then translate them into a real language."}]},
+
+{id:"u2",title:"How Computers Store Data",blurb:"Bits, bytes, binary, hex, and characters.",
+lesson:[
+{h:"Bits and bytes",p:"Computers store everything as <mark>bits</mark>: 0 or 1 (off or on). A group of 8 bits is a <mark>byte</mark>. With n bits you can make 2ⁿ different patterns, so one byte holds 2⁸ = 256 values (0 to 255)."},
+{h:"Binary (base 2)",p:"In <mark>binary</mark>, each place is worth double the place to its right. Add the place values where there's a 1.",code:{all:`Place value:  128  64  32  16   8   4   2   1
+Binary:         0   0   1   0   1   1   0   1
+Decimal:     32 + 8 + 4 + 1 = 45`}},
+{h:"Decimal to binary",p:"Find the biggest place value that fits, write a 1, subtract, and repeat. For 13: 8 fits (13 − 8 = 5), 4 fits (5 − 4 = 1), 2 doesn't, 1 fits. So 13 = 1101."},
+{h:"Hexadecimal (base 16)",p:"<mark>Hexadecimal</mark> uses digits 0–9 and A–F (A = 10 … F = 15). Each hex digit stands for 4 bits, so it's a short way to write binary. Colors on the web use hex, like #FF0000 for red. Example: 2F = 2 × 16 + 15 = 47."},
+{h:"Characters",p:"Text is stored as numbers too. <mark>ASCII</mark> gives each English character a number ('A' = 65, 'a' = 97). <mark>Unicode</mark> extends this to every language and emoji."}],
+terms:[["Bit","A single 0 or 1"],["Byte","8 bits; holds values 0–255"],["Binary","Base-2 number system using only 0 and 1"],["Hexadecimal","Base-16 system using 0–9 and A–F"],["ASCII","Character code that maps English characters to numbers (A = 65)"],["Unicode","Character standard covering all languages and emoji"],["Place value","How much a digit is worth based on its position"]],
+qs:[
+{id:"u2q1",q:"What is binary 1011 in decimal?",c:["11","13","1011","9"],a:0,e:"8 + 0 + 2 + 1 = 11."},
+{id:"u2q2",q:"What is decimal 13 in binary?",c:["1011","1101","1110","1001"],a:1,e:"13 = 8 + 4 + 1 → 1101."},
+{id:"u2q3",q:"How many different values can 8 bits represent?",c:["8","16","255","256"],a:3,e:"2⁸ = 256 values (0 through 255)."},
+{id:"u2q4",q:"What is the largest number you can store in 4 bits?",c:["4","8","15","16"],a:2,e:"1111 = 8 + 4 + 2 + 1 = 15."},
+{id:"u2q5",q:"What is hexadecimal 1F in decimal?",c:["16","31","115","25"],a:1,e:"1 × 16 + 15 = 31."},
+{id:"u2q6",q:"One byte is made of how many bits?",c:["2","4","8","16"],a:2,e:"A byte is 8 bits."},
+{id:"u2q7",q:"What is ASCII used for?",c:["Compressing images","Representing characters as numbers","Connecting to Wi-Fi","Encrypting passwords"],a:1,e:"ASCII maps characters to numbers so text can be stored in binary."},
+{id:"u2q8",q:"Why was Unicode created when ASCII already existed?",c:["ASCII was too slow","ASCII couldn't represent most of the world's languages and symbols","Unicode uses fewer bits for every character","ASCII only stored numbers"],a:1,e:"ASCII covers English characters. Unicode covers every writing system and emoji."},
+{id:"u2q9",q:"What is binary 100000 in decimal?",c:["32","16","64","100"],a:0,e:"The 1 is in the 32s place."}]},
+
+{id:"u3",title:"Variables, Types & Input",blurb:"Store data and talk to the user.",
+lesson:[
+{h:"Variables",p:"A <mark>variable</mark> is a named box that stores a value. You can change what's inside later. The <mark>data type</mark> says what kind of value it is.",list:["<b>int</b>: whole numbers like 16","<b>float</b> (Python) / <b>double</b> (Java): decimals like 3.8","<b>string</b>: text in quotes like \"Ava\"","<b>boolean</b>: True/False (Python) or true/false (Java)"]},
+{h:"Declaring variables",p:"Python figures out the type for you. Java makes you write the type first.",code:{py:`name = "Ava"
+age = 16
+gpa = 3.8
+is_senior = False
+print(name, "is", age)     # Ava is 16`,java:`String name = "Ava";
+int age = 16;
+double gpa = 3.8;
+boolean isSenior = false;
+System.out.println(name + " is " + age);   // Ava is 16`}},
+{h:"Getting input",p:"Programs can ask the user for data.",code:{py:`name = input("Your name? ")        # always a string
+age = int(input("Your age? "))     # convert to int
+print("Hi", name)`,java:`import java.util.Scanner;
+
+Scanner in = new Scanner(System.in);
+String name = in.nextLine();   // reads a whole line
+int age = in.nextInt();        // reads an int
+System.out.println("Hi " + name);`},after:{py:"In Python, input() always gives you a string. Use int() or float() to turn it into a number.",java:"In Java, use a Scanner. nextLine() reads text, nextInt() reads a whole number, nextDouble() reads a decimal."}},
+{h:"Naming rules",p:"Names can't start with a digit, can't have spaces, and can't be keywords like <code>class</code>. Pick names that explain the value: <code>total_score</code> in Python or <code>totalScore</code> in Java (camelCase)."}],
+terms:[["Variable","A named storage location for a value"],["Data type","The kind of value: int, float/double, string, boolean"],["Integer (int)","A whole number with no decimal"],["Float / double","A number with a decimal point"],["String","A sequence of characters (text)"],["Boolean","A value that is only true or false"],["Assignment","Storing a value in a variable with ="],["Constant","A value that shouldn't change once set"]],
+qs:[
+{id:"u3q1",q:"Which data type is best for the number of students in a class?",c:{py:["int","float","str","bool"],java:["int","double","String","boolean"]},a:0,e:"A count is a whole number, so int."},
+{id:"u3q2",q:"Which of these is a boolean value?",c:{py:["True","\"True\"","1.0","'T'"],java:["true","\"true\"","1.0","'t'"]},a:0,e:{py:"True (capital T, no quotes) is a boolean. \"True\" in quotes is a string.",java:"true (lowercase, no quotes) is a boolean. \"true\" in quotes is a String."}},
+{id:"u3q3",q:"What is printed?",code:{py:`x = 5
+y = x
+x = 9
+print(y)`,java:`int x = 5;
+int y = x;
+x = 9;
+System.out.println(y);`},c:["5","9","14","x"],a:0,e:"y got a copy of 5. Changing x later doesn't change y."},
+{id:"u3q4",q:"Which is a valid, well-chosen variable name?",c:{py:["2nd_place","total score","total_score","class"],java:["2ndPlace","total score","totalScore","class"]},a:2,e:"Names can't start with a digit, contain spaces, or be keywords like class."},
+{id:"u3q5",q:{py:"What type of value does input() always return?",java:"Which Scanner method reads a whole line of text?"},c:{py:["int","float","string","boolean"],java:["nextInt()","nextLine()","next()","readText()"]},a:{py:2,java:1},e:{py:"input() always returns a string. Wrap it in int() or float() to get a number.",java:"nextLine() reads everything up to the Enter key."}},
+{id:"u3q6",q:"What is printed?",code:{py:`print("5" + "3")`,java:`System.out.println("5" + "3");`},c:["8","53","\"5\"\"3\"","Error"],a:1,e:"Both are strings, so + joins them: \"53\"."},
+{id:"u3q7",q:"What is the value of x at the end?",code:{py:`x = 10
+x = x + 1
+x += 2`,java:`int x = 10;
+x = x + 1;
+x += 2;`},c:["10","11","12","13"],a:3,e:"10 → 11 → 13. x += 2 means x = x + 2."},
+{id:"u3q8",q:{py:"By convention, how do Python programmers name a constant?",java:"Which Java keyword stops a variable's value from being changed?"},c:{py:["all lowercase","ALL_CAPS like MAX_SCORE","Start with a number","Put it in quotes"],java:["static","final","const","void"]},a:1,e:{py:"Python has no constant keyword. ALL_CAPS signals \"don't change this\".",java:"final makes a variable a constant: final int MAX_SCORE = 100;"}},
+{id:"u3q9",q:"Which type would you use to store a student's GPA, like 3.75?",c:{py:["int","float","str","bool"],java:["int","double","String","boolean"]},a:1,e:{py:"Decimals are floats in Python.",java:"Decimals are usually doubles in Java."}}]},
+
+{id:"u4",title:"Operators & Expressions",blurb:"Math, division rules, and order of operations.",
+lesson:[
+{h:"Arithmetic operators",p:"<code>+ - * /</code> work like math class. Two more matter a lot in CS: <mark>modulus</mark> <code>%</code> gives the remainder, and integer division keeps only the whole part.",code:{py:`print(17 / 5)    # 3.4  (/ always gives a decimal)
+print(17 // 5)   # 3    (floor division)
+print(17 % 5)    # 2    (remainder)
+print(2 ** 3)    # 8    (exponent)`,java:`System.out.println(17 / 5);     // 3   (int / int drops the decimal)
+System.out.println(17.0 / 5);   // 3.4
+System.out.println(17 % 5);     // 2   (remainder)
+System.out.println(Math.pow(2, 3));  // 8.0`}},
+{h:"Order of operations",p:"Just like PEMDAS: parentheses first, then exponents, then * / // % from left to right, then + and −. So <code>2 + 3 * 4</code> is 14, but <code>(2 + 3) * 4</code> is 20."},
+{h:"Why % is useful",p:"<code>n % 2 == 0</code> checks if n is even. <code>n % 10</code> gives the last digit. <code>minutes % 60</code> gives leftover minutes after hours."},
+{h:"Shortcuts and conversion",p:"<mark>Compound assignment</mark> like <code>x += 3</code> means <code>x = x + 3</code>. To change a type, convert (or <mark>cast</mark>) it.",code:{py:`x = 4
+x *= 3         # 12
+print(int(9.99))    # 9  (drops the decimal)
+print(float(7))     # 7.0
+print(str(95))      # "95"`,java:`int x = 4;
+x *= 3;        // 12
+System.out.println((int) 9.99);   // 9  (drops the decimal)
+System.out.println((double) 7);   // 7.0
+x++;           // adds 1`}}],
+terms:[["Modulus (%)","Gives the remainder after division"],["Integer division","Division that keeps only the whole-number part"],["Operator precedence","The order operators are evaluated (like PEMDAS)"],["Expression","A combination of values and operators that produces a value"],["Compound assignment","Shortcut like x += 3 for x = x + 3"],["Casting / conversion","Changing a value from one type to another"]],
+qs:[
+{id:"u4q1",q:"What is printed?",code:{py:`print(17 // 5)`,java:`System.out.println(17 / 5);`},c:["3","3.4","2","4"],a:0,e:{py:"// is floor division: 17 // 5 = 3.",java:"Both are ints, so Java drops the decimal: 3."}},
+{id:"u4q2",q:"What is printed?",code:{py:`print(7 / 2)`,java:`System.out.println(7 / 2);`},c:["3","3.5","4","3.0"],a:{py:1,java:0},e:{py:"In Python, / always gives a decimal: 3.5.",java:"int / int in Java gives an int: 3. Use 7.0 / 2 to get 3.5."}},
+{id:"u4q3",q:"What is 17 % 5?",c:["3","2","3.4","5"],a:1,e:"17 = 5 × 3 + 2. The remainder is 2."},
+{id:"u4q4",q:"What is printed?",code:{py:`print(2 + 3 * 4)`,java:`System.out.println(2 + 3 * 4);`},c:["20","14","24","9"],a:1,e:"Multiply first: 3 × 4 = 12, then 2 + 12 = 14."},
+{id:"u4q5",q:"What is printed?",code:{py:`print(10 - 4 / 2)`,java:`System.out.println(10 - 4 / 2);`},c:["3","8","8.0","3.0"],a:{py:2,java:1},e:{py:"4 / 2 = 2.0 (a float), and 10 − 2.0 = 8.0.",java:"4 / 2 = 2 (int), and 10 − 2 = 8."}},
+{id:"u4q6",q:"Which condition is true only when n is even?",c:{py:["n / 2 == 0","n % 2 == 0","n % 2 == 1","n // 2 == 1"],java:["n / 2 == 0","n % 2 == 0","n % 2 == 1","n / 2 == 1"]},a:1,e:"Even numbers leave remainder 0 when divided by 2."},
+{id:"u4q7",q:"What is printed?",code:{py:`print(int(9.99))`,java:`System.out.println((int) 9.99);`},c:["10","9","9.99","9.0"],a:1,e:"Converting to int chops off the decimal. It does not round."},
+{id:"u4q8",q:"What is x at the end?",code:{py:`x = 4
+x *= 3
+x -= 2`,java:`int x = 4;
+x *= 3;
+x -= 2;`},c:["10","12","2","14"],a:0,e:"4 × 3 = 12, then 12 − 2 = 10."},
+{id:"u4q9",q:"What is printed?",code:{py:`print(2 ** 3)`,java:`System.out.println(Math.pow(2, 3));`},c:["6","8","8.0","9"],a:{py:1,java:2},e:{py:"** is the exponent operator: 2³ = 8.",java:"Math.pow always returns a double, so it prints 8.0."}},
+{id:"u4q10",q:"What is 125 % 10?",c:["12","5","12.5","25"],a:1,e:"% 10 gives the last digit of a whole number: 5."}]},
+
+{id:"u5",title:"Strings",blurb:"Index, slice, and search text.",
+lesson:[
+{h:"Strings are sequences",p:"A <mark>string</mark> is a sequence of characters. Each character has an <mark>index</mark> that starts at <b>0</b>, not 1.",code:{all:`  T   E   X   A   S
+  0   1   2   3   4`}},
+{h:"Common string tools",p:"These are the moves you'll use most:",code:{py:`word = "TEXAS"
+print(len(word))       # 5
+print(word[0])         # T
+print(word[1:3])       # EX   (stops before index 3)
+print(word.lower())    # texas
+print(word.find("A"))  # 3
+print("ha" * 3)        # hahaha`,java:`String word = "TEXAS";
+System.out.println(word.length());        // 5
+System.out.println(word.charAt(0));       // T
+System.out.println(word.substring(1, 3)); // EX  (stops before index 3)
+System.out.println(word.toLowerCase());   // texas
+System.out.println(word.indexOf("A"));    // 3
+System.out.println("ha".repeat(3));       // hahaha`}},
+{h:"Slicing rule",p:{py:"In <code>word[a:b]</code>, a is included and b is not. The slice has b − a characters. <code>word[-1]</code> is the last character.",java:"In <code>substring(a, b)</code>, a is included and b is not. The result has b − a characters. The last character is <code>word.charAt(word.length() - 1)</code>."}},
+{h:"Watch out",p:{py:"You can't add a string and a number: <code>\"Score: \" + 95</code> is an error. Use <code>\"Score: \" + str(95)</code>. Compare text with <code>==</code>.",java:"Java turns numbers into text when you add them to a String: <code>\"Score: \" + 95</code> works. But compare text with <code>.equals()</code>, not <code>==</code>."}}],
+terms:[["String","A sequence of characters"],["Index","The position of a character, starting at 0"],["Length","Number of characters in a string"],["Concatenation","Joining strings together with +"],["Slice / substring","A piece of a string from one index up to (not including) another"],["Immutable","Can't be changed in place; string methods return a new string"]],
+qs:[
+{id:"u5q1",q:"In word = \"TEXAS\", what index is the first character?",c:["0","1","-1","T"],a:0,e:"Indexes start at 0."},
+{id:"u5q2",q:"What is printed?",code:{py:`word = "TEXAS"
+print(word[4])`,java:`String word = "TEXAS";
+System.out.println(word.charAt(4));`},c:["A","S","X","Error"],a:1,e:"T=0, E=1, X=2, A=3, S=4."},
+{id:"u5q3",q:"What is printed?",code:{py:`word = "TEXAS"
+print(word[1:4])`,java:`String word = "TEXAS";
+System.out.println(word.substring(1, 4));`},c:["TEX","EXA","EXAS","XAS"],a:1,e:"Indexes 1, 2, 3 (stops before 4): E X A."},
+{id:"u5q4",q:"What is printed?",code:{py:`print(len("TEXAS"))`,java:`System.out.println("TEXAS".length());`},c:["4","5","6","TEXAS"],a:1,e:"There are 5 characters. The last index is 4, but the length is 5."},
+{id:"u5q5",q:"What is printed?",code:{py:`word = "TEXAS"
+print(word.find("A"))`,java:`String word = "TEXAS";
+System.out.println(word.indexOf("A"));`},c:["2","3","4","-1"],a:1,e:"The first A is at index 3. If it weren't found, you'd get -1."},
+{id:"u5q6",q:"What is printed?",code:{py:`print("Score: " + 95)`,java:`System.out.println("Score: " + 95);`},c:["Score: 95","Score: + 95","An error","Score:95"],a:{py:2,java:0},e:{py:"Python won't add a str and an int. You'd need str(95). (A comma in print also works.)",java:"Java converts 95 to text when you add it to a String: Score: 95."}},
+{id:"u5q7",q:"How do you check whether two strings s1 and s2 have the same text?",c:{py:["s1 == s2","s1.equals(s2)","s1 = s2","s1 is s2"],java:["s1 == s2","s1.equals(s2)","s1 = s2","s1.same(s2)"]},a:{py:0,java:1},e:{py:"In Python, == compares the text.",java:"In Java, == checks if they're the same object. Use .equals() to compare the text."}},
+{id:"u5q8",q:"What happens?",code:{py:`word = "TEXAS"
+print(word[5])`,java:`String word = "TEXAS";
+System.out.println(word.charAt(5));`},c:["Prints S","Prints nothing","An index-out-of-range error","Prints T"],a:2,e:{py:"The last index is 4, so word[5] raises IndexError.",java:"The last index is 4, so charAt(5) throws StringIndexOutOfBoundsException."}},
+{id:"u5q9",q:"Which gets the LAST character of word, whatever its length?",c:{py:["word[len(word)]","word[-1]","word[last]","word.end()"],java:["word.charAt(word.length())","word.charAt(word.length() - 1)","word.last()","word.charAt(-1)"]},a:1,e:{py:"Negative indexes count from the end: word[-1] is the last character.",java:"The last index is length − 1."}}]},
+
+{id:"u6",title:"Making Decisions",blurb:"if, else, and Boolean logic.",
+lesson:[
+{h:"Comparison operators",p:"Conditions compare values and give a boolean: <code>==</code> equal, <code>!=</code> not equal, <code>&lt; &gt; &lt;= &gt;=</code>. Don't mix up <code>=</code> (store a value) and <code>==</code> (compare)."},
+{h:"if / else",p:"<mark>Selection</mark> lets a program choose. Only the first true branch runs.",code:{py:`score = 85
+if score >= 90:
+    print("A")
+elif score >= 80:
+    print("B")      # this runs
+elif score >= 70:
+    print("C")
+else:
+    print("F")`,java:`int score = 85;
+if (score >= 90) {
+    System.out.println("A");
+} else if (score >= 80) {
+    System.out.println("B");   // this runs
+} else if (score >= 70) {
+    System.out.println("C");
+} else {
+    System.out.println("F");
+}`},after:{py:"Python uses a colon and indentation to show what's inside each branch.",java:"Java uses parentheses around the condition and braces { } around each branch."}},
+{h:"Boolean operators",p:"Combine conditions with <mark>and</mark>, <mark>or</mark>, and <mark>not</mark>.",code:{py:`age = 15
+print(age >= 13 and age <= 19)   # True  (both must be true)
+print(age < 5 or age > 65)       # False (at least one must be true)
+print(not True)                  # False`,java:`int age = 15;
+System.out.println(age >= 13 && age <= 19);  // true  (both)
+System.out.println(age < 5 || age > 65);     // false (at least one)
+System.out.println(!true);                   // false`}},
+{h:"Order matters",p:"Check the most specific (or highest) condition first. If you test <code>score &gt;= 70</code> before <code>score &gt;= 90</code>, a 95 gets a C because the first true branch wins."}],
+terms:[["Condition","An expression that is true or false"],["Selection","Choosing which code runs using if/else"],["== vs =","== compares values; = assigns a value"],["and / &&","True only if both sides are true"],["or / ||","True if at least one side is true"],["not / !","Flips true to false and false to true"],["Nested if","An if statement inside another if"]],
+qs:[
+{id:"u6q1",q:"What is printed when score is 85?",code:{py:`if score >= 90:
+    print("A")
+elif score >= 80:
+    print("B")
+elif score >= 70:
+    print("C")
+else:
+    print("F")`,java:`if (score >= 90) {
+    System.out.println("A");
+} else if (score >= 80) {
+    System.out.println("B");
+} else if (score >= 70) {
+    System.out.println("C");
+} else {
+    System.out.println("F");
+}`},c:["A","B","B and C","F"],a:1,e:"85 >= 80 is the first true condition, so only B prints."},
+{id:"u6q2",q:"If x is 7, what is the value of this expression?",code:{py:`x > 5 and x < 10`,java:`x > 5 && x < 10`},c:{py:["True","False","7","Error"],java:["true","false","7","Error"]},a:0,e:"7 > 5 is true and 7 < 10 is true, so both are true."},
+{id:"u6q3",q:"What is the value of this expression?",code:{py:`not (3 > 1)`,java:`!(3 > 1)`},c:{py:["True","False","3","1"],java:["true","false","3","1"]},a:1,e:"3 > 1 is true, and not flips it to false."},
+{id:"u6q4",q:"What's the difference between = and ==?",c:["They mean the same thing","= assigns a value; == compares two values","= compares; == assigns","== is only for strings"],a:1,e:"x = 5 stores 5. x == 5 asks \"is x equal to 5?\""},
+{id:"u6q5",q:"What is printed when temp is 90? (Look closely: there are two separate ifs.)",code:{py:`if temp > 80:
+    print("hot")
+if temp > 40:
+    print("mild")
+else:
+    print("cold")`,java:`if (temp > 80) {
+    System.out.println("hot");
+}
+if (temp > 40) {
+    System.out.println("mild");
+} else {
+    System.out.println("cold");
+}`},c:["hot","hot then mild","mild","hot then cold"],a:1,e:"These are two separate if statements, so both are checked. 90 > 80 prints hot, and 90 > 40 prints mild."},
+{id:"u6q6",q:"For which ages is this true?",code:{py:`age >= 13 and age <= 19`,java:`age >= 13 && age <= 19`},c:["13 through 19","14 through 18","Under 13 or over 19","Every age"],a:0,e:"Both ends are included because of >= and <=."},
+{id:"u6q7",q:"When is (a or b) true?",code:{py:`a or b`,java:`a || b`},c:["Only when both are true","When at least one is true","Only when both are false","Never"],a:1,e:"or is true if either side, or both, is true."},
+{id:"u6q8",q:"A student wrote this grader, and a score of 95 prints C. Why?",code:{py:`if score >= 70:
+    print("C")
+elif score >= 90:
+    print("A")`,java:`if (score >= 70) {
+    System.out.println("C");
+} else if (score >= 90) {
+    System.out.println("A");
+}`},c:["95 is less than 70","The first true branch runs, and >= 70 is checked first","elif/else if is broken","It needs an else"],a:1,e:"Only the first true branch runs. Put the highest cutoff (90) first."}]},
+
+{id:"u7",title:"Loops",blurb:"Repeat with for and while.",
+lesson:[
+{h:"Why loops?",p:"<mark>Iteration</mark> repeats code so you don't copy and paste it. Use a <mark>for loop</mark> when you know how many times to repeat, and a <mark>while loop</mark> when you repeat until something changes."},
+{h:"for loops",p:"Count from a start value up to (not including) a stop value.",code:{py:`for i in range(5):         # 0, 1, 2, 3, 4
+    print(i)
+
+for i in range(2, 10, 2):  # 2, 4, 6, 8   (start, stop, step)
+    print(i)
+
+for i in range(5, 0, -1):  # 5, 4, 3, 2, 1
+    print(i)`,java:`for (int i = 0; i < 5; i++) {       // 0, 1, 2, 3, 4
+    System.out.println(i);
+}
+
+for (int i = 2; i < 10; i += 2) {   // 2, 4, 6, 8
+    System.out.println(i);
+}
+
+for (int i = 5; i > 0; i--) {       // 5, 4, 3, 2, 1
+    System.out.println(i);
+}`}},
+{h:"while loops",p:"A while loop keeps going as long as its condition is true. Something inside must change, or you get an <mark>infinite loop</mark>.",code:{py:`n = 3
+while n > 0:
+    print(n)
+    n -= 1          # without this line, it never stops
+print("Liftoff!")`,java:`int n = 3;
+while (n > 0) {
+    System.out.println(n);
+    n--;            // without this line, it never stops
+}
+System.out.println("Liftoff!");`}},
+{h:"The accumulator pattern",p:"To add things up, start a total at 0 before the loop and add to it inside the loop.",code:{py:`total = 0
+for i in range(1, 5):
+    total += i
+print(total)     # 1 + 2 + 3 + 4 = 10`,java:`int total = 0;
+for (int i = 1; i < 5; i++) {
+    total += i;
+}
+System.out.println(total);   // 1 + 2 + 3 + 4 = 10`}},
+{h:"Nested loops and break",p:"A loop inside a loop runs the inner loop completely for every pass of the outer loop. 3 outer passes × 2 inner passes = 6 runs. <code>break</code> exits a loop immediately."}],
+terms:[["Iteration","Repeating a block of code"],["for loop","Repeats a set number of times (count-controlled)"],["while loop","Repeats while a condition is true (condition-controlled)"],["Infinite loop","A loop whose condition never becomes false"],["Accumulator","A variable that builds up a total inside a loop"],["Nested loop","A loop inside another loop"],["break","Exits the loop immediately"]],
+qs:[
+{id:"u7q1",q:"What is the LAST number printed?",code:{py:`for i in range(5):
+    print(i)`,java:`for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}`},c:["5","4","6","0"],a:1,e:"It counts 0 to 4. It stops before 5."},
+{id:"u7q2",q:"How many times does the loop run?",code:{py:`for i in range(2, 10, 2):
+    print(i)`,java:`for (int i = 2; i < 10; i += 2) {
+    System.out.println(i);
+}`},c:["3","4","5","8"],a:1,e:"i is 2, 4, 6, 8. Four times."},
+{id:"u7q3",q:"What is printed?",code:{py:`total = 0
+for i in range(1, 5):
+    total += i
+print(total)`,java:`int total = 0;
+for (int i = 1; i < 5; i++) {
+    total += i;
+}
+System.out.println(total);`},c:["10","15","4","5"],a:0,e:"1 + 2 + 3 + 4 = 10. The loop stops before 5."},
+{id:"u7q4",q:"What is n after the loop ends?",code:{py:`n = 10
+while n > 0:
+    n -= 3`,java:`int n = 10;
+while (n > 0) {
+    n -= 3;
+}`},c:["1","0","-2","-3"],a:2,e:"10 → 7 → 4 → 1 → -2. Now n > 0 is false, so the loop stops."},
+{id:"u7q5",q:"What usually causes an infinite while loop?",c:["Using a for loop","Forgetting to change the variable in the condition","Printing inside the loop","Using too many variables"],a:1,e:"If nothing inside the loop changes the condition, it stays true forever."},
+{id:"u7q6",q:"How many stars are printed?",code:{py:`for i in range(3):
+    for j in range(2):
+        print("*")`,java:`for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 2; j++) {
+        System.out.println("*");
+    }
+}`},c:["5","6","3","2"],a:1,e:"The inner loop runs 2 times for each of 3 outer passes: 3 × 2 = 6."},
+{id:"u7q7",q:"You want to keep asking for a password until the user types the right one. Which loop fits best?",c:["for loop","while loop","Nested for loop","No loop needed"],a:1,e:"You don't know how many tries it will take, so use a condition-controlled while loop."},
+{id:"u7q8",q:"How many numbers are printed?",code:{py:`for i in range(10):
+    if i == 4:
+        break
+    print(i)`,java:`for (int i = 0; i < 10; i++) {
+    if (i == 4) {
+        break;
+    }
+    System.out.println(i);
+}`},c:["4","5","10","3"],a:0,e:"It prints 0, 1, 2, 3, then break stops the loop when i is 4."},
+{id:"u7q9",q:"Which loop prints 5, 4, 3, 2, 1?",c:{py:["for i in range(5):","for i in range(5, 0, -1):","for i in range(1, 6):","for i in range(5, 0):"],java:["for (int i = 0; i < 5; i++)","for (int i = 5; i > 0; i--)","for (int i = 1; i <= 5; i++)","for (int i = 5; i < 0; i--)"]},a:1,e:{py:"Start at 5, stop before 0, step -1. range(5, 0) with no step is empty.",java:"Start at 5, keep going while i > 0, and subtract 1 each time."}}]},
+
+{id:"u8",title:"Functions & Methods",blurb:"Reuse code with parameters and return values.",
+lesson:[
+{h:"What a function is",p:"A <mark>function</mark> (called a <mark>method</mark> in Java) is a named block of code you can run whenever you need it. It helps you decompose a problem and avoid repeating code."},
+{h:"Parameters and return",p:"<mark>Parameters</mark> are the inputs listed in the definition. <mark>Arguments</mark> are the actual values you pass in when you call it. <code>return</code> sends a value back.",code:{py:`def area(width, height):     # width, height are parameters
+    return width * height
+
+result = area(3, 4)          # 3 and 4 are arguments
+print(result)                # 12`,java:`public static int area(int width, int height) {  // parameters
+    return width * height;
+}
+
+int result = area(3, 4);     // 3 and 4 are arguments
+System.out.println(result);  // 12`},after:{py:"A function with no return statement gives back None.",java:"The word before the name is the return type. A method that returns nothing has return type void."}},
+{h:"Return ends the function",p:"As soon as <code>return</code> runs, the function stops. Any lines after it in the same block never run."},
+{h:"Scope",p:"A variable created inside a function only exists inside that function. This is its <mark>scope</mark>. Trying to use it outside causes an error."}],
+terms:[["Function / method","A named, reusable block of code"],["Parameter","A variable in the function definition that receives input"],["Argument","The actual value passed in when the function is called"],["Return value","The value a function sends back to the caller"],["void / None","Means the function returns no value"],["Scope","Where in the program a variable can be used"],["Call","Running a function by using its name with parentheses"]],
+qs:[
+{id:"u8q1",q:"What is printed?",code:{py:`def twice(x):
+    return x * 2
+
+print(twice(twice(3)))`,java:`public static int twice(int x) {
+    return x * 2;
+}
+
+System.out.println(twice(twice(3)));`},c:["6","12","9","3"],a:1,e:"The inner call gives 6. Then twice(6) gives 12."},
+{id:"u8q2",q:"In area(3, 4), what are 3 and 4 called?",c:["Parameters","Arguments","Return values","Variables types"],a:1,e:"Values passed in a call are arguments. The names in the definition are parameters."},
+{id:"u8q3",q:{py:"What does a Python function return if it has no return statement?",java:"What is the return type of a Java method that returns nothing?"},c:{py:["0","None","An empty string","An error"],java:["int","null","void","empty"]},a:{py:1,java:2},e:{py:"With no return, a Python function gives back None.",java:"void means the method doesn't return a value."}},
+{id:"u8q4",q:"What happens?",code:{py:`def setup():
+    secret = 42
+
+setup()
+print(secret)`,java:`public static void setup() {
+    int secret = 42;
+}
+
+setup();
+System.out.println(secret);`},c:["Prints 42","Prints 0","An error, because secret only exists inside setup","Prints secret"],a:2,e:"secret's scope is the function. Outside it, the variable doesn't exist."},
+{id:"u8q5",q:"What is the main reason to write functions?",c:["To make code run faster","To reuse code and break problems into smaller parts","Because every line must be in a function","To use more memory"],a:1,e:"Functions support decomposition and stop you from repeating code."},
+{id:"u8q6",q:"What is printed?",code:{py:`def greet(name):
+    return "Hi " + name
+
+msg = greet("Lee")
+print(msg + "!")`,java:`public static String greet(String name) {
+    return "Hi " + name;
+}
+
+String msg = greet("Lee");
+System.out.println(msg + "!");`},c:["Hi Lee!","Hi name!","Lee!","Hi Lee"],a:0,e:"greet gives back \"Hi Lee\", and then \"!\" is added."},
+{id:"u8q7",q:"What is printed when check(10) is called?",code:{py:`def check(n):
+    if n > 5:
+        return "big"
+    return "small"
+
+print(check(10))`,java:`public static String check(int n) {
+    if (n > 5) {
+        return "big";
+    }
+    return "small";
+}
+
+System.out.println(check(10));`},c:["big","small","big then small","Nothing"],a:0,e:"return \"big\" runs and ends the function immediately."},
+{id:"u8q8",q:"area needs two arguments. What happens with area(5)?",c:["It uses 0 for the missing one","An error: the call is missing an argument","It returns 5","It returns 25"],a:1,e:"The number of arguments must match the parameters."}]},
+
+{id:"u9",title:"Lists & Arrays",blurb:"Store many values and loop through them.",
+lesson:[
+{h:"One name, many values",p:{py:"A <mark>list</mark> stores many values in order. Each item has an index starting at 0. Lists can grow with <code>append</code>.",java:"An <mark>array</mark> stores many values of the same type in order. Each item has an index starting at 0. Arrays have a fixed size. Use an <code>ArrayList</code> when you need it to grow."},code:{py:`scores = [88, 92, 75, 100]
+print(scores[0])      # 88
+print(len(scores))    # 4
+print(scores[-1])     # 100 (last item)
+scores.append(67)     # now 5 items
+scores[1] = 95        # change an item`,java:`int[] scores = {88, 92, 75, 100};
+System.out.println(scores[0]);       // 88
+System.out.println(scores.length);   // 4
+System.out.println(scores[scores.length - 1]);  // 100 (last)
+scores[1] = 95;                      // change an item`}},
+{h:"Traversing",p:"Looping through every item is called <mark>traversing</mark>. Use an index loop when you need positions, or a for-each loop when you just need the values.",code:{py:`for s in scores:                 # for-each
+    print(s)
+
+for i in range(len(scores)):     # by index
+    print(i, scores[i])`,java:`for (int s : scores) {                    // for-each
+    System.out.println(s);
+}
+
+for (int i = 0; i < scores.length; i++) {  // by index
+    System.out.println(i + " " + scores[i]);
+}`}},
+{h:"Classic algorithms",p:"Find the maximum: start with the first item, then replace it whenever you find something bigger.",code:{py:`nums = [4, 9, 2, 7]
+best = nums[0]
+for n in nums:
+    if n > best:
+        best = n
+print(best)   # 9`,java:`int[] nums = {4, 9, 2, 7};
+int best = nums[0];
+for (int n : nums) {
+    if (n > best) {
+        best = n;
+    }
+}
+System.out.println(best);   // 9`}},
+{h:"Out of bounds",p:"A list of 4 items has indexes 0 to 3. Asking for index 4 crashes the program with an <mark>index out of bounds</mark> error."}],
+terms:[["List / array","An ordered collection of values under one name"],["Element","One value stored in a list or array"],["Index","An element's position, starting at 0"],["Traverse","Visit every element, usually with a loop"],["Out of bounds","Using an index that doesn't exist"],["append / ArrayList","How to add items to a growable list"]],
+qs:[
+{id:"u9q1",q:"What is printed?",code:{py:`scores = [88, 92, 75, 100]
+print(scores[2])`,java:`int[] scores = {88, 92, 75, 100};
+System.out.println(scores[2]);`},c:["92","75","100","88"],a:1,e:"Index 0 is 88, 1 is 92, 2 is 75."},
+{id:"u9q2",q:"A list or array has 4 elements. What is the index of the last one?",c:["4","3","5","-4"],a:1,e:"Indexes run from 0 to length − 1."},
+{id:"u9q3",q:"What happens?",code:{py:`scores = [88, 92, 75, 100]
+print(scores[4])`,java:`int[] scores = {88, 92, 75, 100};
+System.out.println(scores[4]);`},c:["Prints 100","Prints 0","An index out of range error","Prints nothing"],a:2,e:{py:"Index 4 doesn't exist, so you get IndexError.",java:"Index 4 doesn't exist, so you get ArrayIndexOutOfBoundsException."}},
+{id:"u9q4",q:"What is printed?",code:{py:`nums = [4, 9, 2, 7]
+count = 0
+for n in nums:
+    if n > 5:
+        count += 1
+print(count)`,java:`int[] nums = {4, 9, 2, 7};
+int count = 0;
+for (int n : nums) {
+    if (n > 5) {
+        count++;
+    }
+}
+System.out.println(count);`},c:["1","2","3","4"],a:1,e:"Only 9 and 7 are greater than 5."},
+{id:"u9q5",q:"What is printed?",code:{py:`nums = [3, 5, 7]
+total = 0
+for i in range(len(nums)):
+    total += nums[i]
+print(total)`,java:`int[] nums = {3, 5, 7};
+int total = 0;
+for (int i = 0; i < nums.length; i++) {
+    total += nums[i];
+}
+System.out.println(total);`},c:["15","7","3","12"],a:0,e:"3 + 5 + 7 = 15."},
+{id:"u9q6",q:{py:"What is len(nums) after this code?",java:"An int[] has length 4. Can you add a 5th element to it?"},code:{py:`nums = [1, 2, 3]
+nums.append(4)`},c:{py:["3","4","5","Error"],java:["Yes, with nums.add(5)","Yes, with nums[4] = 5","No. Arrays have a fixed size, so you'd use an ArrayList","Yes, arrays grow automatically"]},a:{py:1,java:2},e:{py:"append adds one item to the end, so there are now 4.",java:"Arrays can't grow. An ArrayList can, with list.add(5)."}},
+{id:"u9q7",q:"Which expression gets the LAST element of nums, whatever its length?",c:{py:["nums[len(nums)]","nums[-1]","nums[last]","nums.end()"],java:["nums[nums.length]","nums[nums.length - 1]","nums[-1]","nums.last()"]},a:1,e:{py:"nums[-1] counts from the end.",java:"The last index is length − 1. Java doesn't allow negative indexes."}},
+{id:"u9q8",q:"What does nums contain after this runs?",code:{py:`nums = [1, 2, 3]
+for i in range(len(nums)):
+    nums[i] = nums[i] * 10`,java:`int[] nums = {1, 2, 3};
+for (int i = 0; i < nums.length; i++) {
+    nums[i] = nums[i] * 10;
+}`},c:["1, 2, 3","10, 20, 30","10, 2, 3","30"],a:1,e:"The loop changes every element by its index."}]},
+
+{id:"u10",title:"Searching & Sorting",blurb:"Find and order data efficiently.",
+lesson:[
+{h:"Linear search",p:"<mark>Linear search</mark> checks each item one by one until it finds the target. It works on any list, but a list of 1,000 items might take 1,000 checks.",code:{py:`def find(nums, target):
+    for i in range(len(nums)):
+        if nums[i] == target:
+            return i
+    return -1          # not found`,java:`public static int find(int[] nums, int target) {
+    for (int i = 0; i < nums.length; i++) {
+        if (nums[i] == target) {
+            return i;
+        }
+    }
+    return -1;         // not found
+}`}},
+{h:"Binary search",p:"<mark>Binary search</mark> only works on a <b>sorted</b> list. Check the middle item. If the target is smaller, throw away the right half; if bigger, the left half. Each step cuts the list in half, so 1,000 items takes about 10 checks."},
+{h:"Sorting",list:["<mark>Selection sort</mark>: find the smallest item and swap it to the front. Repeat for the rest.","<mark>Bubble sort</mark>: compare neighbors and swap if they're out of order. The biggest item \"bubbles\" to the end each pass.","<mark>Insertion sort</mark>: take each item and slide it into its place in the sorted part on the left, like sorting cards in your hand."],p:"Three sorts you should know:"},
+{h:"Trace it",p:"Sorting [5, 2, 9, 1] from smallest to biggest:",code:{all:`Selection, pass 1:  smallest is 1, swap with 5  →  [1, 2, 9, 5]
+Bubble, pass 1:     5↔2, 5 and 9 ok, 9↔1      →  [2, 5, 1, 9]`}}],
+terms:[["Linear search","Check every item in order until the target is found"],["Binary search","Repeatedly check the middle of a sorted list and discard half"],["Selection sort","Repeatedly select the smallest item and swap it into place"],["Bubble sort","Swap neighboring items that are out of order; repeat"],["Insertion sort","Insert each item into its place in the sorted section"],["Efficiency","How the work grows as the data gets bigger"]],
+qs:[
+{id:"u10q1",q:"What must be true about a list before you can use binary search?",c:["It has an even number of items","It is sorted","It has no duplicates","It contains only strings"],a:1,e:"Binary search depends on order to know which half to throw away."},
+{id:"u10q2",q:"Worst case, how many items does linear search check in a list of 100?",c:["1","7","50","100"],a:3,e:"If the target is last (or missing), it checks all 100."},
+{id:"u10q3",q:"About how many checks does binary search need for 1,000 sorted items?",c:["About 10","About 100","About 500","1,000"],a:0,e:"Halving 1,000 about 10 times gets you to 1 item."},
+{id:"u10q4",q:"After ONE pass of selection sort (smallest to biggest), what is [5, 2, 9, 1]?",c:["[1, 2, 9, 5]","[2, 5, 9, 1]","[2, 5, 1, 9]","[1, 2, 5, 9]"],a:0,e:"Selection sort swaps the smallest (1) into the front."},
+{id:"u10q5",q:"After ONE pass of bubble sort (smallest to biggest), what is [5, 2, 9, 1]?",c:["[2, 5, 1, 9]","[1, 2, 9, 5]","[2, 5, 9, 1]","[1, 5, 2, 9]"],a:0,e:"Swap 5 and 2, leave 5 and 9, swap 9 and 1. The biggest ends up last."},
+{id:"u10q6",q:"Using the find function from the lesson, what does find([4, 9, 2, 7], 7) return?",c:["7","3","4","-1"],a:1,e:"7 is at index 3."},
+{id:"u10q7",q:"Using the same find function, what does find([4, 9, 2, 7], 5) return?",c:["0","5","-1","An error"],a:2,e:"5 isn't in the list, so the loop finishes and returns -1."},
+{id:"u10q8",q:"Binary search for 23 in [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]. Which item is checked FIRST? (middle index = (0 + 9) / 2, rounded down)",c:["16","23","12","38"],a:0,e:"Middle index is 4, which holds 16. 23 is bigger, so search the right half."},
+{id:"u10q9",q:"Which sort works like sorting cards in your hand, sliding each new card into place?",c:["Selection sort","Bubble sort","Insertion sort","Binary sort"],a:2,e:"Insertion sort builds a sorted section by inserting one item at a time."}]},
+
+{id:"u11",title:"Objects & Classes",blurb:"Model real things with your own types.",
+lesson:[
+{h:"Classes and objects",p:"A <mark>class</mark> is a blueprint. An <mark>object</mark> is one thing built from that blueprint. A class lists the data each object has (<mark>attributes</mark> or fields) and what it can do (<mark>methods</mark>)."},
+{h:"A Dog class",p:"The <mark>constructor</mark> runs when you create an object and sets its starting values.",code:{py:`class Dog:
+    def __init__(self, name):    # constructor
+        self.name = name         # attribute
+        self.tricks = 0
+
+    def learn(self):             # method
+        self.tricks += 1
+
+rex = Dog("Rex")      # create an object
+rex.learn()
+print(rex.name, rex.tricks)    # Rex 1`,java:`public class Dog {
+    private String name;      // fields
+    private int tricks;
+
+    public Dog(String name) { // constructor
+        this.name = name;
+        this.tricks = 0;
+    }
+
+    public void learn() {     // method
+        tricks++;
+    }
+
+    public String getName() { return name; }
+    public int getTricks() { return tricks; }
+}
+
+Dog rex = new Dog("Rex");   // create an object
+rex.learn();
+System.out.println(rex.getName() + " " + rex.getTricks());  // Rex 1`}},
+{h:"self and this",p:{py:"<code>self</code> means \"this particular object.\" It lets each Dog keep its own name and tricks.",java:"<code>this</code> means \"this particular object.\" It tells apart the field <code>this.name</code> from the parameter <code>name</code>."}},
+{h:"Encapsulation",p:"<mark>Encapsulation</mark> keeps an object's data protected and changes it only through methods. In Java, fields are <code>private</code> and you use getters and setters. In Python, a leading underscore like <code>_name</code> signals \"don't touch directly.\""}],
+terms:[["Class","A blueprint that defines attributes and methods"],["Object / instance","One specific thing created from a class"],["Attribute / field","Data stored inside an object"],["Method","A function that belongs to a class"],["Constructor","Special method that sets up a new object"],["self / this","Refers to the current object"],["Encapsulation","Protecting data and accessing it through methods"]],
+qs:[
+{id:"u11q1",q:"Which best describes a class and an object?",c:["They're the same thing","A class is a blueprint; an object is one thing built from it","An object is a blueprint; a class is one copy","A class is a type of loop"],a:1,e:"Dog is the class. rex is an object (an instance) of Dog."},
+{id:"u11q2",q:"Which method runs automatically when an object is created?",c:{py:["__init__ (the constructor)","learn","print","__main__"],java:["The constructor","main","learn","toString"]},a:0,e:"The constructor sets up the new object's starting values."},
+{id:"u11q3",q:"What is printed?",code:{py:`rex = Dog("Rex")
+rex.learn()
+rex.learn()
+print(rex.tricks)`,java:`Dog rex = new Dog("Rex");
+rex.learn();
+rex.learn();
+System.out.println(rex.getTricks());`},c:["0","1","2","Rex"],a:2,e:"tricks starts at 0 and learn() adds 1 twice."},
+{id:"u11q4",q:{py:"What does self refer to inside a method?",java:"What does this refer to inside a method?"},c:["The class itself","The current object","The first parameter's value","The main program"],a:1,e:"It refers to the specific object the method was called on."},
+{id:"u11q5",q:"What is printed?",code:{py:`a = Dog("A")
+b = Dog("B")
+a.learn()
+print(b.tricks)`,java:`Dog a = new Dog("A");
+Dog b = new Dog("B");
+a.learn();
+System.out.println(b.getTricks());`},c:["0","1","2","Error"],a:0,e:"Each object has its own attributes. Teaching a doesn't change b."},
+{id:"u11q6",q:"Keeping an object's data protected and changing it only through methods is called:",c:["Inheritance","Encapsulation","Iteration","Concatenation"],a:1,e:"Encapsulation hides data behind methods like getters and setters."},
+{id:"u11q7",q:"How do you create a new Dog object named Rex?",c:{py:["rex = Dog(\"Rex\")","rex = new Dog(\"Rex\")","Dog rex","rex = Dog.create(\"Rex\")"],java:["Dog rex = Dog(\"Rex\");","Dog rex = new Dog(\"Rex\");","new rex = Dog(\"Rex\");","Dog rex;"]},a:{py:0,java:1},e:{py:"Call the class like a function: Dog(\"Rex\").",java:"Use new followed by the constructor: new Dog(\"Rex\")."}}]},
+
+{id:"u12",title:"Debugging, Testing & Ethics",blurb:"Fix errors, test well, and be a good digital citizen.",
+lesson:[
+{h:"Three kinds of errors",list:["<mark>Syntax error</mark>: breaks the language's grammar (missing colon, semicolon, or parenthesis). The program won't run at all.","<mark>Runtime error</mark>: the program starts but crashes, like dividing by zero or an index out of range.","<mark>Logic error</mark>: the program runs, but the answer is wrong. These are the hardest to find."],p:"Every programmer makes errors. Knowing which kind you have tells you how to find it."},
+{h:"Debugging strategies",list:["Read the error message. It usually names the line.","Trace the code by hand with a <mark>trace table</mark> that lists each variable's value after each step.","Add print statements to see values while it runs.","Explain your code out loud, line by line (\"rubber duck debugging\")."]},
+{h:"Testing",p:"Good <mark>test cases</mark> include normal values, edge values, and invalid values. If valid input is 1 to 100, test 50 (normal), 1 and 100 (edges), and 0 and 101 (just outside). Testing the edges is called <mark>boundary testing</mark>."},
+{h:"Digital citizenship",list:["Copying someone else's code and turning it in as yours is <mark>plagiarism</mark>. Give credit, and follow the <mark>license</mark> on open-source code.","Copyright protects creative work, including code, images, and music.","Protect your privacy: don't share passwords, your address, or personal details online.","Use strong, unique passwords and turn on two-factor authentication.","Cyberbullying has real consequences. Treat people online the way you would in person."]}],
+terms:[["Syntax error","Code that breaks the language's rules and won't run"],["Runtime error","An error that crashes the program while it runs"],["Logic error","The program runs but gives the wrong result"],["Trace table","A table tracking each variable's value step by step"],["Boundary testing","Testing values at and just past the edges of valid input"],["Plagiarism","Presenting someone else's work as your own"],["Open-source license","Rules for how others may use, share, and change code"],["Digital footprint","The record of everything you do and post online"]],
+qs:[
+{id:"u12q1",q:{py:"You forget the colon after an if statement. What kind of error is this?",java:"You forget a semicolon at the end of a line. What kind of error is this?"},c:["Syntax error","Runtime error","Logic error","Not an error"],a:0,e:"Breaking the language's grammar is a syntax error. The program won't run."},
+{id:"u12q2",q:"A program crashes when the user enters 0 and the code divides by it. What kind of error is this?",c:["Syntax error","Runtime error","Logic error","Input error"],a:1,e:"It starts fine and crashes while running, so it's a runtime error."},
+{id:"u12q3",q:"A program averages 3 tests but divides the total by 2. It runs fine but gives the wrong answer. What kind of error is this?",c:["Syntax error","Runtime error","Logic error","Compiler error"],a:2,e:"It runs but the result is wrong, so it's a logic error."},
+{id:"u12q4",q:"Valid input is 1 to 100. Which set of tests is BEST for boundary testing?",c:["50, 51, 52","0, 1, 100, 101","1, 2, 3","-1000, 1000"],a:1,e:"Test right at each edge and just past it."},
+{id:"u12q5",q:"Your friend sends you their finished program, and you change the variable names and turn it in. This is:",c:["Fine, because you changed it","Collaboration","Plagiarism","Debugging"],a:2,e:"Renaming variables doesn't make the work yours."},
+{id:"u12q6",q:"Which password is strongest?",c:["password123","Your pet's name","Tr4ck!Pine#Sunset92","12345678"],a:2,e:"Long, mixed characters, and not personal or common."},
+{id:"u12q7",q:"You want to use open-source code in your project. What should you do?",c:["Use it and remove the author's name","Follow its license and give credit","Only use it if nobody will notice","You can't ever use other people's code"],a:1,e:"Open-source licenses say how you may reuse the code, and they usually require credit."},
+{id:"u12q8",q:"What is a trace table used for?",c:["Drawing flowcharts","Tracking each variable's value as the code runs, step by step","Storing passwords","Making the program faster"],a:1,e:"Trace tables help you find logic errors by following the code by hand."},
+{id:"u12q9",q:"Which is the safest thing to post on a public profile?",c:["Your home address","Your school schedule","Your favorite programming language","Your phone number"],a:2,e:"Location, schedules, and contact info can put your safety and privacy at risk."}]}
+];
+
+/* Bug Hunt: tap the line with the bug */
+const BUGS=[
+{goal:"Add up every number in the list. Should print 15.",py:["nums = [3, 5, 7]","total = 0","for i in range(1, len(nums)):","    total += nums[i]","print(total)"],java:["int[] nums = {3, 5, 7};","int total = 0;","for (int i = 1; i < nums.length; i++) {","    total += nums[i];","}","System.out.println(total);"],bug:{py:2,java:2},fix:{py:"for i in range(len(nums)):",java:"for (int i = 0; i < nums.length; i++) {"},e:"The loop starts at index 1, so it skips the first number. Start at 0."},
+{goal:"Print \"Perfect!\" when the score is 100.",py:["score = int(input(\"Score: \"))","if score = 100:","    print(\"Perfect!\")"],java:["int score = in.nextInt();","if (score = 100) {","    System.out.println(\"Perfect!\");","}"],bug:{py:1,java:1},fix:{py:"if score == 100:",java:"if (score == 100) {"},e:"= assigns a value. Use == to compare."},
+{goal:"Count from 1 up to 5.",py:["count = 1","while count <= 5:","    print(count)","    count -= 1"],java:["int count = 1;","while (count <= 5) {","    System.out.println(count);","    count--;","}"],bug:{py:3,java:3},fix:{py:"    count += 1",java:"    count++;"},e:"Subtracting makes count smaller forever, so the loop never ends. Add 1 instead."},
+{goal:"Average three test scores. Should print 85.",py:["a = 90","b = 85","c = 80","avg = a + b + c / 3","print(avg)"],java:["int a = 90;","int b = 85;","int c = 80;","double avg = a + b + c / 3;","System.out.println(avg);"],bug:{py:3,java:3},fix:{py:"avg = (a + b + c) / 3",java:"double avg = (a + b + c) / 3.0;"},e:{py:"Division happens before addition, so only c gets divided. Add parentheses.",java:"Division happens before addition, so only c gets divided. Add parentheses, and divide by 3.0 to keep decimals."}},
+{goal:"Print the last letter of the word.",py:["word = \"CODE\"","last = word[len(word)]","print(last)"],java:["String word = \"CODE\";","char last = word.charAt(word.length());","System.out.println(last);"],bug:{py:1,java:1},fix:{py:"last = word[len(word) - 1]",java:"char last = word.charAt(word.length() - 1);"},e:"The last index is length − 1. Using length goes out of range."},
+{goal:"Find the highest temperature. Should print -2.",py:["temps = [-5, -2, -9]","high = 0","for t in temps:","    if t > high:","        high = t","print(high)"],java:["int[] temps = {-5, -2, -9};","int high = 0;","for (int t : temps) {","    if (t > high) {","        high = t;","    }","}","System.out.println(high);"],bug:{py:1,java:1},fix:{py:"high = temps[0]",java:"int high = temps[0];"},e:"Every temp is below 0, so nothing beats the starting value of 0. Start with the first element instead."},
+{goal:"square(4) + 1 should print 17.",py:["def square(n):","    result = n * n","","print(square(4) + 1)"],java:["public static int square(int n) {","    int result = n * n;","}","","System.out.println(square(4) + 1);"],bug:{py:1,java:1},fix:{py:"    return n * n",java:"    return n * n;"},e:{py:"The function calculates the answer but never returns it, so it gives back None.",java:"The method promises an int but never returns one, so it won't compile."}},
+{goal:"A score of 95 should get an A.",py:["score = 95","if score >= 70:","    grade = \"C\"","elif score >= 90:","    grade = \"A\"","print(grade)"],java:["int score = 95;","String grade = \"\";","if (score >= 70) {","    grade = \"C\";","} else if (score >= 90) {","    grade = \"A\";","}","System.out.println(grade);"],bug:{py:1,java:2},fix:{py:"Check score >= 90 first, then >= 70",java:"Check score >= 90 first, then >= 70"},e:"95 >= 70 is true, so the first branch runs and stops. Put the higher cutoff first."},
+{goal:"Print \"Continuing\" when the user types yes.",py:["answer = input(\"Continue? \").lower()","if answer == \"YES\":","    print(\"Continuing\")"],java:["String answer = in.nextLine();","if (answer == \"yes\") {","    System.out.println(\"Continuing\");","}"],bug:{py:1,java:1},fix:{py:"if answer == \"yes\":",java:"if (answer.equals(\"yes\")) {"},e:{py:"The input was made lowercase, so it can never equal \"YES\".",java:"== checks whether two Strings are the same object. Use .equals() to compare the text."}},
+{goal:"Print the numbers 1 to 3.",py:["for i in range(1, 3):","    print(i)"],java:["for (int i = 1; i < 3; i++) {","    System.out.println(i);","}"],bug:{py:0,java:0},fix:{py:"for i in range(1, 4):",java:"for (int i = 1; i <= 3; i++) {"},e:"The stop value isn't included, so this only prints 1 and 2."}
+];
+
+/* Code Order: arrange lines into a working program */
+const ORDERS=[
+{goal:"Ask for an age. Print \"You can drive\" if it's 16 or more, otherwise \"Not yet\".",py:["age = int(input(\"Age? \"))","if age >= 16:","    print(\"You can drive\")","else:","    print(\"Not yet\")"],java:["Scanner in = new Scanner(System.in);","int age = in.nextInt();","if (age >= 16) {","    System.out.println(\"You can drive\");","} else {","    System.out.println(\"Not yet\");","}"]},
+{goal:"Print every even number from 0 to 10.",py:["for i in range(0, 11):","    if i % 2 == 0:","        print(i)"],java:["for (int i = 0; i <= 10; i++) {","    if (i % 2 == 0) {","        System.out.println(i);","    }","}"]},
+{goal:"Print 3, 2, 1, then \"Liftoff!\"",py:["n = 3","while n > 0:","    print(n)","    n -= 1","print(\"Liftoff!\")"],java:["int n = 3;","while (n > 0) {","    System.out.println(n);","    n--;","}","System.out.println(\"Liftoff!\");"]},
+{goal:"Add the numbers 1 through 5 and print 15.",py:["total = 0","for i in range(1, 6):","    total += i","print(total)"],java:["int total = 0;","for (int i = 1; i <= 5; i++) {","    total += i;","}","System.out.println(total);"]},
+{goal:"Find and print the biggest number in the list.",py:["nums = [7, 3, 9]","best = nums[0]","for n in nums:","    if n > best:","        best = n","print(best)"],java:["int[] nums = {7, 3, 9};","int best = nums[0];","for (int n : nums) {","    if (n > best) {","        best = n;","    }","}","System.out.println(best);"]},
+{goal:"Define a function that returns a rectangle's area, then print area(3, 4).",py:["def area(w, h):","    return w * h","","result = area(3, 4)","print(result)"].filter(Boolean),java:["public static int area(int w, int h) {","    return w * h;","}","int result = area(3, 4);","System.out.println(result);"]},
+{goal:"Print each letter of \"HI\" on its own line.",py:["word = \"HI\"","for i in range(len(word)):","    print(word[i])"],java:["String word = \"HI\";","for (int i = 0; i < word.length(); i++) {","    System.out.println(word.charAt(i));","}"]}
+];
+
+/* ======================= STATE ======================= */
+const KEY="cs1-quest-v1";
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return {}}}
+let store=Object.assign({lang:"py",xp:0,units:{},qs:{},games:{}},load());
+["units","qs","games"].forEach(k=>store[k]=store[k]||{});
+function save(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}}
+const LV=v=>(v&&typeof v==="object"&&!Array.isArray(v)&&("py" in v||"java" in v||"all" in v))?(v[store.lang]??v.all):v;
+const RANKS=["Rookie","Coder","Debugger","Builder","Developer","Engineer","Architect","Legend"];
+function level(){const lv=Math.floor(store.xp/250);return{lv:lv+1,rank:RANKS[Math.min(lv,RANKS.length-1)],into:store.xp%250}}
+function addXP(n){store.xp+=n;save();drawXP(true)}
+
+const app=document.getElementById("app");
+const h=(tag,attrs={},...kids)=>{const el=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="class")el.className=v;else if(k==="html")el.innerHTML=v;else if(k.startsWith("on"))el.addEventListener(k.slice(2),v);else if(k==="style")el.style.cssText=v;else if(v!==false&&v!=null)el.setAttribute(k,v)}for(const k of kids.flat()){if(k==null||k===false)continue;el.append(k.nodeType?k:document.createTextNode(k))}return el};
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const rand=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const LANGNAME=()=>store.lang==="py"?"Python":"Java";
+
+function codeBlock(src){
+  const pre=h("pre",{});const code=h("code",{});
+  src.split("\n").forEach((ln,i)=>{
+    const m=ln.match(/^(.*?)(\s+(#|\/\/).*)$/);
+    if(m&&!/["'][^"']*$/.test(m[1])){code.append(m[1]);code.append(h("span",{class:"cm"},m[2]))}else code.append(ln);
+    if(i<src.split("\n").length-1)code.append("\n");
+  });
+  pre.append(code);return pre;
+}
+
+/* header */
+let inActivity=false;
+function drawXP(pop){
+  const L=level();const x=document.getElementById("xp");x.innerHTML="";
+  const pts=h("strong",{class:"num"+(pop?" pop":"")},`${store.xp} XP`);
+  x.append(h("span",{},`Level ${L.lv} · ${L.rank}`),h("div",{class:"xpbar","aria-hidden":"true"},h("i",{style:`width:${L.into/250*100}%`})),pts);
+}
+function drawLang(){
+  document.querySelectorAll("#lang button").forEach(b=>{b.setAttribute("aria-pressed",String(b.dataset.l===store.lang));b.disabled=inActivity;b.title=inActivity?"Finish or quit this activity to switch languages":""});
+}
+document.querySelectorAll("#lang button").forEach(b=>b.addEventListener("click",()=>{if(inActivity)return;store.lang=b.dataset.l;save();drawLang();render()}));
+let tab="learn",view=null;
+document.querySelectorAll("#tabs button").forEach(b=>b.addEventListener("click",()=>{stopTimer();tab=b.dataset.tab;view=null;inActivity=false;teacherUnlocked=false;render()}));
+function render(){
+  document.querySelectorAll("#tabs button").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.tab===tab)));
+  drawLang();drawXP(false);app.innerHTML="";
+  if(view){view();return}
+  ({learn:learnHome,practice:practiceHome,games:gamesHome,progress:progressView})[tab]();
+}
+function go(fn,activity){view=fn;inActivity=!!activity;render();window.scrollTo({top:0})}
+function back(){stopTimer();view=null;inActivity=false;render()}
+const backBtn=(label="← Back")=>h("button",{class:"btn ghost small",onclick:back},label);
+
+/* ======================= LEARN ======================= */
+function unitStatus(u){const s=store.units[u.id]||{};if(s.best>=80)return["Mastered","done"];if(s.read||s.best!=null)return[s.best!=null?`Quiz best ${s.best}%`:"Started","going"];return["New",""]}
+function learnHome(){
+  app.append(h("p",{class:"muted"},`12 units built around the Texas Computer Science I course. Read the lesson, then score 80% or higher on the quiz to master it. Code is shown in ${LANGNAME()}; switch anytime at the top.`));
+  app.append(h("div",{class:"units"},...UNITS.map((u,i)=>{const[st,cls]=unitStatus(u);
+    return h("button",{class:"unit",onclick:()=>go(()=>lesson(u))},h("span",{class:"n"},String(i+1)),h("span",{},h("b",{},u.title),h("small",{},u.blurb)),h("span",{class:"pill "+cls},st))})));
+}
+function lesson(u){
+  store.units[u.id]=Object.assign(store.units[u.id]||{},{read:true});save();
+  const idx=UNITS.indexOf(u);
+  app.append(h("div",{class:"row between"},backBtn("← All units"),h("span",{class:"eyebrow"},`Unit ${idx+1} of ${UNITS.length}`)),
+    h("h2",{style:"font-size:1.5rem"},u.title));
+  for(const s of u.lesson){
+    const sec=h("section",{class:"card lesson-sec"},h("h3",{},s.h));
+    if(s.p)sec.append(h("p",{html:LV(s.p)}));
+    if(s.list)sec.append(h("ul",{},...s.list.map(li=>h("li",{html:li}))));
+    if(s.code){const src=LV(s.code);sec.append(h("div",{class:"codehead"},h("span",{},s.code.all?"":LANGNAME())),codeBlock(src))}
+    if(s.after)sec.append(h("p",{class:"muted",html:LV(s.after)}));
+    app.append(sec);
+  }
+  app.append(h("section",{class:"card"},h("h3",{},"Key terms"),h("div",{class:"terms"},...u.terms.map(([t,d])=>h("div",{class:"term"},h("b",{},t),d)))));
+  app.append(h("div",{class:"row"},
+    h("button",{class:"btn",onclick:()=>startQuiz(u.qs.map(q=>({...q,unit:u.id})),{title:u.title,unit:u.id})},`Take the Unit ${idx+1} quiz`),
+    h("button",{class:"btn ghost",onclick:()=>startMatch(u)},"Match the terms"),
+    idx<UNITS.length-1?h("button",{class:"btn ghost",onclick:()=>go(()=>lesson(UNITS[idx+1]))},"Next unit →"):null));
+}
+
+/* ======================= QUIZ ======================= */
+let Z=null;
+function startQuiz(qs,opts){
+  Z={qs:opts.keepOrder?qs:shuffle(qs),i:0,right:0,log:[],opts};go(showQuizQ,true);
+}
+function showQuizQ(){
+  const q=Z.qs[Z.i];const u=UNITS.find(x=>x.id===q.unit);
+  const choices=LV(q.c);const order=shuffle(choices.map((t,i)=>({t,i})));const ans=LV(q.a);
+  app.append(h("div",{class:"hud"},backBtn("Quit"),h("span",{class:"num"},`${Z.i+1} / ${Z.qs.length}`),h("span",{class:"num"},`${Z.right} correct`)),
+    h("div",{class:"progress"},h("i",{style:`width:${Z.i/Z.qs.length*100}%`})));
+  const box=h("div",{class:"choices"});const fb=h("div",{});
+  order.forEach((o,k)=>box.append(h("button",{class:"choice",id:"ch"+k,onclick:()=>{
+    if(Z.done===Z.i)return;Z.done=Z.i;const ok=o.i===ans;
+    [...box.children].forEach((b,j)=>{b.disabled=true;if(order[j].i===ans)b.classList.add("right");else if(j===k)b.classList.add("wrong")});
+    const s=store.qs[q.id]||{c:0,t:0};s.t++;if(ok)s.c++;store.qs[q.id]=s;
+    if(ok){Z.right++;addXP(10)}else save();
+    Z.log.push({q,ok});
+    fb.append(h("div",{class:"fb"+(ok?"":" miss")},h("strong",{},ok?"Correct! +10 XP":"Not quite."),h("span",{},LV(q.e))),
+      h("div",{class:"row",style:"margin-top:12px"},h("button",{class:"btn",id:"next",onclick:()=>{Z.i++;Z.i<Z.qs.length?go(showQuizQ,true):go(quizDone,false)}},Z.i+1<Z.qs.length?"Next →":"See results")));
+    document.getElementById("next").focus();
+  }},h("span",{class:"k"},"ABCD"[k]),h("span",{},o.t))));
+  app.append(h("section",{class:"card"},
+    h("span",{class:"eyebrow"},u?u.title:""),
+    h("p",{class:"qtext"},LV(q.q)),
+    q.code&&LV(q.code)?codeBlock(LV(q.code)):null,box,fb));
+}
+function quizDone(){
+  const pct=Math.round(Z.right/Z.qs.length*100);
+  if(Z.opts.unit){const s=store.units[Z.opts.unit]||{};s.best=Math.max(s.best??0,pct);store.units[Z.opts.unit]=s;save()}
+  const miss=Z.log.filter(l=>!l.ok);
+  app.append(h("section",{class:"card"},
+    h("span",{class:"eyebrow"},Z.opts.title||"Quiz"),
+    h("div",{class:"big num"},pct+"%"),
+    h("p",{},`${Z.right} of ${Z.qs.length} correct. `+(pct>=80?(Z.opts.unit?"Unit mastered!":"Great work!"):"Score 80% or more to master it. Review the misses below and try again.")),
+    h("div",{class:"row"},h("button",{class:"btn",onclick:()=>startQuiz(Z.qs,Z.opts)},"Try again"),backBtn("Done"))),
+    miss.length?h("section",{class:"card"},h("h3",{},"Review"),...miss.map(l=>h("div",{style:"display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:12px"},
+      h("b",{},LV(l.q.q)),l.q.code&&LV(l.q.code)?codeBlock(LV(l.q.code)):null,
+      h("span",{},"Answer: ",h("strong",{},LV(l.q.c)[LV(l.q.a)])),h("span",{class:"muted"},LV(l.q.e))))):null);
+}
+
+/* ======================= PRACTICE ======================= */
+function allQs(){return UNITS.flatMap(u=>u.qs.map(q=>({...q,unit:u.id})))}
+function practiceHome(){
+  const all=allQs();const missed=all.filter(q=>{const s=store.qs[q.id];return s&&s.c<s.t});
+  app.append(h("div",{class:"tiles"},
+    h("button",{class:"tile wide",onclick:()=>startQuiz(shuffle(all).slice(0,15),{title:"Mixed Review"})},h("span",{class:"tag"},"15 questions"),h("b",{},"Mixed Review"),h("span",{class:"muted"},`Random questions from all ${UNITS.length} units. Good for test prep.`)),
+    h("button",{class:"tile",onclick:()=>go(outputIntro)},h("span",{class:"tag"},"Never runs out"),h("b",{},"Output Lab"),h("span",{class:"muted"},"New code every time. Type exactly what it prints.")),
+    h("button",{class:"tile",disabled:!missed.length,onclick:()=>startQuiz(missed,{title:"Fix My Misses"})},h("span",{class:"tag"},`${missed.length} saved`),h("b",{},"Fix My Misses"),h("span",{class:"muted"},missed.length?"Questions you've missed before.":"Questions you miss show up here."))),
+    h("h2",{},"Quiz by unit"),
+    h("div",{class:"units"},...UNITS.map((u,i)=>{const[st,cls]=unitStatus(u);return h("button",{class:"unit",onclick:()=>startQuiz(u.qs.map(q=>({...q,unit:u.id})),{title:u.title,unit:u.id})},h("span",{class:"n"},String(i+1)),h("span",{},h("b",{},u.title),h("small",{},`${u.qs.length} questions`)),h("span",{class:"pill "+cls},st))})));
+}
+
+/* ---------- Output Lab: procedurally generated tracing ---------- */
+const WORDS=["PYTHON","LAPTOP","GALAXY","PIXELS","BINARY","ROCKET","CODING","SCHOOL","TEXAS","MUSTANG"];
+function gen(){
+  const py=store.lang==="py";const t=pick(["div","mod","prec","vars","sum","count","idx","slice","len","ifs","dbl","list","listlast"]);
+  const P=s=>py?`print(${s})`:`System.out.println(${s});`;
+  let code,ans,topic;
+  if(t==="div"){const a=rand(11,49),b=rand(2,7);code=py?P(`${a} // ${b}`):P(`${a} / ${b}`);ans=Math.floor(a/b);topic=py?"Floor division":"Integer division"}
+  else if(t==="mod"){const a=rand(10,60),b=rand(2,9);code=P(`${a} % ${b}`);ans=a%b;topic="Modulus"}
+  else if(t==="prec"){const a=rand(1,9),b=rand(2,6),c=rand(2,6);const f=pick([0,1]);code=f?P(`(${a} + ${b}) * ${c}`):P(`${a} + ${b} * ${c}`);ans=f?(a+b)*c:a+b*c;topic="Order of operations"}
+  else if(t==="vars"){const a=rand(2,12),b=rand(2,9);code=py?`x = ${a}\ny = ${b}\nx = x + y\ny = x - 1\nprint(x * y)`:`int x = ${a};\nint y = ${b};\nx = x + y;\ny = x - 1;\nSystem.out.println(x * y);`;ans=(a+b)*(a+b-1);topic="Variables"}
+  else if(t==="sum"||t==="count"){const st=rand(0,3),step=rand(1,3),stop=st+step*rand(2,5)+rand(0,1);let s=0,c=0;for(let i=st;i<stop;i+=step){s+=i;c++}
+    const rng=step===1?(st===0?`range(${stop})`:`range(${st}, ${stop})`):`range(${st}, ${stop}, ${step})`;const inc=step===1?"i++":`i += ${step}`;
+    if(t==="sum"){code=py?`total = 0\nfor i in ${rng}:\n    total += i\nprint(total)`:`int total = 0;\nfor (int i = ${st}; i < ${stop}; ${inc}) {\n    total += i;\n}\nSystem.out.println(total);`;ans=s;topic="Loops: accumulator"}
+    else{code=py?`count = 0\nfor i in ${rng}:\n    count += 1\nprint(count)`:`int count = 0;\nfor (int i = ${st}; i < ${stop}; ${inc}) {\n    count++;\n}\nSystem.out.println(count);`;ans=c;topic="Loops: counting"}}
+  else if(t==="idx"){const w=pick(WORDS),i=rand(0,w.length-1);code=py?`word = "${w}"\nprint(word[${i}])`:`String word = "${w}";\nSystem.out.println(word.charAt(${i}));`;ans=w[i];topic="String index"}
+  else if(t==="slice"){const w=pick(WORDS),a=rand(0,3),b=Math.min(w.length,a+rand(1,3));code=py?`word = "${w}"\nprint(word[${a}:${b}])`:`String word = "${w}";\nSystem.out.println(word.substring(${a}, ${b}));`;ans=w.slice(a,b);topic=py?"String slice":"substring"}
+  else if(t==="len"){const w=pick(WORDS),k=rand(1,5);code=py?`word = "${w}"\nprint(len(word) + ${k})`:`String word = "${w}";\nSystem.out.println(word.length() + ${k});`;ans=w.length+k;topic="String length"}
+  else if(t==="ifs"){const x=rand(40,100);code=py?`x = ${x}\nif x >= 90:\n    print("A")\nelif x >= 80:\n    print("B")\nelif x >= 70:\n    print("C")\nelse:\n    print("F")`:`int x = ${x};\nif (x >= 90) {\n    System.out.println("A");\n} else if (x >= 80) {\n    System.out.println("B");\n} else if (x >= 70) {\n    System.out.println("C");\n} else {\n    System.out.println("F");\n}`;ans=x>=90?"A":x>=80?"B":x>=70?"C":"F";topic="if / else"}
+  else if(t==="dbl"){const n0=rand(1,3),f=pick([2,3]),lim=rand(20,150);let n=n0;while(n<lim)n*=f;code=py?`n = ${n0}\nwhile n < ${lim}:\n    n *= ${f}\nprint(n)`:`int n = ${n0};\nwhile (n < ${lim}) {\n    n *= ${f};\n}\nSystem.out.println(n);`;ans=n;topic="while loops"}
+  else if(t==="list"){const nums=Array.from({length:5},()=>rand(1,50)),i=rand(0,4),j=rand(0,4);code=py?`nums = [${nums.join(", ")}]\nprint(nums[${i}] + nums[${j}])`:`int[] nums = {${nums.join(", ")}};\nSystem.out.println(nums[${i}] + nums[${j}]);`;ans=nums[i]+nums[j];topic="Lists & arrays"}
+  else{const nums=Array.from({length:rand(3,6)},()=>rand(1,50));code=py?`nums = [${nums.join(", ")}]\nprint(nums[-1] - nums[0])`:`int[] nums = {${nums.join(", ")}};\nSystem.out.println(nums[nums.length - 1] - nums[0]);`;ans=nums[nums.length-1]-nums[0];topic="Lists & arrays"}
+  return{code,ans:String(ans),topic};
+}
+let O=null;
+function outputIntro(){
+  app.append(h("div",{class:"row"},backBtn()),h("section",{class:"card"},h("span",{class:"eyebrow"},"Output Lab"),h("h2",{},"What does it print?"),
+    h("p",{},`You'll get 10 short ${LANGNAME()} programs, made fresh each round. Trace them in your head (or on paper) and type the exact output. +15 XP each.`),
+    h("p",{class:"muted"},"Covers division, modulus, order of operations, strings, if/else, loops, and lists."),
+    h("div",{class:"row"},h("button",{class:"btn",onclick:()=>{O={n:0,right:0,cur:gen()};go(outputQ,true)}},"Start"))));
+}
+function norm(s){return String(s).trim().replace(/^["']+|["']+$/g,"").trim().toLowerCase()}
+function outputQ(){
+  const c=O.cur;
+  app.append(h("div",{class:"hud"},backBtn("Quit"),h("span",{class:"num"},`${O.n+1} / 10`),h("span",{class:"num"},`${O.right} correct`)),
+    h("div",{class:"progress"},h("i",{style:`width:${O.n*10}%`})));
+  const inp=h("input",{id:"out-ans",type:"text",autocomplete:"off",autocapitalize:"off",spellcheck:"false",placeholder:"Type the output","aria-label":"Your answer"});
+  const fb=h("div",{});let done=false;
+  const check=()=>{if(done){nextO();return}if(!inp.value.trim())return;done=true;const ok=norm(inp.value)===norm(c.ans);inp.disabled=true;
+    if(ok){O.right++;addXP(15)}
+    fb.append(h("div",{class:"fb"+(ok?"":" miss")},h("strong",{},ok?"Correct! +15 XP":"Not quite."),h("span",{},"It prints: ",h("code",{},c.ans))),
+      h("div",{class:"row",style:"margin-top:12px"},h("button",{class:"btn",id:"next",onclick:nextO},O.n<9?"Next program →":"See results")));
+    document.getElementById("next").focus()};
+  const form=h("form",{class:"answer",onsubmit:e=>{e.preventDefault();check()}},inp,h("button",{class:"btn",type:"submit"},"Check"));
+  app.append(h("section",{class:"card"},h("span",{class:"eyebrow"},c.topic),h("p",{class:"qtext"},"What is printed?"),codeBlock(c.code),form,fb));
+  setTimeout(()=>inp.focus(),50);
+}
+function nextO(){O.n++;if(O.n>=10){store.games.output=Math.max(store.games.output||0,O.right);save();go(()=>{
+  app.append(h("section",{class:"card"},h("span",{class:"eyebrow"},"Output Lab"),h("div",{class:"big num"},`${O.right}/10`),
+    h("p",{},O.right>=8?"Sharp tracing!":"Tip: write each variable's value on paper after every line. That's a trace table."),
+    h("div",{class:"row"},h("button",{class:"btn",onclick:()=>{O={n:0,right:0,cur:gen()};go(outputQ,true)}},"New round"),backBtn("Done"))))},false);return}
+  O.cur=gen();go(outputQ,true)}
+
+/* ======================= GAMES ======================= */
+function gamesHome(){
+  const g=store.games;
+  app.append(h("div",{class:"tiles"},
+    h("button",{class:"tile wide",onclick:()=>go(blitzIntro)},h("span",{class:"tag"},`60 seconds · best ${g.blitz||0}`),h("b",{},"Binary Blitz"),h("span",{class:"muted"},"Convert between binary and decimal as fast as you can.")),
+    h("button",{class:"tile",onclick:()=>startBugs()},h("span",{class:"tag"},`Best ${g.bugs||0}/${BUGS.length}`),h("b",{},"Bug Hunt"),h("span",{class:"muted"},"Tap the line that's breaking the program.")),
+    h("button",{class:"tile",onclick:()=>startOrder()},h("span",{class:"tag"},`Best ${g.order||0}/${ORDERS.length}`),h("b",{},"Code Builder"),h("span",{class:"muted"},"Put scrambled lines in the right order.")),
+    h("button",{class:"tile",onclick:()=>startMatch(null)},h("span",{class:"tag"},g.match?`Best ${g.match}s`:"All units"),h("b",{},"Term Match"),h("span",{class:"muted"},"Pair vocabulary words with their meanings.")),
+    h("button",{class:"tile",onclick:()=>go(outputIntro)},h("span",{class:"tag"},`Best ${g.output||0}/10`),h("b",{},"Output Lab"),h("span",{class:"muted"},"Predict what fresh code prints."))));
+}
+
+/* ---------- Binary Blitz ---------- */
+let B=null,timer=null;
+function stopTimer(){if(timer){clearInterval(timer);timer=null}}
+function blitzIntro(){
+  app.append(h("div",{class:"row"},backBtn()),h("section",{class:"card"},h("span",{class:"eyebrow"},"Binary Blitz"),h("h2",{},"60 seconds. How many can you convert?"),
+    h("p",{},"You'll see a decimal number to write in binary, or a binary number to write in decimal. Leading zeros are fine."),
+    codeBlock("Place values:  32  16   8   4   2   1"),
+    h("div",{class:"row"},h("button",{class:"btn",onclick:()=>{B={score:0,miss:0,end:Date.now()+60000,q:null};B.q=blitzQ();go(blitzPlay,true)}},"Start"))));
+}
+function blitzQ(){const max=B&&B.score>=8?255:B&&B.score>=4?63:31;const n=rand(1,max);return pick([0,1])?{show:n.toString(2),label:"binary → decimal",ans:n,base:10}:{show:String(n),label:"decimal → binary",ans:n,base:2}}
+function blitzPlay(){
+  const q=B.q;
+  const tl=h("span",{class:"num",id:"tl"},"60s");
+  const inp=h("input",{id:"bz-ans",type:"text",inputmode:"numeric",autocomplete:"off",placeholder:q.base===2?"Binary, like 1011":"Decimal number","aria-label":"Your answer"});
+  const fb=h("p",{class:"muted",id:"bzfb"},B.last||" ");
+  const form=h("form",{class:"answer",onsubmit:e=>{e.preventDefault();const v=inp.value.trim();if(!v)return;
+    const valid=q.base===2?/^[01]+$/.test(v):/^\d+$/.test(v);const ok=valid&&parseInt(v,q.base)===q.ans;
+    if(ok){B.score++;B.last=`✓ ${q.show} = ${q.base===2?q.ans.toString(2):q.ans}`}else{B.miss++;B.last=`✗ ${q.show} = ${q.base===2?q.ans.toString(2):q.ans}`}
+    B.q=blitzQ();go(blitzPlay,true)}},inp,h("button",{class:"btn",type:"submit"},"Go"));
+  app.append(h("div",{class:"hud"},backBtn("Quit"),tl,h("span",{class:"num"},`Score ${B.score}`)),
+    h("div",{class:"progress"},h("i",{id:"tbar",style:`width:${Math.max(0,(B.end-Date.now())/600)}%`})),
+    h("section",{class:"card",style:"text-align:center;align-items:center"},h("span",{class:"eyebrow"},q.label),h("div",{class:"big num",style:"font-family:var(--mono);letter-spacing:.05em"},q.show),form,fb));
+  setTimeout(()=>inp.focus(),30);
+  stopTimer();timer=setInterval(()=>{const left=B.end-Date.now();const el=document.getElementById("tl"),bar=document.getElementById("tbar");
+    if(el)el.textContent=Math.max(0,Math.ceil(left/1000))+"s";if(bar)bar.style.width=Math.max(0,left/600)+"%";
+    if(left<=0){stopTimer();const best=Math.max(store.games.blitz||0,B.score);const isBest=B.score>(store.games.blitz||0);store.games.blitz=best;if(B.score)addXP(B.score*5);else save();
+      go(()=>app.append(h("section",{class:"card"},h("span",{class:"eyebrow"},isBest?"New best!":"Time!"),h("div",{class:"big num"},String(B.score)),
+        h("p",{},`${B.score} correct, ${B.miss} missed. +${B.score*5} XP.`),
+        h("div",{class:"row"},h("button",{class:"btn",onclick:()=>{B={score:0,miss:0,end:Date.now()+60000,q:null};B.q=blitzQ();go(blitzPlay,true)}},"Play again"),backBtn("Done")))),false)}},200);
+}
+
+/* ---------- Bug Hunt ---------- */
+let G=null;
+function startBugs(){G={list:shuffle(BUGS),i:0,right:0};go(bugQ,true)}
+function bugQ(){
+  const b=G.list[G.i];const lines=b[store.lang];const bug=b.bug[store.lang];
+  const box=h("div",{class:"lines"});const fb=h("div",{});let done=false;
+  lines.forEach((ln,k)=>box.append(h("button",{class:"line",disabled:ln===""?"":false,onclick:e=>{if(done)return;done=true;const ok=k===bug;
+    [...box.children].forEach((el,j)=>{el.disabled=true;if(j===bug)el.classList.add("right");else if(j===k)el.classList.add("wrong")});
+    if(ok){G.right++;addXP(20)}
+    fb.append(h("div",{class:"fb"+(ok?"":" miss")},h("strong",{},ok?"Found it! +20 XP":`The bug is on line ${bug+1}.`),h("span",{},LV(b.e)),h("span",{},"Fix: ",h("code",{},LV(b.fix)))),
+      h("div",{class:"row",style:"margin-top:12px"},h("button",{class:"btn",id:"next",onclick:()=>{G.i++;if(G.i<G.list.length)go(bugQ,true);else{store.games.bugs=Math.max(store.games.bugs||0,G.right);save();go(()=>doneCard("Bug Hunt",`${G.right}/${G.list.length}`,"bugs fixed",startBugs),false)}}},G.i+1<G.list.length?"Next bug →":"See results")));
+    document.getElementById("next").focus()}},h("span",{class:"ln"},String(k+1)),ln||" ")));
+  app.append(h("div",{class:"hud"},backBtn("Quit"),h("span",{class:"num"},`${G.i+1} / ${G.list.length}`),h("span",{class:"num"},`${G.right} found`)),
+    h("section",{class:"card"},h("span",{class:"eyebrow"},"Bug Hunt · tap the broken line"),h("p",{class:"qtext"},b.goal),box,fb));
+}
+function doneCard(name,big,label,again){
+  app.append(h("section",{class:"card"},h("span",{class:"eyebrow"},name),h("div",{class:"big num"},big),h("p",{},label),
+    h("div",{class:"row"},h("button",{class:"btn",onclick:again},"Play again"),backBtn("Done"))));
+}
+
+/* ---------- Code Builder (Parsons) ---------- */
+let R=null;
+function startOrder(){R={list:shuffle(ORDERS),i:0,right:0};newOrder();go(orderQ,true)}
+function newOrder(){const it=R.list[R.i];const lines=it[store.lang];let pool;do{pool=shuffle(lines.map((t,k)=>({t,k})))}while(lines.length>2&&pool.every((p,k)=>p.t===lines[k]));R.pool=pool;R.built=[];R.checked=false}
+function orderQ(){
+  const it=R.list[R.i];const target=it[store.lang];
+  const built=h("div",{class:"lines slot"},R.built.length?R.built.map((p,k)=>h("button",{class:"line"+(R.checked?(p.t===target[k]?" right":" wrong"):""),disabled:R.checked?"":false,onclick:()=>{R.pool.push(p);R.built.splice(k,1);go(orderQ,true)}},h("span",{class:"ln"},String(k+1)),p.t)):h("span",{class:"empty"},"Tap lines below to build your program here."));
+  const pool=h("div",{class:"pool"},...R.pool.map((p,k)=>h("button",{class:"line",onclick:()=>{R.built.push(p);R.pool.splice(k,1);go(orderQ,true)}},p.t)));
+  const fb=h("div",{});
+  if(R.checked){const ok=R.built.every((p,k)=>p.t===target[k]);
+    fb.append(h("div",{class:"fb"+(ok?"":" miss")},h("strong",{},ok?"It runs! +25 XP":"Not in the right order yet."),ok?null:h("span",{},"Here's a working version:")),ok?null:codeBlock(target.join("\n")),
+      h("div",{class:"row",style:"margin-top:12px"},h("button",{class:"btn",id:"next",onclick:()=>{R.i++;if(R.i<R.list.length){newOrder();go(orderQ,true)}else{store.games.order=Math.max(store.games.order||0,R.right);save();go(()=>doneCard("Code Builder",`${R.right}/${R.list.length}`,"programs built correctly on the first try",startOrder),false)}}},R.i+1<R.list.length?"Next program →":"See results")))}
+  app.append(h("div",{class:"hud"},backBtn("Quit"),h("span",{class:"num"},`${R.i+1} / ${R.list.length}`),h("span",{class:"num"},`${R.right} built`)),
+    h("section",{class:"card"},h("span",{class:"eyebrow"},`Code Builder · ${LANGNAME()}`),h("p",{class:"qtext"},it.goal),
+      h("span",{class:"eyebrow"},"Your program"),built,
+      R.pool.length?h("span",{class:"eyebrow"},"Lines to use"):null,R.pool.length?pool:null,
+      !R.checked?h("div",{class:"row"},h("button",{class:"btn",disabled:R.pool.length?"":false,onclick:()=>{R.checked=true;if(R.built.every((p,k)=>p.t===target[k])){R.right++;addXP(25)}go(orderQ,true)}},"Run it"),
+        h("button",{class:"btn ghost",onclick:()=>{R.pool=R.pool.concat(R.built);R.built=[];go(orderQ,true)}},"Clear")):null,fb));
+}
+
+/* ---------- Term Match ---------- */
+let M=null;
+function startMatch(unit){
+  const src=unit?unit.terms:UNITS.flatMap(u=>u.terms);
+  const pairs=shuffle(src).slice(0,Math.min(5,src.length)).map((p,i)=>({t:p[0],d:p[1],i}));
+  M={unit,pairs,left:shuffle(pairs),right:shuffle(pairs),sel:null,done:new Set(),miss:0,start:Date.now()};go(matchView,true);
+}
+function matchView(){
+  const L=h("div",{class:"col"}),Rr=h("div",{class:"col"});
+  M.left.forEach(p=>L.append(h("button",{class:"mbtn"+(M.done.has(p.i)?" ok":"")+(M.sel===p.i?" sel":""),disabled:M.done.has(p.i)?"":false,onclick:()=>{M.sel=p.i;go(matchView,true)}},h("b",{},p.t))));
+  M.right.forEach(p=>Rr.append(h("button",{class:"mbtn"+(M.done.has(p.i)?" ok":""),disabled:M.done.has(p.i)?"":false,onclick:e=>{
+    if(M.sel==null)return;
+    if(M.sel===p.i){M.done.add(p.i);M.sel=null;
+      if(M.done.size===M.pairs.length){const secs=Math.round((Date.now()-M.start)/1000);const prev=store.games.match;if(!M.unit&&(!prev||secs<prev))store.games.match=secs;addXP(20);
+        go(()=>doneCard("Term Match",`${secs}s`,`All ${M.pairs.length} pairs matched with ${M.miss} wrong ${M.miss===1?"guess":"guesses"}. +20 XP`,()=>startMatch(M.unit)),false);return}
+      go(matchView,true)}
+    else{M.miss++;const el=e.currentTarget;el.classList.add("no");setTimeout(()=>el.classList.remove("no"),450)}}},p.d)));
+  app.append(h("div",{class:"hud"},backBtn("Quit"),h("span",{class:"num"},`${M.done.size} / ${M.pairs.length} matched`),h("span",{class:"num"},`${M.miss} wrong`)),
+    h("section",{class:"card"},h("span",{class:"eyebrow"},M.unit?M.unit.title:"All units"),h("p",{class:"muted"},"Tap a term, then tap its meaning."),h("div",{class:"match"},L,Rr)));
+}
+
+/* ======================= PROGRESS ======================= */
+let confirmReset=false;
+function progressView(){
+  const L=level();const mastered=UNITS.filter(u=>(store.units[u.id]||{}).best>=80).length;
+  let t=0,c=0;Object.values(store.qs).forEach(s=>{t+=s.t;c+=s.c});
+  app.append(h("section",{class:"card"},h("h2",{},`Level ${L.lv} · ${L.rank}`),
+    h("p",{class:"muted"},`${250-L.into} XP to the next level.`),
+    h("div",{class:"stats"},h("div",{},h("strong",{class:"num"},`${mastered}/${UNITS.length}`),h("small",{},"Units mastered")),
+      h("div",{},h("strong",{class:"num"},String(t)),h("small",{},"Questions answered")),
+      h("div",{},h("strong",{class:"num"},t?Math.round(c/t*100)+"%":"—"),h("small",{},"Accuracy")))),
+    h("section",{class:"card"},h("h3",{},"Unit quiz scores"),h("div",{class:"bars"},...UNITS.map((u,i)=>{const b=(store.units[u.id]||{}).best;
+      return h("div",{class:"bar"},h("span",{},`${i+1}. ${u.title}`),h("span",{class:"num muted"},b==null?"not taken":`${b}%${b>=80?" · mastered":""}`),h("div",{class:"track"},h("div",{class:"fill",style:`width:${b||0}%`})))}))),
+    shareCard(),
+    h("section",{class:"card"},h("h3",{},"Game bests"),h("div",{class:"stats"},
+      h("div",{},h("strong",{class:"num"},String(store.games.blitz||0)),h("small",{},"Binary Blitz")),
+      h("div",{},h("strong",{class:"num"},`${store.games.bugs||0}/${BUGS.length}`),h("small",{},"Bug Hunt")),
+      h("div",{},h("strong",{class:"num"},`${store.games.order||0}/${ORDERS.length}`),h("small",{},"Code Builder")))),
+    h("section",{class:"card"},h("p",{class:"muted"},"Progress is saved in this browser on this device."),
+      confirmReset?h("div",{class:"row"},h("span",{},"Erase all XP and scores?"),h("button",{class:"btn",style:"background:var(--bad)",onclick:()=>{store={lang:store.lang,profile:store.profile,xp:0,units:{},qs:{},games:{}};save();confirmReset=false;render()}},"Yes, reset"),h("button",{class:"btn ghost",onclick:()=>{confirmReset=false;render()}},"Cancel"))
+      :h("div",{class:"row"},h("button",{class:"btn ghost small",onclick:()=>{confirmReset=true;render()}},"Reset progress"))),
+    h("p",{class:"muted",style:"font-size:.85rem"},h("button",{class:"linkbtn",onclick:()=>go(teacherGate)},"Teacher sign in")));
+}
+
+/* ======================= SCORE CODES ======================= */
+const SALT="cs1quest-26";
+function fnv(str){let x=0x811c9dc5;for(let i=0;i<str.length;i++){x^=str.charCodeAt(i);x=Math.imul(x,0x01000193)>>>0}return x.toString(36)}
+const b64e=str=>btoa(unescape(encodeURIComponent(str))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+const b64d=str=>{str=str.replace(/-/g,"+").replace(/_/g,"/");while(str.length%4)str+="=";return decodeURIComponent(escape(atob(str)))};
+function makeCode(){
+  const pr=store.profile||{};let t=0,c=0;Object.values(store.qs).forEach(q=>{t+=q.t;c+=q.c});
+  const d={v:1,n:(pr.name||"").trim().slice(0,40),p:(pr.period||"").trim().slice(0,12),x:store.xp,
+    u:UNITS.map(u=>{const b=(store.units[u.id]||{}).best;return b==null?-1:b}),
+    g:[store.games.blitz||0,store.games.bugs||0,store.games.order||0,store.games.output||0],a:t,c,ts:Math.floor(Date.now()/60000)};
+  const body=b64e(JSON.stringify(d));return `CSQ1.${body}.${fnv(SALT+body)}`;
+}
+function readCodes(text){
+  const out=[],bad=[];const re=/CSQ1\.([A-Za-z0-9_-]+)\.([0-9a-z]+)/g;let m;
+  while((m=re.exec(text))){
+    if(fnv(SALT+m[1])!==m[2]){bad.push(m[0]);continue}
+    try{const d=JSON.parse(b64d(m[1]));if(d&&d.v===1&&typeof d.n==="string"&&d.n&&Array.isArray(d.u))out.push(d);else bad.push(m[0])}catch(e){bad.push(m[0])}
+  }
+  const stray=(text.match(/CSQ1/g)||[]).length-out.length-bad.length;
+  return{out,bad:bad.length+Math.max(0,stray)};
+}
+function copyText(txt,btn,area){
+  const done=ok=>{btn.textContent=ok?"Copied!":"Selected. Press copy";setTimeout(()=>btn.textContent=btn.dataset.label,1800)};
+  try{navigator.clipboard.writeText(txt).then(()=>done(true),()=>{if(area){area.focus();area.select()}done(false)})}catch(e){if(area){area.focus();area.select()}done(false)}
+}
+
+function shareCard(){
+  const pr=store.profile||{};
+  const nameIn=h("input",{id:"stu-name",type:"text",maxlength:"40",autocomplete:"off",value:pr.name||"",placeholder:"Maya R."});
+  const perIn=h("input",{id:"stu-period",type:"text",maxlength:"12",autocomplete:"off",value:pr.period||"",placeholder:"3"});
+  const out=h("div",{style:"display:flex;flex-direction:column;gap:10px"});
+  const make=()=>{
+    store.profile={name:nameIn.value.trim(),period:perIn.value.trim()};save();out.innerHTML="";
+    if(!store.profile.name){out.append(h("p",{style:"color:var(--bad)"},"Type your name first so your teacher knows whose scores these are."));nameIn.focus();return}
+    const code=makeCode();const area=h("textarea",{id:"stu-code",rows:"4",readonly:""},code);
+    const btn=h("button",{class:"btn","data-label":"Copy code",onclick:()=>copyText(code,btn,area)},"Copy code");
+    out.append(area,h("div",{class:"row"},btn,h("span",{class:"muted",style:"font-size:.85rem"},"Paste it wherever your teacher collects it.")));
+  };
+  return h("section",{class:"card"},h("h3",{},"Send your scores to your teacher"),
+    h("p",{class:"muted"},"Make a score code, then submit it the way your teacher asks (Google Classroom, Canvas, or a form). Make a new code any time your scores go up."),
+    h("div",{class:"row",style:"align-items:flex-end"},
+      h("label",{class:"field"},"Your name (first name + last initial)",nameIn),
+      h("label",{class:"field",style:"flex:0 1 110px;min-width:90px"},"Class period",perIn)),
+    h("div",{class:"row"},h("button",{class:"btn",onclick:make},"Make my score code")),out);
+}
+
+/* ======================= TEACHER DASHBOARD ======================= */
+const TKEY="cs1-quest-teacher-v1";
+let T=(()=>{try{return JSON.parse(localStorage.getItem(TKEY))||{}}catch(e){return {}}})();T.students=T.students||{};
+function tsave(){try{localStorage.setItem(TKEY,JSON.stringify(T))}catch(e){}}
+let TV={period:"all",sort:"x",msg:"",big:false,confirmClear:false,confirmRm:null};
+const mastered=d=>d.u.filter(b=>b>=80).length;
+const acc=d=>d.a?Math.round(d.c/d.a*100):null;
+const lvl=x=>Math.floor(x/250)+1;
+function cellClass(b){return b<0?"c":b>=80?"c hi":b>=50?"c mid":"c lo"}
+function teacherRows(){
+  let rows=Object.values(T.students);if(TV.period!=="all")rows=rows.filter(r=>(r.p||"—")===TV.period);
+  const k=TV.sort;
+  rows.sort((a,b)=>k==="n"?a.n.localeCompare(b.n):k==="m"?mastered(b)-mastered(a)||b.x-a.x:k==="a"?(acc(b)??-1)-(acc(a)??-1):b.x-a.x||mastered(b)-mastered(a));
+  return rows;
+}
+function addCodes(text){
+  const {out,bad}=readCodes(text);let added=0,updated=0,older=0;
+  for(const d of out){const key=d.n.toLowerCase()+"|"+(d.p||"").toLowerCase();const cur=T.students[key];
+    if(!cur){T.students[key]=d;added++}else if(d.ts>=cur.ts){T.students[key]=d;updated++}else older++}
+  tsave();
+  const parts=[];if(added)parts.push(`${added} added`);if(updated)parts.push(`${updated} updated`);if(older)parts.push(`${older} skipped (an older code than the one saved)`);
+  if(bad)parts.push(`${bad} couldn't be read. Ask ${bad===1?"that student":"those students"} to copy the code again, since it was cut off or changed`);
+  TV.msg=parts.length?parts.join(" · ")+".":"No score codes found. Codes start with CSQ1.";
+}
+function csv(rows){
+  const esc=v=>{v=String(v);return /[",\n]/.test(v)?`"${v.replace(/"/g,'""')}"`:v};
+  const head=["Name","Period","Level","XP","Units mastered","Accuracy %","Questions answered",...UNITS.map((u,i)=>`Unit ${i+1} %`),"Binary Blitz","Bug Hunt","Code Builder","Output Lab","Code made"];
+  const lines=[head,...rows.map(d=>[d.n,d.p||"",lvl(d.x),d.x,mastered(d),acc(d)??"",d.a,...d.u.map(b=>b<0?"":b),d.g[0],d.g[1],d.g[2],d.g[3],new Date(d.ts*60000).toLocaleString()])];
+  return lines.map(r=>r.map(esc).join(",")).join("\n");
+}
+function teacherView(){
+  if(!teacherUnlocked){teacherGate();return}
+  const all=Object.values(T.students);const rows=teacherRows();
+  const periods=[...new Set(all.map(r=>r.p||"—"))].sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}));
+  if(TV.period!=="all"&&!periods.includes(TV.period))TV.period="all";
+  const rr=()=>go(teacherView);
+
+  if(TV.big){
+    app.append(h("div",{class:"row between"},h("button",{class:"btn ghost small",onclick:()=>{TV.big=false;rr()}},"← Exit big screen"),h("span",{class:"eyebrow"},TV.period==="all"?"All periods":`Period ${TV.period}`)),
+      h("h1",{},"Class Leaderboard"),
+      h("ol",{class:"lb huge"},...rows.slice(0,10).map((d,i)=>h("li",{},h("span",{class:"rk"},String(i+1)),h("span",{class:"nm"},d.n),h("span",{class:"num"},`${d.x} XP`)))));
+    return;
+  }
+
+  const paste=h("textarea",{id:"teacher-paste",rows:"4",placeholder:"Paste student score codes here. One or many at once, in any format."});
+  app.append(h("div",{class:"row between"},h("button",{class:"btn ghost small",onclick:()=>{teacherUnlocked=false;TV.msg="";back()}},"Lock & exit"),h("span",{class:"eyebrow"},"Teacher mode")),
+    h("h2",{style:"font-size:1.5rem"},"Class Dashboard"),
+    h("section",{class:"card"},h("h3",{},"Add score codes"),
+      h("p",{class:"muted"},"Students open Progress, make a score code, and submit it. Paste everything they sent below: a whole column from a form or a pile of comments works. A newer code from the same student replaces the old one."),
+      paste,h("div",{class:"row"},h("button",{class:"btn",onclick:()=>{if(!paste.value.trim())return;addCodes(paste.value);rr()}},"Add codes")),
+      TV.msg?h("p",{role:"status"},TV.msg):null));
+
+  if(!all.length){
+    app.append(h("section",{class:"card"},h("h3",{},"No students yet"),
+      h("ol",{style:"margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px"},
+        h("li",{},"Share this page's link with your class."),
+        h("li",{},"Students practice, then go to Progress → Make my score code → Copy."),
+        h("li",{},"They submit the code (an assignment, a form, or a chat message)."),
+        h("li",{},"Paste the codes above. The leaderboard and score table fill in here.")),
+      h("p",{class:"muted"},"Everything you add stays in this browser only. Student data isn't sent anywhere.")));
+    return;
+  }
+
+  const chips=h("div",{class:"chips"},h("button",{class:"chip","aria-pressed":String(TV.period==="all"),onclick:()=>{TV.period="all";rr()}},`All (${all.length})`),
+    ...periods.map(p=>h("button",{class:"chip","aria-pressed":String(TV.period===p),onclick:()=>{TV.period=p;rr()}},p==="—"?"No period":`Period ${p}`)));
+  app.append(chips);
+
+  const byXP=rows.slice().sort((a,b)=>b.x-a.x);
+  app.append(h("section",{class:"card"},h("div",{class:"row between"},h("h3",{},"Leaderboard"),h("button",{class:"btn ghost small",onclick:()=>{TV.big=true;rr()}},"Big screen")),
+    h("ol",{class:"lb"},...byXP.slice(0,10).map((d,i)=>h("li",{},h("span",{class:"rk"},String(i+1)),h("span",{class:"nm"},d.n+(TV.period==="all"&&d.p?` · P${d.p}`:"")),h("span",{class:"num muted"},`${d.x} XP · ${mastered(d)}/${UNITS.length}`))))));
+
+  const avg=UNITS.map((u,i)=>{const v=rows.map(r=>r.u[i]).filter(b=>b>=0);return v.length?Math.round(v.reduce((a,b)=>a+b,0)/v.length):-1});
+  const taken=avg.map((a,i)=>({a,i})).filter(o=>o.a>=0).sort((x,y)=>x.a-y.a).slice(0,3);
+  const totAcc=(()=>{let a=0,c=0;rows.forEach(r=>{a+=r.a;c+=r.c});return a?Math.round(c/a*100):null})();
+  app.append(h("section",{class:"card"},h("h3",{},"Class snapshot"),
+    h("div",{class:"stats"},h("div",{},h("strong",{class:"num"},String(rows.length)),h("small",{},"Students")),
+      h("div",{},h("strong",{class:"num"},totAcc==null?"—":totAcc+"%"),h("small",{},"Avg accuracy")),
+      h("div",{},h("strong",{class:"num"},rows.length?(rows.reduce((a,r)=>a+mastered(r),0)/rows.length).toFixed(1):"0"),h("small",{},"Avg units mastered"))),
+    taken.length?h("p",{},h("b",{},"Lowest unit averages: "),taken.map(o=>`Unit ${o.i+1} ${UNITS[o.i].title} (${o.a}%)`).join(" · ")):h("p",{class:"muted"},"No unit quizzes taken yet.")));
+
+  const sortBtn=(k,label)=>h("button",{"aria-pressed":String(TV.sort===k),onclick:()=>{TV.sort=k;rr()},title:"Sort"},label);
+  const table=h("table",{},
+    h("thead",{},h("tr",{},h("th",{},sortBtn("n","Student")),h("th",{},"Per."),h("th",{},sortBtn("x","XP")),h("th",{},sortBtn("m","Mastered")),h("th",{},sortBtn("a","Accuracy")),
+      ...UNITS.map((u,i)=>h("th",{title:u.title},`U${i+1}`)),h("th",{},"Blitz"),h("th",{},"Bugs"),h("th",{},"Updated"),h("th",{},""))),
+    h("tbody",{},...rows.map(d=>{const key=d.n.toLowerCase()+"|"+(d.p||"").toLowerCase();
+      return h("tr",{},h("td",{},h("b",{},d.n)),h("td",{},d.p||"—"),h("td",{class:"num"},`${d.x} · L${lvl(d.x)}`),h("td",{class:"c"},`${mastered(d)}/${UNITS.length}`),h("td",{class:"c"},acc(d)==null?"—":acc(d)+"%"),
+        ...d.u.map(b=>h("td",{class:cellClass(b)},b<0?"–":String(b))),h("td",{class:"c"},String(d.g[0])),h("td",{class:"c"},`${d.g[1]}/${BUGS.length}`),
+        h("td",{class:"muted"},new Date(d.ts*60000).toLocaleDateString(undefined,{month:"short",day:"numeric"})),
+        h("td",{},h("button",{class:"btn ghost small",onclick:()=>{if(TV.confirmRm===key){delete T.students[key];tsave();TV.confirmRm=null}else TV.confirmRm=key;rr()}},TV.confirmRm===key?"Confirm remove":"Remove")))})),
+    h("tfoot",{},h("tr",{class:"avg"},h("td",{},"Class average"),h("td",{}),h("td",{}),h("td",{}),h("td",{}),...avg.map(a=>h("td",{class:cellClass(a)},a<0?"–":String(a))),h("td",{}),h("td",{}),h("td",{}),h("td",{}))));
+  const csvBtn=h("button",{class:"btn ghost small","data-label":"Copy as spreadsheet (CSV)",onclick:()=>copyText(csv(rows),csvBtn,null)},"Copy as spreadsheet (CSV)");
+  app.append(h("section",{class:"card"},h("div",{class:"row between"},h("h3",{},"Scores"),csvBtn),
+    h("p",{class:"muted",style:"font-size:.85rem"},"Unit cells show each student's best quiz score. Green is mastered (80%+), yellow is 50–79%, red is under 50%, and – means not taken."),
+    h("div",{class:"tablewrap"},table)),
+    h("section",{class:"card"},h("p",{class:"muted"},"This class list is saved only in this browser. To keep a backup, use Copy as spreadsheet and paste it into Sheets or Excel."),
+      TV.confirmClear?h("div",{class:"row"},h("span",{},"Remove every student from this dashboard?"),h("button",{class:"btn",style:"background:var(--bad)",onclick:()=>{T.students={};tsave();TV.confirmClear=false;TV.msg="";rr()}},"Yes, clear"),h("button",{class:"btn ghost",onclick:()=>{TV.confirmClear=false;rr()}},"Cancel"))
+      :h("div",{class:"row"},h("button",{class:"btn ghost small",onclick:()=>{TV.confirmClear=true;rr()}},"Clear class list"))));
+}
+
+/* ======================= TEACHER SIGN IN ======================= */
+let teacherUnlocked=false,pinFails=0,pinWait=0,gateForgot=false;
+const pinHash=p=>fnv("cs1q-pin|"+p);
+function pinInput(id,label,auto){return h("label",{class:"field",style:"max-width:260px"},label,h("input",{id,type:"password",inputmode:"numeric",pattern:"[0-9]*",maxlength:"8",autocomplete:auto}))}
+function teacherGate(){
+  if(teacherUnlocked){teacherView();return}
+  const msg=h("p",{role:"status",style:"color:var(--bad);min-height:1.4em"});
+  app.append(h("div",{class:"row between"},backBtn("← Back"),h("span",{class:"eyebrow"},"Teacher sign in")));
+  if(!T.pin){
+    const a=pinInput("pin-new","Create a PIN (4–8 digits)","new-password"),b=pinInput("pin-confirm","Type it again","new-password");
+    app.append(h("section",{class:"card"},h("h2",{},"Set up teacher mode"),
+      h("p",{},"Teacher mode opens the Class Dashboard, where you paste student score codes and see the leaderboard and score table."),
+      h("p",{class:"muted"},"Your PIN keeps students out of the dashboard on this device. Use one your students don't know."),
+      h("form",{style:"display:flex;flex-direction:column;gap:12px",onsubmit:e=>{e.preventDefault();
+        const p1=a.querySelector("input").value.trim(),p2=b.querySelector("input").value.trim();
+        if(!/^\d{4,8}$/.test(p1)){msg.textContent="Use 4 to 8 digits, numbers only.";return}
+        if(p1!==p2){msg.textContent="The two PINs don't match. Type them again.";return}
+        T.pin=pinHash(p1);tsave();teacherUnlocked=true;go(teacherView)}},
+        a,b,msg,h("div",{class:"row"},h("button",{class:"btn",type:"submit"},"Create PIN and open dashboard")))));
+    setTimeout(()=>{const i=document.getElementById("pin-new");if(i)i.focus()},30);
+  }else if(gateForgot){
+    app.append(h("section",{class:"card"},h("h2",{},"Reset teacher mode?"),
+      h("p",{},"This removes the PIN and erases the class list saved on this device. Students would need to send their score codes again."),
+      h("div",{class:"row"},h("button",{class:"btn",style:"background:var(--bad)",onclick:()=>{T={students:{}};tsave();gateForgot=false;TV.msg="";go(teacherGate)}},"Erase and reset"),
+        h("button",{class:"btn ghost",onclick:()=>{gateForgot=false;go(teacherGate)}},"Cancel"))));
+  }else{
+    const a=pinInput("pin-enter","Teacher PIN","current-password");
+    app.append(h("section",{class:"card"},h("h2",{},"Enter your teacher PIN"),
+      h("form",{style:"display:flex;flex-direction:column;gap:12px",onsubmit:e=>{e.preventDefault();const inp=a.querySelector("input");
+        const wait=Math.ceil((pinWait-Date.now())/1000);if(wait>0){msg.textContent=`Too many tries. Wait ${wait} seconds.`;return}
+        if(pinHash(inp.value.trim())===T.pin){pinFails=0;teacherUnlocked=true;go(teacherView);return}
+        pinFails++;inp.value="";inp.focus();
+        if(pinFails>=5){pinFails=0;pinWait=Date.now()+30000;msg.textContent="Too many tries. Wait 30 seconds."}else msg.textContent="That PIN isn't right."}},
+        a,msg,h("div",{class:"row"},h("button",{class:"btn",type:"submit"},"Open dashboard"),h("button",{class:"linkbtn",type:"button",onclick:()=>{gateForgot=true;go(teacherGate)}},"Forgot PIN?")))));
+    setTimeout(()=>{const i=document.getElementById("pin-enter");if(i)i.focus()},30);
+  }
+}
+
+if(location.hash==="#teacher"){tab="progress";view=teacherGate}
+render();
+</script>
+
+</body></html>
