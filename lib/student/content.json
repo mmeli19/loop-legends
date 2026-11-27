@@ -1,0 +1,4018 @@
+{
+ "UNITS": [
+  {
+   "id": "u1",
+   "title": "Computational Thinking",
+   "blurb": "Decompose problems and write algorithms.",
+   "lesson": [
+    {
+     "h": "Thinking like a computer scientist",
+     "p": "Before writing code, programmers think through the problem. There are four big skills:",
+     "list": [
+      "<mark>Decomposition</mark>: break a big problem into smaller parts.",
+      "<mark>Pattern recognition</mark>: notice what repeats or is similar.",
+      "<mark>Abstraction</mark>: ignore details that don't matter right now.",
+      "<mark>Algorithm</mark>: write clear step-by-step instructions that always finish."
+     ]
+    },
+    {
+     "h": "Pseudocode",
+     "p": "<mark>Pseudocode</mark> describes an algorithm in plain, code-like English. It isn't a real language, so anyone can read it. Here's an algorithm to find the average of test scores:",
+     "code": {
+      "all": "SET total TO 0\nFOR EACH score IN scores\n    ADD score TO total\nEND FOR\nSET average TO total / COUNT(scores)\nDISPLAY average"
+     }
+    },
+    {
+     "h": "Flowcharts",
+     "p": "A <mark>flowchart</mark> draws an algorithm with shapes:",
+     "list": [
+      "Oval: start or end",
+      "Rectangle: a process (do something)",
+      "Diamond: a decision (yes/no question)",
+      "Parallelogram: input or output"
+     ]
+    },
+    {
+     "h": "Three control structures",
+     "p": "Every program is built from three structures: <mark>sequence</mark> (steps in order), <mark>selection</mark> (choosing with if), and <mark>iteration</mark> (repeating with loops). You'll learn each one in this course."
+    }
+   ],
+   "terms": [
+    [
+     "Decomposition",
+     "Breaking a problem into smaller, manageable parts"
+    ],
+    [
+     "Pattern recognition",
+     "Finding similarities or repeated steps"
+    ],
+    [
+     "Abstraction",
+     "Hiding details that aren't needed to solve the problem"
+    ],
+    [
+     "Algorithm",
+     "A precise, step-by-step set of instructions that finishes"
+    ],
+    [
+     "Pseudocode",
+     "Plain-language description of an algorithm's steps"
+    ],
+    [
+     "Flowchart",
+     "Diagram of an algorithm using shapes and arrows"
+    ],
+    [
+     "Sequence",
+     "Steps run one after another, in order"
+    ],
+    [
+     "Selection",
+     "Choosing a path based on a condition (if)"
+    ],
+    [
+     "Iteration",
+     "Repeating steps (loops)"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u1q1",
+     "q": "Planning a school dance by splitting it into music, food, and decorations is an example of:",
+     "c": [
+      "Abstraction",
+      "Decomposition",
+      "Iteration",
+      "Debugging"
+     ],
+     "a": 1,
+     "e": "Splitting a big job into smaller parts is decomposition."
+    },
+    {
+     "id": "u1q2",
+     "q": "In a flowchart, what does a diamond shape mean?",
+     "c": [
+      "Start or end",
+      "A process",
+      "A decision",
+      "Input or output"
+     ],
+     "a": 2,
+     "e": "Diamonds ask a yes/no question and branch."
+    },
+    {
+     "id": "u1q3",
+     "q": "A traffic simulation treats every car as a moving dot and ignores color and brand. This is:",
+     "c": [
+      "Abstraction",
+      "Decomposition",
+      "Selection",
+      "Pattern recognition"
+     ],
+     "a": 0,
+     "e": "Abstraction removes details that don't matter for the problem."
+    },
+    {
+     "id": "u1q4",
+     "q": "Which are the three basic control structures?",
+     "c": [
+      "Input, output, storage",
+      "Sequence, selection, iteration",
+      "Variables, loops, lists",
+      "Syntax, runtime, logic"
+     ],
+     "a": 1,
+     "e": "Every algorithm can be built from sequence, selection, and iteration."
+    },
+    {
+     "id": "u1q5",
+     "q": "Which is the best example of an algorithm?",
+     "c": [
+      "\"Make the drawing look nice.\"",
+      "\"Do some math until it feels right.\"",
+      "\"Add the two numbers, divide by 2, display the result.\"",
+      "\"Think about the problem.\""
+     ],
+     "a": 2,
+     "e": "An algorithm has clear, precise steps that end."
+    },
+    {
+     "id": "u1q6",
+     "q": "In a flowchart, the parallelogram shape represents:",
+     "c": [
+      "A decision",
+      "Input or output",
+      "A loop counter",
+      "The end of the program"
+     ],
+     "a": 1,
+     "e": "Parallelograms are used for input (get data) and output (show data)."
+    },
+    {
+     "id": "u1q7",
+     "q": "To draw a square you notice \"move forward, turn right\" happens 4 times. Noticing this is:",
+     "c": [
+      "Pattern recognition",
+      "Abstraction",
+      "Decomposition",
+      "Encryption"
+     ],
+     "a": 0,
+     "e": "Spotting a repeated step is pattern recognition, and it hints you can use a loop."
+    },
+    {
+     "id": "u1q8",
+     "q": "Why do programmers write pseudocode before coding?",
+     "c": [
+      "Computers run pseudocode faster",
+      "To plan the logic without worrying about syntax",
+      "It's required by every language",
+      "It replaces testing"
+     ],
+     "a": 1,
+     "e": "Pseudocode lets you focus on the steps first, then translate them into a real language."
+    }
+   ],
+   "teks": [
+    "4A",
+    "4B",
+    "4C",
+    "4F",
+    "4G",
+    "4Q"
+   ]
+  },
+  {
+   "id": "u2",
+   "title": "How Computers Store Data",
+   "blurb": "Bits, bytes, binary, hex, and characters.",
+   "lesson": [
+    {
+     "h": "Bits and bytes",
+     "p": "Computers store everything as <mark>bits</mark>: 0 or 1 (off or on). A group of 8 bits is a <mark>byte</mark>. With n bits you can make 2ⁿ different patterns, so one byte holds 2⁸ = 256 values (0 to 255)."
+    },
+    {
+     "h": "Binary (base 2)",
+     "p": "In <mark>binary</mark>, each place is worth double the place to its right. Add the place values where there's a 1.",
+     "code": {
+      "all": "Place value:  128  64  32  16   8   4   2   1\nBinary:         0   0   1   0   1   1   0   1\nDecimal:     32 + 8 + 4 + 1 = 45"
+     }
+    },
+    {
+     "h": "Decimal to binary",
+     "p": "Find the biggest place value that fits, write a 1, subtract, and repeat. For 13: 8 fits (13 − 8 = 5), 4 fits (5 − 4 = 1), 2 doesn't, 1 fits. So 13 = 1101."
+    },
+    {
+     "h": "Hexadecimal (base 16)",
+     "p": "<mark>Hexadecimal</mark> uses digits 0–9 and A–F (A = 10 … F = 15). Each hex digit stands for 4 bits, so it's a short way to write binary. Colors on the web use hex, like #FF0000 for red. Example: 2F = 2 × 16 + 15 = 47."
+    },
+    {
+     "h": "Characters",
+     "p": "Text is stored as numbers too. <mark>ASCII</mark> gives each English character a number ('A' = 65, 'a' = 97). <mark>Unicode</mark> extends this to every language and emoji."
+    }
+   ],
+   "terms": [
+    [
+     "Bit",
+     "A single 0 or 1"
+    ],
+    [
+     "Byte",
+     "8 bits; holds values 0–255"
+    ],
+    [
+     "Binary",
+     "Base-2 number system using only 0 and 1"
+    ],
+    [
+     "Hexadecimal",
+     "Base-16 system using 0–9 and A–F"
+    ],
+    [
+     "ASCII",
+     "Character code that maps English characters to numbers (A = 65)"
+    ],
+    [
+     "Unicode",
+     "Character standard covering all languages and emoji"
+    ],
+    [
+     "Place value",
+     "How much a digit is worth based on its position"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u2q1",
+     "q": "What is binary 1011 in decimal?",
+     "c": [
+      "11",
+      "13",
+      "1011",
+      "9"
+     ],
+     "a": 0,
+     "e": "8 + 0 + 2 + 1 = 11."
+    },
+    {
+     "id": "u2q2",
+     "q": "What is decimal 13 in binary?",
+     "c": [
+      "1011",
+      "1101",
+      "1110",
+      "1001"
+     ],
+     "a": 1,
+     "e": "13 = 8 + 4 + 1 → 1101."
+    },
+    {
+     "id": "u2q3",
+     "q": "How many different values can 8 bits represent?",
+     "c": [
+      "8",
+      "16",
+      "255",
+      "256"
+     ],
+     "a": 3,
+     "e": "2⁸ = 256 values (0 through 255)."
+    },
+    {
+     "id": "u2q4",
+     "q": "What is the largest number you can store in 4 bits?",
+     "c": [
+      "4",
+      "8",
+      "15",
+      "16"
+     ],
+     "a": 2,
+     "e": "1111 = 8 + 4 + 2 + 1 = 15."
+    },
+    {
+     "id": "u2q5",
+     "q": "What is hexadecimal 1F in decimal?",
+     "c": [
+      "16",
+      "31",
+      "115",
+      "25"
+     ],
+     "a": 1,
+     "e": "1 × 16 + 15 = 31."
+    },
+    {
+     "id": "u2q6",
+     "q": "One byte is made of how many bits?",
+     "c": [
+      "2",
+      "4",
+      "8",
+      "16"
+     ],
+     "a": 2,
+     "e": "A byte is 8 bits."
+    },
+    {
+     "id": "u2q7",
+     "q": "What is ASCII used for?",
+     "c": [
+      "Compressing images",
+      "Representing characters as numbers",
+      "Connecting to Wi-Fi",
+      "Encrypting passwords"
+     ],
+     "a": 1,
+     "e": "ASCII maps characters to numbers so text can be stored in binary."
+    },
+    {
+     "id": "u2q8",
+     "q": "Why was Unicode created when ASCII already existed?",
+     "c": [
+      "ASCII was too slow",
+      "ASCII couldn't represent most of the world's languages and symbols",
+      "Unicode uses fewer bits for every character",
+      "ASCII only stored numbers"
+     ],
+     "a": 1,
+     "e": "ASCII covers English characters. Unicode covers every writing system and emoji."
+    },
+    {
+     "id": "u2q9",
+     "q": "What is binary 100000 in decimal?",
+     "c": [
+      "32",
+      "16",
+      "64",
+      "100"
+     ],
+     "a": 0,
+     "e": "The 1 is in the 32s place."
+    }
+   ],
+   "teks": [
+    "6K",
+    "6M"
+   ]
+  },
+  {
+   "id": "u3",
+   "title": "Variables, Types & Input",
+   "blurb": "Store data and talk to the user.",
+   "lesson": [
+    {
+     "h": "Variables",
+     "p": "A <mark>variable</mark> is a named box that stores a value. You can change what's inside later. The <mark>data type</mark> says what kind of value it is.",
+     "list": [
+      "<b>int</b>: whole numbers like 16",
+      "<b>float</b> (Python) / <b>double</b> (Java): decimals like 3.8",
+      "<b>string</b>: text in quotes like \"Ava\"",
+      "<b>boolean</b>: True/False (Python) or true/false (Java)"
+     ]
+    },
+    {
+     "h": "Declaring variables",
+     "p": "Python figures out the type for you. Java makes you write the type first.",
+     "code": {
+      "py": "name = \"Ava\"\nage = 16\ngpa = 3.8\nis_senior = False\nprint(name, \"is\", age)     # Ava is 16",
+      "java": "String name = \"Ava\";\nint age = 16;\ndouble gpa = 3.8;\nboolean isSenior = false;\nSystem.out.println(name + \" is \" + age);   // Ava is 16"
+     }
+    },
+    {
+     "h": "Getting input",
+     "p": "Programs can ask the user for data.",
+     "code": {
+      "py": "name = input(\"Your name? \")        # always a string\nage = int(input(\"Your age? \"))     # convert to int\nprint(\"Hi\", name)",
+      "java": "import java.util.Scanner;\n\nScanner in = new Scanner(System.in);\nString name = in.nextLine();   // reads a whole line\nint age = in.nextInt();        // reads an int\nSystem.out.println(\"Hi \" + name);"
+     },
+     "after": {
+      "py": "In Python, input() always gives you a string. Use int() or float() to turn it into a number.",
+      "java": "In Java, use a Scanner. nextLine() reads text, nextInt() reads a whole number, nextDouble() reads a decimal."
+     }
+    },
+    {
+     "h": "Naming rules",
+     "p": "Names can't start with a digit, can't have spaces, and can't be keywords like <code>class</code>. Pick names that explain the value: <code>total_score</code> in Python or <code>totalScore</code> in Java (camelCase)."
+    }
+   ],
+   "terms": [
+    [
+     "Variable",
+     "A named storage location for a value"
+    ],
+    [
+     "Data type",
+     "The kind of value: int, float/double, string, boolean"
+    ],
+    [
+     "Integer (int)",
+     "A whole number with no decimal"
+    ],
+    [
+     "Float / double",
+     "A number with a decimal point"
+    ],
+    [
+     "String",
+     "A sequence of characters (text)"
+    ],
+    [
+     "Boolean",
+     "A value that is only true or false"
+    ],
+    [
+     "Assignment",
+     "Storing a value in a variable with ="
+    ],
+    [
+     "Constant",
+     "A value that shouldn't change once set"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u3q1",
+     "q": "Which data type is best for the number of students in a class?",
+     "c": {
+      "py": [
+       "int",
+       "float",
+       "str",
+       "bool"
+      ],
+      "java": [
+       "int",
+       "double",
+       "String",
+       "boolean"
+      ]
+     },
+     "a": 0,
+     "e": "A count is a whole number, so int."
+    },
+    {
+     "id": "u3q2",
+     "q": "Which of these is a boolean value?",
+     "c": {
+      "py": [
+       "True",
+       "\"True\"",
+       "1.0",
+       "'T'"
+      ],
+      "java": [
+       "true",
+       "\"true\"",
+       "1.0",
+       "'t'"
+      ]
+     },
+     "a": 0,
+     "e": {
+      "py": "True (capital T, no quotes) is a boolean. \"True\" in quotes is a string.",
+      "java": "true (lowercase, no quotes) is a boolean. \"true\" in quotes is a String."
+     }
+    },
+    {
+     "id": "u3q3",
+     "q": "What is printed?",
+     "code": {
+      "py": "x = 5\ny = x\nx = 9\nprint(y)",
+      "java": "int x = 5;\nint y = x;\nx = 9;\nSystem.out.println(y);"
+     },
+     "c": [
+      "5",
+      "9",
+      "14",
+      "x"
+     ],
+     "a": 0,
+     "e": "y got a copy of 5. Changing x later doesn't change y."
+    },
+    {
+     "id": "u3q4",
+     "q": "Which is a valid, well-chosen variable name?",
+     "c": {
+      "py": [
+       "2nd_place",
+       "total score",
+       "total_score",
+       "class"
+      ],
+      "java": [
+       "2ndPlace",
+       "total score",
+       "totalScore",
+       "class"
+      ]
+     },
+     "a": 2,
+     "e": "Names can't start with a digit, contain spaces, or be keywords like class."
+    },
+    {
+     "id": "u3q5",
+     "q": {
+      "py": "What type of value does input() always return?",
+      "java": "Which Scanner method reads a whole line of text?"
+     },
+     "c": {
+      "py": [
+       "int",
+       "float",
+       "string",
+       "boolean"
+      ],
+      "java": [
+       "nextInt()",
+       "nextLine()",
+       "next()",
+       "readText()"
+      ]
+     },
+     "a": {
+      "py": 2,
+      "java": 1
+     },
+     "e": {
+      "py": "input() always returns a string. Wrap it in int() or float() to get a number.",
+      "java": "nextLine() reads everything up to the Enter key."
+     }
+    },
+    {
+     "id": "u3q6",
+     "q": "What is printed?",
+     "code": {
+      "py": "print(\"5\" + \"3\")",
+      "java": "System.out.println(\"5\" + \"3\");"
+     },
+     "c": [
+      "8",
+      "53",
+      "\"5\"\"3\"",
+      "Error"
+     ],
+     "a": 1,
+     "e": "Both are strings, so + joins them: \"53\"."
+    },
+    {
+     "id": "u3q7",
+     "q": "What is the value of x at the end?",
+     "code": {
+      "py": "x = 10\nx = x + 1\nx += 2",
+      "java": "int x = 10;\nx = x + 1;\nx += 2;"
+     },
+     "c": [
+      "10",
+      "11",
+      "12",
+      "13"
+     ],
+     "a": 3,
+     "e": "10 → 11 → 13. x += 2 means x = x + 2."
+    },
+    {
+     "id": "u3q8",
+     "q": {
+      "py": "By convention, how do Python programmers name a constant?",
+      "java": "Which Java keyword stops a variable's value from being changed?"
+     },
+     "c": {
+      "py": [
+       "all lowercase",
+       "ALL_CAPS like MAX_SCORE",
+       "Start with a number",
+       "Put it in quotes"
+      ],
+      "java": [
+       "static",
+       "final",
+       "const",
+       "void"
+      ]
+     },
+     "a": 1,
+     "e": {
+      "py": "Python has no constant keyword. ALL_CAPS signals \"don't change this\".",
+      "java": "final makes a variable a constant: final int MAX_SCORE = 100;"
+     }
+    },
+    {
+     "id": "u3q9",
+     "q": "Which type would you use to store a student's GPA, like 3.75?",
+     "c": {
+      "py": [
+       "int",
+       "float",
+       "str",
+       "bool"
+      ],
+      "java": [
+       "int",
+       "double",
+       "String",
+       "boolean"
+      ]
+     },
+     "a": 1,
+     "e": {
+      "py": "Decimals are floats in Python.",
+      "java": "Decimals are usually doubles in Java."
+     }
+    }
+   ],
+   "teks": [
+    "3B",
+    "4D",
+    "4P",
+    "6N",
+    "6O"
+   ]
+  },
+  {
+   "id": "u4",
+   "title": "Operators & Expressions",
+   "blurb": "Math, division rules, and order of operations.",
+   "lesson": [
+    {
+     "h": "Arithmetic operators",
+     "p": "<code>+ - * /</code> work like math class. Two more matter a lot in CS: <mark>modulus</mark> <code>%</code> gives the remainder, and integer division keeps only the whole part.",
+     "code": {
+      "py": "print(17 / 5)    # 3.4  (/ always gives a decimal)\nprint(17 // 5)   # 3    (floor division)\nprint(17 % 5)    # 2    (remainder)\nprint(2 ** 3)    # 8    (exponent)",
+      "java": "System.out.println(17 / 5);     // 3   (int / int drops the decimal)\nSystem.out.println(17.0 / 5);   // 3.4\nSystem.out.println(17 % 5);     // 2   (remainder)\nSystem.out.println(Math.pow(2, 3));  // 8.0"
+     }
+    },
+    {
+     "h": "Order of operations",
+     "p": "Just like PEMDAS: parentheses first, then exponents, then * / // % from left to right, then + and −. So <code>2 + 3 * 4</code> is 14, but <code>(2 + 3) * 4</code> is 20."
+    },
+    {
+     "h": "Why % is useful",
+     "p": "<code>n % 2 == 0</code> checks if n is even. <code>n % 10</code> gives the last digit. <code>minutes % 60</code> gives leftover minutes after hours."
+    },
+    {
+     "h": "Shortcuts and conversion",
+     "p": "<mark>Compound assignment</mark> like <code>x += 3</code> means <code>x = x + 3</code>. To change a type, convert (or <mark>cast</mark>) it.",
+     "code": {
+      "py": "x = 4\nx *= 3         # 12\nprint(int(9.99))    # 9  (drops the decimal)\nprint(float(7))     # 7.0\nprint(str(95))      # \"95\"",
+      "java": "int x = 4;\nx *= 3;        // 12\nSystem.out.println((int) 9.99);   // 9  (drops the decimal)\nSystem.out.println((double) 7);   // 7.0\nx++;           // adds 1"
+     }
+    }
+   ],
+   "terms": [
+    [
+     "Modulus (%)",
+     "Gives the remainder after division"
+    ],
+    [
+     "Integer division",
+     "Division that keeps only the whole-number part"
+    ],
+    [
+     "Operator precedence",
+     "The order operators are evaluated (like PEMDAS)"
+    ],
+    [
+     "Expression",
+     "A combination of values and operators that produces a value"
+    ],
+    [
+     "Compound assignment",
+     "Shortcut like x += 3 for x = x + 3"
+    ],
+    [
+     "Casting / conversion",
+     "Changing a value from one type to another"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u4q1",
+     "q": "What is printed?",
+     "code": {
+      "py": "print(17 // 5)",
+      "java": "System.out.println(17 / 5);"
+     },
+     "c": [
+      "3",
+      "3.4",
+      "2",
+      "4"
+     ],
+     "a": 0,
+     "e": {
+      "py": "// is floor division: 17 // 5 = 3.",
+      "java": "Both are ints, so Java drops the decimal: 3."
+     }
+    },
+    {
+     "id": "u4q2",
+     "q": "What is printed?",
+     "code": {
+      "py": "print(7 / 2)",
+      "java": "System.out.println(7 / 2);"
+     },
+     "c": [
+      "3",
+      "3.5",
+      "4",
+      "3.0"
+     ],
+     "a": {
+      "py": 1,
+      "java": 0
+     },
+     "e": {
+      "py": "In Python, / always gives a decimal: 3.5.",
+      "java": "int / int in Java gives an int: 3. Use 7.0 / 2 to get 3.5."
+     }
+    },
+    {
+     "id": "u4q3",
+     "q": "What is 17 % 5?",
+     "c": [
+      "3",
+      "2",
+      "3.4",
+      "5"
+     ],
+     "a": 1,
+     "e": "17 = 5 × 3 + 2. The remainder is 2."
+    },
+    {
+     "id": "u4q4",
+     "q": "What is printed?",
+     "code": {
+      "py": "print(2 + 3 * 4)",
+      "java": "System.out.println(2 + 3 * 4);"
+     },
+     "c": [
+      "20",
+      "14",
+      "24",
+      "9"
+     ],
+     "a": 1,
+     "e": "Multiply first: 3 × 4 = 12, then 2 + 12 = 14."
+    },
+    {
+     "id": "u4q5",
+     "q": "What is printed?",
+     "code": {
+      "py": "print(10 - 4 / 2)",
+      "java": "System.out.println(10 - 4 / 2);"
+     },
+     "c": [
+      "3",
+      "8",
+      "8.0",
+      "3.0"
+     ],
+     "a": {
+      "py": 2,
+      "java": 1
+     },
+     "e": {
+      "py": "4 / 2 = 2.0 (a float), and 10 − 2.0 = 8.0.",
+      "java": "4 / 2 = 2 (int), and 10 − 2 = 8."
+     }
+    },
+    {
+     "id": "u4q6",
+     "q": "Which condition is true only when n is even?",
+     "c": {
+      "py": [
+       "n / 2 == 0",
+       "n % 2 == 0",
+       "n % 2 == 1",
+       "n // 2 == 1"
+      ],
+      "java": [
+       "n / 2 == 0",
+       "n % 2 == 0",
+       "n % 2 == 1",
+       "n / 2 == 1"
+      ]
+     },
+     "a": 1,
+     "e": "Even numbers leave remainder 0 when divided by 2."
+    },
+    {
+     "id": "u4q7",
+     "q": "What is printed?",
+     "code": {
+      "py": "print(int(9.99))",
+      "java": "System.out.println((int) 9.99);"
+     },
+     "c": [
+      "10",
+      "9",
+      "9.99",
+      "9.0"
+     ],
+     "a": 1,
+     "e": "Converting to int chops off the decimal. It does not round."
+    },
+    {
+     "id": "u4q8",
+     "q": "What is x at the end?",
+     "code": {
+      "py": "x = 4\nx *= 3\nx -= 2",
+      "java": "int x = 4;\nx *= 3;\nx -= 2;"
+     },
+     "c": [
+      "10",
+      "12",
+      "2",
+      "14"
+     ],
+     "a": 0,
+     "e": "4 × 3 = 12, then 12 − 2 = 10."
+    },
+    {
+     "id": "u4q9",
+     "q": "What is printed?",
+     "code": {
+      "py": "print(2 ** 3)",
+      "java": "System.out.println(Math.pow(2, 3));"
+     },
+     "c": [
+      "6",
+      "8",
+      "8.0",
+      "9"
+     ],
+     "a": {
+      "py": 1,
+      "java": 2
+     },
+     "e": {
+      "py": "** is the exponent operator: 2³ = 8.",
+      "java": "Math.pow always returns a double, so it prints 8.0."
+     }
+    },
+    {
+     "id": "u4q10",
+     "q": "What is 125 % 10?",
+     "c": [
+      "12",
+      "5",
+      "12.5",
+      "25"
+     ],
+     "a": 1,
+     "e": "% 10 gives the last digit of a whole number: 5."
+    }
+   ],
+   "teks": [
+    "4N",
+    "4O",
+    "4P"
+   ]
+  },
+  {
+   "id": "u5",
+   "title": "Strings",
+   "blurb": "Index, slice, and search text.",
+   "lesson": [
+    {
+     "h": "Strings are sequences",
+     "p": "A <mark>string</mark> is a sequence of characters. Each character has an <mark>index</mark> that starts at <b>0</b>, not 1.",
+     "code": {
+      "all": "  T   E   X   A   S\n  0   1   2   3   4"
+     }
+    },
+    {
+     "h": "Common string tools",
+     "p": "These are the moves you'll use most:",
+     "code": {
+      "py": "word = \"TEXAS\"\nprint(len(word))       # 5\nprint(word[0])         # T\nprint(word[1:3])       # EX   (stops before index 3)\nprint(word.lower())    # texas\nprint(word.find(\"A\"))  # 3\nprint(\"ha\" * 3)        # hahaha",
+      "java": "String word = \"TEXAS\";\nSystem.out.println(word.length());        // 5\nSystem.out.println(word.charAt(0));       // T\nSystem.out.println(word.substring(1, 3)); // EX  (stops before index 3)\nSystem.out.println(word.toLowerCase());   // texas\nSystem.out.println(word.indexOf(\"A\"));    // 3\nSystem.out.println(\"ha\".repeat(3));       // hahaha"
+     }
+    },
+    {
+     "h": "Slicing rule",
+     "p": {
+      "py": "In <code>word[a:b]</code>, a is included and b is not. The slice has b − a characters. <code>word[-1]</code> is the last character.",
+      "java": "In <code>substring(a, b)</code>, a is included and b is not. The result has b − a characters. The last character is <code>word.charAt(word.length() - 1)</code>."
+     }
+    },
+    {
+     "h": "Watch out",
+     "p": {
+      "py": "You can't add a string and a number: <code>\"Score: \" + 95</code> is an error. Use <code>\"Score: \" + str(95)</code>. Compare text with <code>==</code>.",
+      "java": "Java turns numbers into text when you add them to a String: <code>\"Score: \" + 95</code> works. But compare text with <code>.equals()</code>, not <code>==</code>."
+     }
+    }
+   ],
+   "terms": [
+    [
+     "String",
+     "A sequence of characters"
+    ],
+    [
+     "Index",
+     "The position of a character, starting at 0"
+    ],
+    [
+     "Length",
+     "Number of characters in a string"
+    ],
+    [
+     "Concatenation",
+     "Joining strings together with +"
+    ],
+    [
+     "Slice / substring",
+     "A piece of a string from one index up to (not including) another"
+    ],
+    [
+     "Immutable",
+     "Can't be changed in place; string methods return a new string"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u5q1",
+     "q": "In word = \"TEXAS\", what index is the first character?",
+     "c": [
+      "0",
+      "1",
+      "-1",
+      "T"
+     ],
+     "a": 0,
+     "e": "Indexes start at 0."
+    },
+    {
+     "id": "u5q2",
+     "q": "What is printed?",
+     "code": {
+      "py": "word = \"TEXAS\"\nprint(word[4])",
+      "java": "String word = \"TEXAS\";\nSystem.out.println(word.charAt(4));"
+     },
+     "c": [
+      "A",
+      "S",
+      "X",
+      "Error"
+     ],
+     "a": 1,
+     "e": "T=0, E=1, X=2, A=3, S=4."
+    },
+    {
+     "id": "u5q3",
+     "q": "What is printed?",
+     "code": {
+      "py": "word = \"TEXAS\"\nprint(word[1:4])",
+      "java": "String word = \"TEXAS\";\nSystem.out.println(word.substring(1, 4));"
+     },
+     "c": [
+      "TEX",
+      "EXA",
+      "EXAS",
+      "XAS"
+     ],
+     "a": 1,
+     "e": "Indexes 1, 2, 3 (stops before 4): E X A."
+    },
+    {
+     "id": "u5q4",
+     "q": "What is printed?",
+     "code": {
+      "py": "print(len(\"TEXAS\"))",
+      "java": "System.out.println(\"TEXAS\".length());"
+     },
+     "c": [
+      "4",
+      "5",
+      "6",
+      "TEXAS"
+     ],
+     "a": 1,
+     "e": "There are 5 characters. The last index is 4, but the length is 5."
+    },
+    {
+     "id": "u5q5",
+     "q": "What is printed?",
+     "code": {
+      "py": "word = \"TEXAS\"\nprint(word.find(\"A\"))",
+      "java": "String word = \"TEXAS\";\nSystem.out.println(word.indexOf(\"A\"));"
+     },
+     "c": [
+      "2",
+      "3",
+      "4",
+      "-1"
+     ],
+     "a": 1,
+     "e": "The first A is at index 3. If it weren't found, you'd get -1."
+    },
+    {
+     "id": "u5q6",
+     "q": "What is printed?",
+     "code": {
+      "py": "print(\"Score: \" + 95)",
+      "java": "System.out.println(\"Score: \" + 95);"
+     },
+     "c": [
+      "Score: 95",
+      "Score: + 95",
+      "An error",
+      "Score:95"
+     ],
+     "a": {
+      "py": 2,
+      "java": 0
+     },
+     "e": {
+      "py": "Python won't add a str and an int. You'd need str(95). (A comma in print also works.)",
+      "java": "Java converts 95 to text when you add it to a String: Score: 95."
+     }
+    },
+    {
+     "id": "u5q7",
+     "q": "How do you check whether two strings s1 and s2 have the same text?",
+     "c": {
+      "py": [
+       "s1 == s2",
+       "s1.equals(s2)",
+       "s1 = s2",
+       "s1 is s2"
+      ],
+      "java": [
+       "s1 == s2",
+       "s1.equals(s2)",
+       "s1 = s2",
+       "s1.same(s2)"
+      ]
+     },
+     "a": {
+      "py": 0,
+      "java": 1
+     },
+     "e": {
+      "py": "In Python, == compares the text.",
+      "java": "In Java, == checks if they're the same object. Use .equals() to compare the text."
+     }
+    },
+    {
+     "id": "u5q8",
+     "q": "What happens?",
+     "code": {
+      "py": "word = \"TEXAS\"\nprint(word[5])",
+      "java": "String word = \"TEXAS\";\nSystem.out.println(word.charAt(5));"
+     },
+     "c": [
+      "Prints S",
+      "Prints nothing",
+      "An index-out-of-range error",
+      "Prints T"
+     ],
+     "a": 2,
+     "e": {
+      "py": "The last index is 4, so word[5] raises IndexError.",
+      "java": "The last index is 4, so charAt(5) throws StringIndexOutOfBoundsException."
+     }
+    },
+    {
+     "id": "u5q9",
+     "q": "Which gets the LAST character of word, whatever its length?",
+     "c": {
+      "py": [
+       "word[len(word)]",
+       "word[-1]",
+       "word[last]",
+       "word.end()"
+      ],
+      "java": [
+       "word.charAt(word.length())",
+       "word.charAt(word.length() - 1)",
+       "word.last()",
+       "word.charAt(-1)"
+      ]
+     },
+     "a": 1,
+     "e": {
+      "py": "Negative indexes count from the end: word[-1] is the last character.",
+      "java": "The last index is length − 1."
+     }
+    }
+   ],
+   "teks": [
+    "6P"
+   ]
+  },
+  {
+   "id": "u6",
+   "title": "Making Decisions",
+   "blurb": "if, else, and Boolean logic.",
+   "lesson": [
+    {
+     "h": "Comparison operators",
+     "p": "Conditions compare values and give a boolean: <code>==</code> equal, <code>!=</code> not equal, <code>&lt; &gt; &lt;= &gt;=</code>. Don't mix up <code>=</code> (store a value) and <code>==</code> (compare)."
+    },
+    {
+     "h": "if / else",
+     "p": "<mark>Selection</mark> lets a program choose. Only the first true branch runs.",
+     "code": {
+      "py": "score = 85\nif score >= 90:\n    print(\"A\")\nelif score >= 80:\n    print(\"B\")      # this runs\nelif score >= 70:\n    print(\"C\")\nelse:\n    print(\"F\")",
+      "java": "int score = 85;\nif (score >= 90) {\n    System.out.println(\"A\");\n} else if (score >= 80) {\n    System.out.println(\"B\");   // this runs\n} else if (score >= 70) {\n    System.out.println(\"C\");\n} else {\n    System.out.println(\"F\");\n}"
+     },
+     "after": {
+      "py": "Python uses a colon and indentation to show what's inside each branch.",
+      "java": "Java uses parentheses around the condition and braces { } around each branch."
+     }
+    },
+    {
+     "h": "Boolean operators",
+     "p": "Combine conditions with <mark>and</mark>, <mark>or</mark>, and <mark>not</mark>.",
+     "code": {
+      "py": "age = 15\nprint(age >= 13 and age <= 19)   # True  (both must be true)\nprint(age < 5 or age > 65)       # False (at least one must be true)\nprint(not True)                  # False",
+      "java": "int age = 15;\nSystem.out.println(age >= 13 && age <= 19);  // true  (both)\nSystem.out.println(age < 5 || age > 65);     // false (at least one)\nSystem.out.println(!true);                   // false"
+     }
+    },
+    {
+     "h": "Order matters",
+     "p": "Check the most specific (or highest) condition first. If you test <code>score &gt;= 70</code> before <code>score &gt;= 90</code>, a 95 gets a C because the first true branch wins."
+    }
+   ],
+   "terms": [
+    [
+     "Condition",
+     "An expression that is true or false"
+    ],
+    [
+     "Selection",
+     "Choosing which code runs using if/else"
+    ],
+    [
+     "== vs =",
+     "== compares values; = assigns a value"
+    ],
+    [
+     "and / &&",
+     "True only if both sides are true"
+    ],
+    [
+     "or / ||",
+     "True if at least one side is true"
+    ],
+    [
+     "not / !",
+     "Flips true to false and false to true"
+    ],
+    [
+     "Nested if",
+     "An if statement inside another if"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u6q1",
+     "q": "What is printed when score is 85?",
+     "code": {
+      "py": "if score >= 90:\n    print(\"A\")\nelif score >= 80:\n    print(\"B\")\nelif score >= 70:\n    print(\"C\")\nelse:\n    print(\"F\")",
+      "java": "if (score >= 90) {\n    System.out.println(\"A\");\n} else if (score >= 80) {\n    System.out.println(\"B\");\n} else if (score >= 70) {\n    System.out.println(\"C\");\n} else {\n    System.out.println(\"F\");\n}"
+     },
+     "c": [
+      "A",
+      "B",
+      "B and C",
+      "F"
+     ],
+     "a": 1,
+     "e": "85 >= 80 is the first true condition, so only B prints."
+    },
+    {
+     "id": "u6q2",
+     "q": "If x is 7, what is the value of this expression?",
+     "code": {
+      "py": "x > 5 and x < 10",
+      "java": "x > 5 && x < 10"
+     },
+     "c": {
+      "py": [
+       "True",
+       "False",
+       "7",
+       "Error"
+      ],
+      "java": [
+       "true",
+       "false",
+       "7",
+       "Error"
+      ]
+     },
+     "a": 0,
+     "e": "7 > 5 is true and 7 < 10 is true, so both are true."
+    },
+    {
+     "id": "u6q3",
+     "q": "What is the value of this expression?",
+     "code": {
+      "py": "not (3 > 1)",
+      "java": "!(3 > 1)"
+     },
+     "c": {
+      "py": [
+       "True",
+       "False",
+       "3",
+       "1"
+      ],
+      "java": [
+       "true",
+       "false",
+       "3",
+       "1"
+      ]
+     },
+     "a": 1,
+     "e": "3 > 1 is true, and not flips it to false."
+    },
+    {
+     "id": "u6q4",
+     "q": "What's the difference between = and ==?",
+     "c": [
+      "They mean the same thing",
+      "= assigns a value; == compares two values",
+      "= compares; == assigns",
+      "== is only for strings"
+     ],
+     "a": 1,
+     "e": "x = 5 stores 5. x == 5 asks \"is x equal to 5?\""
+    },
+    {
+     "id": "u6q5",
+     "q": "What is printed when temp is 90? (Look closely: there are two separate ifs.)",
+     "code": {
+      "py": "if temp > 80:\n    print(\"hot\")\nif temp > 40:\n    print(\"mild\")\nelse:\n    print(\"cold\")",
+      "java": "if (temp > 80) {\n    System.out.println(\"hot\");\n}\nif (temp > 40) {\n    System.out.println(\"mild\");\n} else {\n    System.out.println(\"cold\");\n}"
+     },
+     "c": [
+      "hot",
+      "hot then mild",
+      "mild",
+      "hot then cold"
+     ],
+     "a": 1,
+     "e": "These are two separate if statements, so both are checked. 90 > 80 prints hot, and 90 > 40 prints mild."
+    },
+    {
+     "id": "u6q6",
+     "q": "For which ages is this true?",
+     "code": {
+      "py": "age >= 13 and age <= 19",
+      "java": "age >= 13 && age <= 19"
+     },
+     "c": [
+      "13 through 19",
+      "14 through 18",
+      "Under 13 or over 19",
+      "Every age"
+     ],
+     "a": 0,
+     "e": "Both ends are included because of >= and <=."
+    },
+    {
+     "id": "u6q7",
+     "q": "When is (a or b) true?",
+     "code": {
+      "py": "a or b",
+      "java": "a || b"
+     },
+     "c": [
+      "Only when both are true",
+      "When at least one is true",
+      "Only when both are false",
+      "Never"
+     ],
+     "a": 1,
+     "e": "or is true if either side, or both, is true."
+    },
+    {
+     "id": "u6q8",
+     "q": "A student wrote this grader, and a score of 95 prints C. Why?",
+     "code": {
+      "py": "if score >= 70:\n    print(\"C\")\nelif score >= 90:\n    print(\"A\")",
+      "java": "if (score >= 70) {\n    System.out.println(\"C\");\n} else if (score >= 90) {\n    System.out.println(\"A\");\n}"
+     },
+     "c": [
+      "95 is less than 70",
+      "The first true branch runs, and >= 70 is checked first",
+      "elif/else if is broken",
+      "It needs an else"
+     ],
+     "a": 1,
+     "e": "Only the first true branch runs. Put the highest cutoff (90) first."
+    }
+   ],
+   "teks": [
+    "4M",
+    "4R",
+    "4T",
+    "4U",
+    "6J"
+   ]
+  },
+  {
+   "id": "u7",
+   "title": "Loops",
+   "blurb": "Repeat with for and while.",
+   "lesson": [
+    {
+     "h": "Why loops?",
+     "p": "<mark>Iteration</mark> repeats code so you don't copy and paste it. Use a <mark>for loop</mark> when you know how many times to repeat, and a <mark>while loop</mark> when you repeat until something changes."
+    },
+    {
+     "h": "for loops",
+     "p": "Count from a start value up to (not including) a stop value.",
+     "code": {
+      "py": "for i in range(5):         # 0, 1, 2, 3, 4\n    print(i)\n\nfor i in range(2, 10, 2):  # 2, 4, 6, 8   (start, stop, step)\n    print(i)\n\nfor i in range(5, 0, -1):  # 5, 4, 3, 2, 1\n    print(i)",
+      "java": "for (int i = 0; i < 5; i++) {       // 0, 1, 2, 3, 4\n    System.out.println(i);\n}\n\nfor (int i = 2; i < 10; i += 2) {   // 2, 4, 6, 8\n    System.out.println(i);\n}\n\nfor (int i = 5; i > 0; i--) {       // 5, 4, 3, 2, 1\n    System.out.println(i);\n}"
+     }
+    },
+    {
+     "h": "while loops",
+     "p": "A while loop keeps going as long as its condition is true. Something inside must change, or you get an <mark>infinite loop</mark>.",
+     "code": {
+      "py": "n = 3\nwhile n > 0:\n    print(n)\n    n -= 1          # without this line, it never stops\nprint(\"Liftoff!\")",
+      "java": "int n = 3;\nwhile (n > 0) {\n    System.out.println(n);\n    n--;            // without this line, it never stops\n}\nSystem.out.println(\"Liftoff!\");"
+     }
+    },
+    {
+     "h": "The accumulator pattern",
+     "p": "To add things up, start a total at 0 before the loop and add to it inside the loop.",
+     "code": {
+      "py": "total = 0\nfor i in range(1, 5):\n    total += i\nprint(total)     # 1 + 2 + 3 + 4 = 10",
+      "java": "int total = 0;\nfor (int i = 1; i < 5; i++) {\n    total += i;\n}\nSystem.out.println(total);   // 1 + 2 + 3 + 4 = 10"
+     }
+    },
+    {
+     "h": "Nested loops and break",
+     "p": "A loop inside a loop runs the inner loop completely for every pass of the outer loop. 3 outer passes × 2 inner passes = 6 runs. <code>break</code> exits a loop immediately."
+    }
+   ],
+   "terms": [
+    [
+     "Iteration",
+     "Repeating a block of code"
+    ],
+    [
+     "for loop",
+     "Repeats a set number of times (count-controlled)"
+    ],
+    [
+     "while loop",
+     "Repeats while a condition is true (condition-controlled)"
+    ],
+    [
+     "Infinite loop",
+     "A loop whose condition never becomes false"
+    ],
+    [
+     "Accumulator",
+     "A variable that builds up a total inside a loop"
+    ],
+    [
+     "Nested loop",
+     "A loop inside another loop"
+    ],
+    [
+     "break",
+     "Exits the loop immediately"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u7q1",
+     "q": "What is the LAST number printed?",
+     "code": {
+      "py": "for i in range(5):\n    print(i)",
+      "java": "for (int i = 0; i < 5; i++) {\n    System.out.println(i);\n}"
+     },
+     "c": [
+      "5",
+      "4",
+      "6",
+      "0"
+     ],
+     "a": 1,
+     "e": "It counts 0 to 4. It stops before 5."
+    },
+    {
+     "id": "u7q2",
+     "q": "How many times does the loop run?",
+     "code": {
+      "py": "for i in range(2, 10, 2):\n    print(i)",
+      "java": "for (int i = 2; i < 10; i += 2) {\n    System.out.println(i);\n}"
+     },
+     "c": [
+      "3",
+      "4",
+      "5",
+      "8"
+     ],
+     "a": 1,
+     "e": "i is 2, 4, 6, 8. Four times."
+    },
+    {
+     "id": "u7q3",
+     "q": "What is printed?",
+     "code": {
+      "py": "total = 0\nfor i in range(1, 5):\n    total += i\nprint(total)",
+      "java": "int total = 0;\nfor (int i = 1; i < 5; i++) {\n    total += i;\n}\nSystem.out.println(total);"
+     },
+     "c": [
+      "10",
+      "15",
+      "4",
+      "5"
+     ],
+     "a": 0,
+     "e": "1 + 2 + 3 + 4 = 10. The loop stops before 5."
+    },
+    {
+     "id": "u7q4",
+     "q": "What is n after the loop ends?",
+     "code": {
+      "py": "n = 10\nwhile n > 0:\n    n -= 3",
+      "java": "int n = 10;\nwhile (n > 0) {\n    n -= 3;\n}"
+     },
+     "c": [
+      "1",
+      "0",
+      "-2",
+      "-3"
+     ],
+     "a": 2,
+     "e": "10 → 7 → 4 → 1 → -2. Now n > 0 is false, so the loop stops."
+    },
+    {
+     "id": "u7q5",
+     "q": "What usually causes an infinite while loop?",
+     "c": [
+      "Using a for loop",
+      "Forgetting to change the variable in the condition",
+      "Printing inside the loop",
+      "Using too many variables"
+     ],
+     "a": 1,
+     "e": "If nothing inside the loop changes the condition, it stays true forever."
+    },
+    {
+     "id": "u7q6",
+     "q": "How many stars are printed?",
+     "code": {
+      "py": "for i in range(3):\n    for j in range(2):\n        print(\"*\")",
+      "java": "for (int i = 0; i < 3; i++) {\n    for (int j = 0; j < 2; j++) {\n        System.out.println(\"*\");\n    }\n}"
+     },
+     "c": [
+      "5",
+      "6",
+      "3",
+      "2"
+     ],
+     "a": 1,
+     "e": "The inner loop runs 2 times for each of 3 outer passes: 3 × 2 = 6."
+    },
+    {
+     "id": "u7q7",
+     "q": "You want to keep asking for a password until the user types the right one. Which loop fits best?",
+     "c": [
+      "for loop",
+      "while loop",
+      "Nested for loop",
+      "No loop needed"
+     ],
+     "a": 1,
+     "e": "You don't know how many tries it will take, so use a condition-controlled while loop."
+    },
+    {
+     "id": "u7q8",
+     "q": "How many numbers are printed?",
+     "code": {
+      "py": "for i in range(10):\n    if i == 4:\n        break\n    print(i)",
+      "java": "for (int i = 0; i < 10; i++) {\n    if (i == 4) {\n        break;\n    }\n    System.out.println(i);\n}"
+     },
+     "c": [
+      "4",
+      "5",
+      "10",
+      "3"
+     ],
+     "a": 0,
+     "e": "It prints 0, 1, 2, 3, then break stops the loop when i is 4."
+    },
+    {
+     "id": "u7q9",
+     "q": "Which loop prints 5, 4, 3, 2, 1?",
+     "c": {
+      "py": [
+       "for i in range(5):",
+       "for i in range(5, 0, -1):",
+       "for i in range(1, 6):",
+       "for i in range(5, 0):"
+      ],
+      "java": [
+       "for (int i = 0; i < 5; i++)",
+       "for (int i = 5; i > 0; i--)",
+       "for (int i = 1; i <= 5; i++)",
+       "for (int i = 5; i < 0; i--)"
+      ]
+     },
+     "a": 1,
+     "e": {
+      "py": "Start at 5, stop before 0, step -1. range(5, 0) with no step is empty.",
+      "java": "Start at 5, keep going while i > 0, and subtract 1 each time."
+     }
+    }
+   ],
+   "teks": [
+    "4M",
+    "4S"
+   ]
+  },
+  {
+   "id": "u8",
+   "title": "Functions & Methods",
+   "blurb": "Reuse code with parameters and return values.",
+   "lesson": [
+    {
+     "h": "What a function is",
+     "p": "A <mark>function</mark> (called a <mark>method</mark> in Java) is a named block of code you can run whenever you need it. It helps you decompose a problem and avoid repeating code."
+    },
+    {
+     "h": "Parameters and return",
+     "p": "<mark>Parameters</mark> are the inputs listed in the definition. <mark>Arguments</mark> are the actual values you pass in when you call it. <code>return</code> sends a value back.",
+     "code": {
+      "py": "def area(width, height):     # width, height are parameters\n    return width * height\n\nresult = area(3, 4)          # 3 and 4 are arguments\nprint(result)                # 12",
+      "java": "public static int area(int width, int height) {  // parameters\n    return width * height;\n}\n\nint result = area(3, 4);     // 3 and 4 are arguments\nSystem.out.println(result);  // 12"
+     },
+     "after": {
+      "py": "A function with no return statement gives back None.",
+      "java": "The word before the name is the return type. A method that returns nothing has return type void."
+     }
+    },
+    {
+     "h": "Return ends the function",
+     "p": "As soon as <code>return</code> runs, the function stops. Any lines after it in the same block never run."
+    },
+    {
+     "h": "Scope",
+     "p": "A variable created inside a function only exists inside that function. This is its <mark>scope</mark>. Trying to use it outside causes an error."
+    }
+   ],
+   "terms": [
+    [
+     "Function / method",
+     "A named, reusable block of code"
+    ],
+    [
+     "Parameter",
+     "A variable in the function definition that receives input"
+    ],
+    [
+     "Argument",
+     "The actual value passed in when the function is called"
+    ],
+    [
+     "Return value",
+     "The value a function sends back to the caller"
+    ],
+    [
+     "void / None",
+     "Means the function returns no value"
+    ],
+    [
+     "Scope",
+     "Where in the program a variable can be used"
+    ],
+    [
+     "Call",
+     "Running a function by using its name with parentheses"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u8q1",
+     "q": "What is printed?",
+     "code": {
+      "py": "def twice(x):\n    return x * 2\n\nprint(twice(twice(3)))",
+      "java": "public static int twice(int x) {\n    return x * 2;\n}\n\nSystem.out.println(twice(twice(3)));"
+     },
+     "c": [
+      "6",
+      "12",
+      "9",
+      "3"
+     ],
+     "a": 1,
+     "e": "The inner call gives 6. Then twice(6) gives 12."
+    },
+    {
+     "id": "u8q2",
+     "q": "In area(3, 4), what are 3 and 4 called?",
+     "c": [
+      "Parameters",
+      "Arguments",
+      "Return values",
+      "Variables types"
+     ],
+     "a": 1,
+     "e": "Values passed in a call are arguments. The names in the definition are parameters."
+    },
+    {
+     "id": "u8q3",
+     "q": {
+      "py": "What does a Python function return if it has no return statement?",
+      "java": "What is the return type of a Java method that returns nothing?"
+     },
+     "c": {
+      "py": [
+       "0",
+       "None",
+       "An empty string",
+       "An error"
+      ],
+      "java": [
+       "int",
+       "null",
+       "void",
+       "empty"
+      ]
+     },
+     "a": {
+      "py": 1,
+      "java": 2
+     },
+     "e": {
+      "py": "With no return, a Python function gives back None.",
+      "java": "void means the method doesn't return a value."
+     }
+    },
+    {
+     "id": "u8q4",
+     "q": "What happens?",
+     "code": {
+      "py": "def setup():\n    secret = 42\n\nsetup()\nprint(secret)",
+      "java": "public static void setup() {\n    int secret = 42;\n}\n\nsetup();\nSystem.out.println(secret);"
+     },
+     "c": [
+      "Prints 42",
+      "Prints 0",
+      "An error, because secret only exists inside setup",
+      "Prints secret"
+     ],
+     "a": 2,
+     "e": "secret's scope is the function. Outside it, the variable doesn't exist."
+    },
+    {
+     "id": "u8q5",
+     "q": "What is the main reason to write functions?",
+     "c": [
+      "To make code run faster",
+      "To reuse code and break problems into smaller parts",
+      "Because every line must be in a function",
+      "To use more memory"
+     ],
+     "a": 1,
+     "e": "Functions support decomposition and stop you from repeating code."
+    },
+    {
+     "id": "u8q6",
+     "q": "What is printed?",
+     "code": {
+      "py": "def greet(name):\n    return \"Hi \" + name\n\nmsg = greet(\"Lee\")\nprint(msg + \"!\")",
+      "java": "public static String greet(String name) {\n    return \"Hi \" + name;\n}\n\nString msg = greet(\"Lee\");\nSystem.out.println(msg + \"!\");"
+     },
+     "c": [
+      "Hi Lee!",
+      "Hi name!",
+      "Lee!",
+      "Hi Lee"
+     ],
+     "a": 0,
+     "e": "greet gives back \"Hi Lee\", and then \"!\" is added."
+    },
+    {
+     "id": "u8q7",
+     "q": "What is printed when check(10) is called?",
+     "code": {
+      "py": "def check(n):\n    if n > 5:\n        return \"big\"\n    return \"small\"\n\nprint(check(10))",
+      "java": "public static String check(int n) {\n    if (n > 5) {\n        return \"big\";\n    }\n    return \"small\";\n}\n\nSystem.out.println(check(10));"
+     },
+     "c": [
+      "big",
+      "small",
+      "big then small",
+      "Nothing"
+     ],
+     "a": 0,
+     "e": "return \"big\" runs and ends the function immediately."
+    },
+    {
+     "id": "u8q8",
+     "q": "area needs two arguments. What happens with area(5)?",
+     "c": [
+      "It uses 0 for the missing one",
+      "An error: the call is missing an argument",
+      "It returns 5",
+      "It returns 25"
+     ],
+     "a": 1,
+     "e": "The number of arguments must match the parameters."
+    }
+   ],
+   "teks": [
+    "4E",
+    "6E",
+    "6G",
+    "6H",
+    "6I"
+   ]
+  },
+  {
+   "id": "u9",
+   "title": "Lists & Arrays",
+   "blurb": "Store many values and loop through them.",
+   "lesson": [
+    {
+     "h": "One name, many values",
+     "p": {
+      "py": "A <mark>list</mark> stores many values in order. Each item has an index starting at 0. Lists can grow with <code>append</code>.",
+      "java": "An <mark>array</mark> stores many values of the same type in order. Each item has an index starting at 0. Arrays have a fixed size. Use an <code>ArrayList</code> when you need it to grow."
+     },
+     "code": {
+      "py": "scores = [88, 92, 75, 100]\nprint(scores[0])      # 88\nprint(len(scores))    # 4\nprint(scores[-1])     # 100 (last item)\nscores.append(67)     # now 5 items\nscores[1] = 95        # change an item",
+      "java": "int[] scores = {88, 92, 75, 100};\nSystem.out.println(scores[0]);       // 88\nSystem.out.println(scores.length);   // 4\nSystem.out.println(scores[scores.length - 1]);  // 100 (last)\nscores[1] = 95;                      // change an item"
+     }
+    },
+    {
+     "h": "Traversing",
+     "p": "Looping through every item is called <mark>traversing</mark>. Use an index loop when you need positions, or a for-each loop when you just need the values.",
+     "code": {
+      "py": "for s in scores:                 # for-each\n    print(s)\n\nfor i in range(len(scores)):     # by index\n    print(i, scores[i])",
+      "java": "for (int s : scores) {                    // for-each\n    System.out.println(s);\n}\n\nfor (int i = 0; i < scores.length; i++) {  // by index\n    System.out.println(i + \" \" + scores[i]);\n}"
+     }
+    },
+    {
+     "h": "Classic algorithms",
+     "p": "Find the maximum: start with the first item, then replace it whenever you find something bigger.",
+     "code": {
+      "py": "nums = [4, 9, 2, 7]\nbest = nums[0]\nfor n in nums:\n    if n > best:\n        best = n\nprint(best)   # 9",
+      "java": "int[] nums = {4, 9, 2, 7};\nint best = nums[0];\nfor (int n : nums) {\n    if (n > best) {\n        best = n;\n    }\n}\nSystem.out.println(best);   // 9"
+     }
+    },
+    {
+     "h": "Out of bounds",
+     "p": "A list of 4 items has indexes 0 to 3. Asking for index 4 crashes the program with an <mark>index out of bounds</mark> error."
+    }
+   ],
+   "terms": [
+    [
+     "List / array",
+     "An ordered collection of values under one name"
+    ],
+    [
+     "Element",
+     "One value stored in a list or array"
+    ],
+    [
+     "Index",
+     "An element's position, starting at 0"
+    ],
+    [
+     "Traverse",
+     "Visit every element, usually with a loop"
+    ],
+    [
+     "Out of bounds",
+     "Using an index that doesn't exist"
+    ],
+    [
+     "append / ArrayList",
+     "How to add items to a growable list"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u9q1",
+     "q": "What is printed?",
+     "code": {
+      "py": "scores = [88, 92, 75, 100]\nprint(scores[2])",
+      "java": "int[] scores = {88, 92, 75, 100};\nSystem.out.println(scores[2]);"
+     },
+     "c": [
+      "92",
+      "75",
+      "100",
+      "88"
+     ],
+     "a": 1,
+     "e": "Index 0 is 88, 1 is 92, 2 is 75."
+    },
+    {
+     "id": "u9q2",
+     "q": "A list or array has 4 elements. What is the index of the last one?",
+     "c": [
+      "4",
+      "3",
+      "5",
+      "-4"
+     ],
+     "a": 1,
+     "e": "Indexes run from 0 to length − 1."
+    },
+    {
+     "id": "u9q3",
+     "q": "What happens?",
+     "code": {
+      "py": "scores = [88, 92, 75, 100]\nprint(scores[4])",
+      "java": "int[] scores = {88, 92, 75, 100};\nSystem.out.println(scores[4]);"
+     },
+     "c": [
+      "Prints 100",
+      "Prints 0",
+      "An index out of range error",
+      "Prints nothing"
+     ],
+     "a": 2,
+     "e": {
+      "py": "Index 4 doesn't exist, so you get IndexError.",
+      "java": "Index 4 doesn't exist, so you get ArrayIndexOutOfBoundsException."
+     }
+    },
+    {
+     "id": "u9q4",
+     "q": "What is printed?",
+     "code": {
+      "py": "nums = [4, 9, 2, 7]\ncount = 0\nfor n in nums:\n    if n > 5:\n        count += 1\nprint(count)",
+      "java": "int[] nums = {4, 9, 2, 7};\nint count = 0;\nfor (int n : nums) {\n    if (n > 5) {\n        count++;\n    }\n}\nSystem.out.println(count);"
+     },
+     "c": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "a": 1,
+     "e": "Only 9 and 7 are greater than 5."
+    },
+    {
+     "id": "u9q5",
+     "q": "What is printed?",
+     "code": {
+      "py": "nums = [3, 5, 7]\ntotal = 0\nfor i in range(len(nums)):\n    total += nums[i]\nprint(total)",
+      "java": "int[] nums = {3, 5, 7};\nint total = 0;\nfor (int i = 0; i < nums.length; i++) {\n    total += nums[i];\n}\nSystem.out.println(total);"
+     },
+     "c": [
+      "15",
+      "7",
+      "3",
+      "12"
+     ],
+     "a": 0,
+     "e": "3 + 5 + 7 = 15."
+    },
+    {
+     "id": "u9q6",
+     "q": {
+      "py": "What is len(nums) after this code?",
+      "java": "An int[] has length 4. Can you add a 5th element to it?"
+     },
+     "code": {
+      "py": "nums = [1, 2, 3]\nnums.append(4)"
+     },
+     "c": {
+      "py": [
+       "3",
+       "4",
+       "5",
+       "Error"
+      ],
+      "java": [
+       "Yes, with nums.add(5)",
+       "Yes, with nums[4] = 5",
+       "No. Arrays have a fixed size, so you'd use an ArrayList",
+       "Yes, arrays grow automatically"
+      ]
+     },
+     "a": {
+      "py": 1,
+      "java": 2
+     },
+     "e": {
+      "py": "append adds one item to the end, so there are now 4.",
+      "java": "Arrays can't grow. An ArrayList can, with list.add(5)."
+     }
+    },
+    {
+     "id": "u9q7",
+     "q": "Which expression gets the LAST element of nums, whatever its length?",
+     "c": {
+      "py": [
+       "nums[len(nums)]",
+       "nums[-1]",
+       "nums[last]",
+       "nums.end()"
+      ],
+      "java": [
+       "nums[nums.length]",
+       "nums[nums.length - 1]",
+       "nums[-1]",
+       "nums.last()"
+      ]
+     },
+     "a": 1,
+     "e": {
+      "py": "nums[-1] counts from the end.",
+      "java": "The last index is length − 1. Java doesn't allow negative indexes."
+     }
+    },
+    {
+     "id": "u9q8",
+     "q": "What does nums contain after this runs?",
+     "code": {
+      "py": "nums = [1, 2, 3]\nfor i in range(len(nums)):\n    nums[i] = nums[i] * 10",
+      "java": "int[] nums = {1, 2, 3};\nfor (int i = 0; i < nums.length; i++) {\n    nums[i] = nums[i] * 10;\n}"
+     },
+     "c": [
+      "1, 2, 3",
+      "10, 20, 30",
+      "10, 2, 3",
+      "30"
+     ],
+     "a": 1,
+     "e": "The loop changes every element by its index."
+    }
+   ],
+   "teks": [
+    "4K",
+    "6Q",
+    "6R"
+   ]
+  },
+  {
+   "id": "u10",
+   "title": "Searching & Sorting",
+   "blurb": "Find and order data efficiently.",
+   "lesson": [
+    {
+     "h": "Linear search",
+     "p": "<mark>Linear search</mark> checks each item one by one until it finds the target. It works on any list, but a list of 1,000 items might take 1,000 checks.",
+     "code": {
+      "py": "def find(nums, target):\n    for i in range(len(nums)):\n        if nums[i] == target:\n            return i\n    return -1          # not found",
+      "java": "public static int find(int[] nums, int target) {\n    for (int i = 0; i < nums.length; i++) {\n        if (nums[i] == target) {\n            return i;\n        }\n    }\n    return -1;         // not found\n}"
+     }
+    },
+    {
+     "h": "Binary search",
+     "p": "<mark>Binary search</mark> only works on a <b>sorted</b> list. Check the middle item. If the target is smaller, throw away the right half; if bigger, the left half. Each step cuts the list in half, so 1,000 items takes about 10 checks."
+    },
+    {
+     "h": "Sorting",
+     "list": [
+      "<mark>Selection sort</mark>: find the smallest item and swap it to the front. Repeat for the rest.",
+      "<mark>Bubble sort</mark>: compare neighbors and swap if they're out of order. The biggest item \"bubbles\" to the end each pass.",
+      "<mark>Insertion sort</mark>: take each item and slide it into its place in the sorted part on the left, like sorting cards in your hand."
+     ],
+     "p": "Three sorts you should know:"
+    },
+    {
+     "h": "Trace it",
+     "p": "Sorting [5, 2, 9, 1] from smallest to biggest:",
+     "code": {
+      "all": "Selection, pass 1:  smallest is 1, swap with 5  →  [1, 2, 9, 5]\nBubble, pass 1:     5↔2, 5 and 9 ok, 9↔1      →  [2, 5, 1, 9]"
+     }
+    }
+   ],
+   "terms": [
+    [
+     "Linear search",
+     "Check every item in order until the target is found"
+    ],
+    [
+     "Binary search",
+     "Repeatedly check the middle of a sorted list and discard half"
+    ],
+    [
+     "Selection sort",
+     "Repeatedly select the smallest item and swap it into place"
+    ],
+    [
+     "Bubble sort",
+     "Swap neighboring items that are out of order; repeat"
+    ],
+    [
+     "Insertion sort",
+     "Insert each item into its place in the sorted section"
+    ],
+    [
+     "Efficiency",
+     "How the work grows as the data gets bigger"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u10q1",
+     "q": "What must be true about a list before you can use binary search?",
+     "c": [
+      "It has an even number of items",
+      "It is sorted",
+      "It has no duplicates",
+      "It contains only strings"
+     ],
+     "a": 1,
+     "e": "Binary search depends on order to know which half to throw away."
+    },
+    {
+     "id": "u10q2",
+     "q": "Worst case, how many items does linear search check in a list of 100?",
+     "c": [
+      "1",
+      "7",
+      "50",
+      "100"
+     ],
+     "a": 3,
+     "e": "If the target is last (or missing), it checks all 100."
+    },
+    {
+     "id": "u10q3",
+     "q": "About how many checks does binary search need for 1,000 sorted items?",
+     "c": [
+      "About 10",
+      "About 100",
+      "About 500",
+      "1,000"
+     ],
+     "a": 0,
+     "e": "Halving 1,000 about 10 times gets you to 1 item."
+    },
+    {
+     "id": "u10q4",
+     "q": "After ONE pass of selection sort (smallest to biggest), what is [5, 2, 9, 1]?",
+     "c": [
+      "[1, 2, 9, 5]",
+      "[2, 5, 9, 1]",
+      "[2, 5, 1, 9]",
+      "[1, 2, 5, 9]"
+     ],
+     "a": 0,
+     "e": "Selection sort swaps the smallest (1) into the front."
+    },
+    {
+     "id": "u10q5",
+     "q": "After ONE pass of bubble sort (smallest to biggest), what is [5, 2, 9, 1]?",
+     "c": [
+      "[2, 5, 1, 9]",
+      "[1, 2, 9, 5]",
+      "[2, 5, 9, 1]",
+      "[1, 5, 2, 9]"
+     ],
+     "a": 0,
+     "e": "Swap 5 and 2, leave 5 and 9, swap 9 and 1. The biggest ends up last."
+    },
+    {
+     "id": "u10q6",
+     "q": "Using the find function from the lesson, what does find([4, 9, 2, 7], 7) return?",
+     "c": [
+      "7",
+      "3",
+      "4",
+      "-1"
+     ],
+     "a": 1,
+     "e": "7 is at index 3."
+    },
+    {
+     "id": "u10q7",
+     "q": "Using the same find function, what does find([4, 9, 2, 7], 5) return?",
+     "c": [
+      "0",
+      "5",
+      "-1",
+      "An error"
+     ],
+     "a": 2,
+     "e": "5 isn't in the list, so the loop finishes and returns -1."
+    },
+    {
+     "id": "u10q8",
+     "q": "Binary search for 23 in [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]. Which item is checked FIRST? (middle index = (0 + 9) / 2, rounded down)",
+     "c": [
+      "16",
+      "23",
+      "12",
+      "38"
+     ],
+     "a": 0,
+     "e": "Middle index is 4, which holds 16. 23 is bigger, so search the right half."
+    },
+    {
+     "id": "u10q9",
+     "q": "Which sort works like sorting cards in your hand, sliding each new card into place?",
+     "c": [
+      "Selection sort",
+      "Bubble sort",
+      "Insertion sort",
+      "Binary sort"
+     ],
+     "a": 2,
+     "e": "Insertion sort builds a sorted section by inserting one item at a time."
+    }
+   ],
+   "teks": [
+    "4K",
+    "6Q"
+   ]
+  },
+  {
+   "id": "u11",
+   "title": "Objects & Classes",
+   "blurb": "Model real things with your own types.",
+   "lesson": [
+    {
+     "h": "Classes and objects",
+     "p": "A <mark>class</mark> is a blueprint. An <mark>object</mark> is one thing built from that blueprint. A class lists the data each object has (<mark>attributes</mark> or fields) and what it can do (<mark>methods</mark>)."
+    },
+    {
+     "h": "A Dog class",
+     "p": "The <mark>constructor</mark> runs when you create an object and sets its starting values.",
+     "code": {
+      "py": "class Dog:\n    def __init__(self, name):    # constructor\n        self.name = name         # attribute\n        self.tricks = 0\n\n    def learn(self):             # method\n        self.tricks += 1\n\nrex = Dog(\"Rex\")      # create an object\nrex.learn()\nprint(rex.name, rex.tricks)    # Rex 1",
+      "java": "public class Dog {\n    private String name;      // fields\n    private int tricks;\n\n    public Dog(String name) { // constructor\n        this.name = name;\n        this.tricks = 0;\n    }\n\n    public void learn() {     // method\n        tricks++;\n    }\n\n    public String getName() { return name; }\n    public int getTricks() { return tricks; }\n}\n\nDog rex = new Dog(\"Rex\");   // create an object\nrex.learn();\nSystem.out.println(rex.getName() + \" \" + rex.getTricks());  // Rex 1"
+     }
+    },
+    {
+     "h": "self and this",
+     "p": {
+      "py": "<code>self</code> means \"this particular object.\" It lets each Dog keep its own name and tricks.",
+      "java": "<code>this</code> means \"this particular object.\" It tells apart the field <code>this.name</code> from the parameter <code>name</code>."
+     }
+    },
+    {
+     "h": "Encapsulation",
+     "p": "<mark>Encapsulation</mark> keeps an object's data protected and changes it only through methods. In Java, fields are <code>private</code> and you use getters and setters. In Python, a leading underscore like <code>_name</code> signals \"don't touch directly.\""
+    }
+   ],
+   "terms": [
+    [
+     "Class",
+     "A blueprint that defines attributes and methods"
+    ],
+    [
+     "Object / instance",
+     "One specific thing created from a class"
+    ],
+    [
+     "Attribute / field",
+     "Data stored inside an object"
+    ],
+    [
+     "Method",
+     "A function that belongs to a class"
+    ],
+    [
+     "Constructor",
+     "Special method that sets up a new object"
+    ],
+    [
+     "self / this",
+     "Refers to the current object"
+    ],
+    [
+     "Encapsulation",
+     "Protecting data and accessing it through methods"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u11q1",
+     "q": "Which best describes a class and an object?",
+     "c": [
+      "They're the same thing",
+      "A class is a blueprint; an object is one thing built from it",
+      "An object is a blueprint; a class is one copy",
+      "A class is a type of loop"
+     ],
+     "a": 1,
+     "e": "Dog is the class. rex is an object (an instance) of Dog."
+    },
+    {
+     "id": "u11q2",
+     "q": "Which method runs automatically when an object is created?",
+     "c": {
+      "py": [
+       "__init__ (the constructor)",
+       "learn",
+       "print",
+       "__main__"
+      ],
+      "java": [
+       "The constructor",
+       "main",
+       "learn",
+       "toString"
+      ]
+     },
+     "a": 0,
+     "e": "The constructor sets up the new object's starting values."
+    },
+    {
+     "id": "u11q3",
+     "q": "What is printed?",
+     "code": {
+      "py": "rex = Dog(\"Rex\")\nrex.learn()\nrex.learn()\nprint(rex.tricks)",
+      "java": "Dog rex = new Dog(\"Rex\");\nrex.learn();\nrex.learn();\nSystem.out.println(rex.getTricks());"
+     },
+     "c": [
+      "0",
+      "1",
+      "2",
+      "Rex"
+     ],
+     "a": 2,
+     "e": "tricks starts at 0 and learn() adds 1 twice."
+    },
+    {
+     "id": "u11q4",
+     "q": {
+      "py": "What does self refer to inside a method?",
+      "java": "What does this refer to inside a method?"
+     },
+     "c": [
+      "The class itself",
+      "The current object",
+      "The first parameter's value",
+      "The main program"
+     ],
+     "a": 1,
+     "e": "It refers to the specific object the method was called on."
+    },
+    {
+     "id": "u11q5",
+     "q": "What is printed?",
+     "code": {
+      "py": "a = Dog(\"A\")\nb = Dog(\"B\")\na.learn()\nprint(b.tricks)",
+      "java": "Dog a = new Dog(\"A\");\nDog b = new Dog(\"B\");\na.learn();\nSystem.out.println(b.getTricks());"
+     },
+     "c": [
+      "0",
+      "1",
+      "2",
+      "Error"
+     ],
+     "a": 0,
+     "e": "Each object has its own attributes. Teaching a doesn't change b."
+    },
+    {
+     "id": "u11q6",
+     "q": "Keeping an object's data protected and changing it only through methods is called:",
+     "c": [
+      "Inheritance",
+      "Encapsulation",
+      "Iteration",
+      "Concatenation"
+     ],
+     "a": 1,
+     "e": "Encapsulation hides data behind methods like getters and setters."
+    },
+    {
+     "id": "u11q7",
+     "q": "How do you create a new Dog object named Rex?",
+     "c": {
+      "py": [
+       "rex = Dog(\"Rex\")",
+       "rex = new Dog(\"Rex\")",
+       "Dog rex",
+       "rex = Dog.create(\"Rex\")"
+      ],
+      "java": [
+       "Dog rex = Dog(\"Rex\");",
+       "Dog rex = new Dog(\"Rex\");",
+       "new rex = Dog(\"Rex\");",
+       "Dog rex;"
+      ]
+     },
+     "a": {
+      "py": 0,
+      "java": 1
+     },
+     "e": {
+      "py": "Call the class like a function: Dog(\"Rex\").",
+      "java": "Use new followed by the constructor: new Dog(\"Rex\")."
+     }
+    }
+   ],
+   "teks": [
+    "6D",
+    "6F",
+    "6O"
+   ]
+  },
+  {
+   "id": "u12",
+   "title": "Debugging, Testing & Ethics",
+   "blurb": "Fix errors, test well, and be a good digital citizen.",
+   "lesson": [
+    {
+     "h": "Three kinds of errors",
+     "list": [
+      "<mark>Syntax error</mark>: breaks the language's grammar (missing colon, semicolon, or parenthesis). The program won't run at all.",
+      "<mark>Runtime error</mark>: the program starts but crashes, like dividing by zero or an index out of range.",
+      "<mark>Logic error</mark>: the program runs, but the answer is wrong. These are the hardest to find."
+     ],
+     "p": "Every programmer makes errors. Knowing which kind you have tells you how to find it."
+    },
+    {
+     "h": "Debugging strategies",
+     "list": [
+      "Read the error message. It usually names the line.",
+      "Trace the code by hand with a <mark>trace table</mark> that lists each variable's value after each step.",
+      "Add print statements to see values while it runs.",
+      "Explain your code out loud, line by line (\"rubber duck debugging\")."
+     ]
+    },
+    {
+     "h": "Testing",
+     "p": "Good <mark>test cases</mark> include normal values, edge values, and invalid values. If valid input is 1 to 100, test 50 (normal), 1 and 100 (edges), and 0 and 101 (just outside). Testing the edges is called <mark>boundary testing</mark>."
+    },
+    {
+     "h": "Digital citizenship",
+     "list": [
+      "Copying someone else's code and turning it in as yours is <mark>plagiarism</mark>. Give credit, and follow the <mark>license</mark> on open-source code.",
+      "Copyright protects creative work, including code, images, and music.",
+      "Protect your privacy: don't share passwords, your address, or personal details online.",
+      "Use strong, unique passwords and turn on two-factor authentication.",
+      "Cyberbullying has real consequences. Treat people online the way you would in person."
+     ]
+    }
+   ],
+   "terms": [
+    [
+     "Syntax error",
+     "Code that breaks the language's rules and won't run"
+    ],
+    [
+     "Runtime error",
+     "An error that crashes the program while it runs"
+    ],
+    [
+     "Logic error",
+     "The program runs but gives the wrong result"
+    ],
+    [
+     "Trace table",
+     "A table tracking each variable's value step by step"
+    ],
+    [
+     "Boundary testing",
+     "Testing values at and just past the edges of valid input"
+    ],
+    [
+     "Plagiarism",
+     "Presenting someone else's work as your own"
+    ],
+    [
+     "Open-source license",
+     "Rules for how others may use, share, and change code"
+    ],
+    [
+     "Digital footprint",
+     "The record of everything you do and post online"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u12q1",
+     "q": {
+      "py": "You forget the colon after an if statement. What kind of error is this?",
+      "java": "You forget a semicolon at the end of a line. What kind of error is this?"
+     },
+     "c": [
+      "Syntax error",
+      "Runtime error",
+      "Logic error",
+      "Not an error"
+     ],
+     "a": 0,
+     "e": "Breaking the language's grammar is a syntax error. The program won't run."
+    },
+    {
+     "id": "u12q2",
+     "q": "A program crashes when the user enters 0 and the code divides by it. What kind of error is this?",
+     "c": [
+      "Syntax error",
+      "Runtime error",
+      "Logic error",
+      "Input error"
+     ],
+     "a": 1,
+     "e": "It starts fine and crashes while running, so it's a runtime error."
+    },
+    {
+     "id": "u12q3",
+     "q": "A program averages 3 tests but divides the total by 2. It runs fine but gives the wrong answer. What kind of error is this?",
+     "c": [
+      "Syntax error",
+      "Runtime error",
+      "Logic error",
+      "Compiler error"
+     ],
+     "a": 2,
+     "e": "It runs but the result is wrong, so it's a logic error."
+    },
+    {
+     "id": "u12q4",
+     "q": "Valid input is 1 to 100. Which set of tests is BEST for boundary testing?",
+     "c": [
+      "50, 51, 52",
+      "0, 1, 100, 101",
+      "1, 2, 3",
+      "-1000, 1000"
+     ],
+     "a": 1,
+     "e": "Test right at each edge and just past it."
+    },
+    {
+     "id": "u12q5",
+     "q": "Your friend sends you their finished program, and you change the variable names and turn it in. This is:",
+     "c": [
+      "Fine, because you changed it",
+      "Collaboration",
+      "Plagiarism",
+      "Debugging"
+     ],
+     "a": 2,
+     "e": "Renaming variables doesn't make the work yours."
+    },
+    {
+     "id": "u12q6",
+     "q": "Which password is strongest?",
+     "c": [
+      "password123",
+      "Your pet's name",
+      "Tr4ck!Pine#Sunset92",
+      "12345678"
+     ],
+     "a": 2,
+     "e": "Long, mixed characters, and not personal or common."
+    },
+    {
+     "id": "u12q7",
+     "q": "You want to use open-source code in your project. What should you do?",
+     "c": [
+      "Use it and remove the author's name",
+      "Follow its license and give credit",
+      "Only use it if nobody will notice",
+      "You can't ever use other people's code"
+     ],
+     "a": 1,
+     "e": "Open-source licenses say how you may reuse the code, and they usually require credit."
+    },
+    {
+     "id": "u12q8",
+     "q": "What is a trace table used for?",
+     "c": [
+      "Drawing flowcharts",
+      "Tracking each variable's value as the code runs, step by step",
+      "Storing passwords",
+      "Making the program faster"
+     ],
+     "a": 1,
+     "e": "Trace tables help you find logic errors by following the code by hand."
+    },
+    {
+     "id": "u12q9",
+     "q": "Which is the safest thing to post on a public profile?",
+     "c": [
+      "Your home address",
+      "Your school schedule",
+      "Your favorite programming language",
+      "Your phone number"
+     ],
+     "a": 2,
+     "e": "Location, schedules, and contact info can put your safety and privacy at risk."
+    }
+   ],
+   "teks": [
+    "4H",
+    "4I",
+    "4J",
+    "5A",
+    "5D"
+   ]
+  },
+  {
+   "id": "u13",
+   "title": "Hardware & Programming Languages",
+   "blurb": "CPU, memory, compilers vs. interpreters, and the limits of numbers.",
+   "lesson": [
+    {
+     "h": "Inside the computer",
+     "p": "The <mark>CPU</mark> (central processing unit) runs instructions. <mark>Primary memory</mark> (RAM) holds the program and data while it runs and is erased when power is off. <mark>Secondary storage</mark> (SSD, hard drive, flash drive) keeps files when the power is off. <mark>Peripherals</mark> are input and output devices like the keyboard, mouse, monitor, and printer."
+    },
+    {
+     "h": "High-level languages",
+     "p": "People write code in high-level languages such as Python and Java. The computer only runs <mark>machine code</mark> (binary instructions), so the code must be translated.",
+     "list": [
+      "A <mark>compiler</mark> translates the whole program before it runs. Java is compiled to bytecode, which the Java Virtual Machine runs.",
+      "An <mark>interpreter</mark> translates and runs the program line by line. Python is usually run by an interpreter.",
+      "Compiled programs catch many errors before running. Interpreted programs are quick to test and change."
+     ]
+    },
+    {
+     "h": "Typed languages",
+     "p": "In a <mark>strongly, statically typed</mark> language like Java, every variable has a declared type that cannot change. In a <mark>dynamically typed</mark> language like Python, a variable's type comes from the value stored in it and can change.",
+     "code": {
+      "py": "x = 5        # x holds an int\nx = \"five\"   # now x holds a str. Python allows this",
+      "java": "int x = 5;\nx = \"five\";  // compile error: incompatible types"
+     }
+    },
+    {
+     "h": "Local and global variables",
+     "p": "A <mark>local variable</mark> is created inside a function and exists only there. A <mark>global variable</mark> is created outside all functions and can be read anywhere in the file. Prefer local variables and parameters, because globals make bugs harder to find.",
+     "code": {
+      "py": "count = 0          # global\n\ndef show():\n    msg = \"hi\"     # local to show()\n    print(msg, count)",
+      "java": "public class Demo {\n    static int count = 0;     // class-level (global-like)\n\n    public static void show() {\n        String msg = \"hi\";   // local to show()\n        System.out.println(msg + count);\n    }\n}"
+     }
+    },
+    {
+     "h": "Numbers have limits",
+     "p": {
+      "py": "Python integers can grow as large as memory allows, but decimals (floats) are stored in binary and can't be exact. <code>0.1 + 0.2</code> prints <code>0.30000000000000004</code>.",
+      "java": "A Java <code>int</code> is 32 bits, so its largest value is 2,147,483,647. Adding 1 wraps around to -2,147,483,648. This is <mark>integer overflow</mark>. Doubles are stored in binary and can't be exact: <code>0.1 + 0.2</code> prints <code>0.30000000000000004</code>."
+     },
+     "code": {
+      "py": "print(0.1 + 0.2)          # 0.30000000000000004\nprint(round(0.1 + 0.2, 2)) # 0.3",
+      "java": "int big = Integer.MAX_VALUE;   // 2147483647\nSystem.out.println(big + 1);   // -2147483648 (wraparound)\nSystem.out.println(0.1 + 0.2); // 0.30000000000000004"
+     },
+     "after": "Never compare decimals with == when exact money or measurements matter. Round, or check whether the difference is very small."
+    },
+    {
+     "h": "Primitives and objects",
+     "p": "A <mark>primitive</mark> variable stores a simple value directly, like a whole number or true/false. An <mark>object</mark> variable refers to a bundle of data and methods, like a String or a list. In Java, <code>int</code>, <code>double</code>, and <code>boolean</code> are primitives while <code>String</code> is an object. In Python, every value is an object."
+    }
+   ],
+   "terms": [
+    [
+     "CPU",
+     "The processor that carries out program instructions"
+    ],
+    [
+     "Primary memory (RAM)",
+     "Fast, temporary memory that holds running programs and data"
+    ],
+    [
+     "Secondary storage",
+     "Long-term storage that keeps files with the power off"
+    ],
+    [
+     "Peripheral",
+     "An input or output device connected to the computer"
+    ],
+    [
+     "Compiler",
+     "Translates a whole program before it runs"
+    ],
+    [
+     "Interpreter",
+     "Translates and runs a program one line at a time"
+    ],
+    [
+     "Integer overflow",
+     "When a number is too big for its type and wraps around"
+    ],
+    [
+     "Global variable",
+     "A variable declared outside every function"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u13q1",
+     "q": "Which component carries out a program's instructions?",
+     "c": [
+      "RAM",
+      "CPU",
+      "SSD",
+      "Monitor"
+     ],
+     "a": 1,
+     "e": "The CPU (central processing unit) executes instructions."
+    },
+    {
+     "id": "u13q2",
+     "q": "You save an essay and turn the computer off. Where does the file stay?",
+     "c": [
+      "RAM (primary memory)",
+      "Secondary storage like an SSD",
+      "The CPU",
+      "The keyboard"
+     ],
+     "a": 1,
+     "e": "RAM is erased without power. Secondary storage keeps files."
+    },
+    {
+     "id": "u13q3",
+     "q": "Which device is a peripheral?",
+     "c": [
+      "CPU",
+      "RAM",
+      "Printer",
+      "Motherboard"
+     ],
+     "a": 2,
+     "e": "Peripherals are input/output devices outside the core system, like printers and mice."
+    },
+    {
+     "id": "u13q4",
+     "q": "What does an interpreter do?",
+     "c": [
+      "Translates the whole program before running it",
+      "Translates and runs the program line by line",
+      "Stores files permanently",
+      "Converts images to binary"
+     ],
+     "a": 1,
+     "e": "An interpreter works line by line. A compiler translates the whole program first."
+    },
+    {
+     "id": "u13q5",
+     "q": {
+      "py": "In Python, x = 5 and then x = \"five\" is allowed. Why?",
+      "java": "In Java, int x = 5; x = \"five\"; causes an error. Why?"
+     },
+     "c": {
+      "py": [
+       "Python is dynamically typed",
+       "Python has no variables",
+       "Strings and ints are the same",
+       "Python is compiled"
+      ],
+      "java": [
+       "Java is strongly, statically typed",
+       "Java has no strings",
+       "x is a constant",
+       "Java is interpreted"
+      ]
+     },
+     "a": 0,
+     "e": {
+      "py": "In a dynamically typed language, a variable takes the type of whatever value it holds.",
+      "java": "A Java variable's declared type can't change, so an int variable can't hold a String."
+     }
+    },
+    {
+     "id": "u13q6",
+     "q": "What is printed?",
+     "code": {
+      "py": "print(0.1 + 0.2 == 0.3)",
+      "java": "System.out.println(0.1 + 0.2 == 0.3);"
+     },
+     "c": {
+      "py": [
+       "True",
+       "False",
+       "Error",
+       "0.3"
+      ],
+      "java": [
+       "true",
+       "false",
+       "Error",
+       "0.3"
+      ]
+     },
+     "a": 1,
+     "e": "Decimals are stored in binary and aren't exact, so 0.1 + 0.2 is 0.30000000000000004."
+    },
+    {
+     "id": "u13q7",
+     "q": {
+      "py": "Which is true about integers in Python?",
+      "java": "What is Integer.MAX_VALUE + 1 in Java?"
+     },
+     "c": {
+      "py": [
+       "They overflow at 2,147,483,647",
+       "They can grow as large as memory allows",
+       "They are always 8 bits",
+       "They can't be negative"
+      ],
+      "java": [
+       "2147483648",
+       "-2147483648",
+       "An error",
+       "0"
+      ]
+     },
+     "a": 1,
+     "e": {
+      "py": "Python ints have no fixed size, so they don't wrap around.",
+      "java": "A 32-bit int wraps around from the largest value to the smallest. That's integer overflow."
+     }
+    },
+    {
+     "id": "u13q8",
+     "q": "A variable created inside a function is called:",
+     "c": [
+      "Global",
+      "Local",
+      "Constant",
+      "Static"
+     ],
+     "a": 1,
+     "e": "Local variables exist only inside the function where they're created."
+    }
+   ],
+   "teks": [
+    "6A",
+    "6B",
+    "6C",
+    "6E",
+    "6L",
+    "6O",
+    "6S"
+   ]
+  },
+  {
+   "id": "u14",
+   "title": "Style, Output & Graphics",
+   "blurb": "Readable code, clear prompts, formatted output, and simple drawings.",
+   "lesson": [
+    {
+     "h": "Code that people can read",
+     "p": "Programs are read by people far more often than they're written. Good <mark>programming style</mark> makes code easier to read, fix, and grade.",
+     "list": [
+      "Use <mark>descriptive identifiers</mark>: <code>total_price</code> or <code>totalPrice</code>, not <code>tp</code>.",
+      "Add <mark>comments</mark> to explain why, not what every line does.",
+      "Use consistent <mark>indentation</mark> and white space between sections.",
+      "Follow your language's standard style (PEP 8 for Python, Java conventions for Java)."
+     ]
+    },
+    {
+     "h": "Prompts and labeled output",
+     "p": "When a program asks for input, the prompt should tell the user exactly what to type. Output should be labeled so the user knows what each number means.",
+     "code": {
+      "py": "# Ask clearly, label the result\nname = input(\"Enter your first name: \")\nage = int(input(\"Enter your age in years: \"))\nprint(\"Name:\", name)\nprint(\"Age next year:\", age + 1)",
+      "java": "// Ask clearly, label the result\nScanner in = new Scanner(System.in);\nSystem.out.print(\"Enter your first name: \");\nString name = in.nextLine();\nSystem.out.print(\"Enter your age in years: \");\nint age = in.nextInt();\nSystem.out.println(\"Name: \" + name);\nSystem.out.println(\"Age next year: \" + (age + 1));"
+     }
+    },
+    {
+     "h": "Formatting numbers",
+     "p": "Money and measurements should show a fixed number of decimal places, and tables should line up in columns.",
+     "code": {
+      "py": "price = 4.5\nprint(f\"Total: ${price:.2f}\")       # Total: $4.50\nprint(f\"{'Item':<8}{'Cost':>8}\")\nprint(f\"{'Taco':<8}{3.25:>8.2f}\")",
+      "java": "double price = 4.5;\nSystem.out.printf(\"Total: $%.2f%n\", price);   // Total: $4.50\nSystem.out.printf(\"%-8s%8s%n\", \"Item\", \"Cost\");\nSystem.out.printf(\"%-8s%8.2f%n\", \"Taco\", 3.25);"
+     },
+     "after": {
+      "py": "Inside an f-string, :.2f means two decimal places, < means left-align, and > means right-align.",
+      "java": "In printf, %.2f means two decimal places, %-8s left-aligns in 8 spaces, and %n starts a new line."
+     }
+    },
+    {
+     "h": "Simple vector graphics",
+     "p": "<mark>Vector graphics</mark> are drawn from shapes defined by coordinates, like lines, circles, and rectangles, instead of a grid of pixels.",
+     "code": {
+      "py": "import turtle\nt = turtle.Turtle()\n\nt.forward(100)          # a line 100 pixels long\nt.circle(50)            # a circle with radius 50\nfor side in range(4):   # a 100 x 60 rectangle\n    t.forward(100 if side % 2 == 0 else 60)\n    t.left(90)\nturtle.done()",
+      "java": "import java.awt.*;\nimport javax.swing.*;\n\npublic class Shapes extends JPanel {\n    protected void paintComponent(Graphics g) {\n        super.paintComponent(g);\n        g.drawLine(10, 10, 110, 10);   // line\n        g.drawOval(10, 30, 100, 100);  // circle\n        g.drawRect(130, 30, 100, 60);  // rectangle\n    }\n}"
+     },
+     "after": {
+      "py": "In turtle, forward moves and draws, left turns in degrees, and circle draws using a radius.",
+      "java": "drawOval takes x, y, width, height. When width equals height, you get a circle."
+     }
+    }
+   ],
+   "terms": [
+    [
+     "Identifier",
+     "The name you give a variable, function, or class"
+    ],
+    [
+     "Comment",
+     "A note in code that the computer ignores"
+    ],
+    [
+     "Indentation",
+     "Spacing at the start of a line that shows code structure"
+    ],
+    [
+     "Prompt",
+     "Text that tells the user what to enter"
+    ],
+    [
+     "Formatted output",
+     "Output with set decimal places, widths, and alignment"
+    ],
+    [
+     "Vector graphics",
+     "Images drawn from shapes defined by coordinates"
+    ],
+    [
+     "Style guide",
+     "A shared set of rules for writing readable code"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u14q1",
+     "q": "Which variable name follows good style?",
+     "c": {
+      "py": [
+       "x1",
+       "tp",
+       "total_price",
+       "TOTALPRICE!"
+      ],
+      "java": [
+       "x1",
+       "tp",
+       "totalPrice",
+       "TOTALPRICE!"
+      ]
+     },
+     "a": 2,
+     "e": "Descriptive identifiers say what the value means."
+    },
+    {
+     "id": "u14q2",
+     "q": "What is the main purpose of a comment?",
+     "c": [
+      "Make the program run faster",
+      "Explain the code to people reading it",
+      "Store data",
+      "Fix syntax errors"
+     ],
+     "a": 1,
+     "e": "Comments are ignored by the computer and help human readers."
+    },
+    {
+     "id": "u14q3",
+     "q": "Which prompt is clearest?",
+     "c": [
+      "?",
+      "Enter:",
+      "Enter your test score (0-100): ",
+      "Input data"
+     ],
+     "a": 2,
+     "e": "A good prompt says exactly what to type, including the allowed range."
+    },
+    {
+     "id": "u14q4",
+     "q": "What is printed?",
+     "code": {
+      "py": "price = 7.5\nprint(f\"${price:.2f}\")",
+      "java": "double price = 7.5;\nSystem.out.printf(\"$%.2f%n\", price);"
+     },
+     "c": [
+      "$7.5",
+      "$7.50",
+      "$8",
+      "$7.500"
+     ],
+     "a": 1,
+     "e": ".2f shows exactly two digits after the decimal point."
+    },
+    {
+     "id": "u14q5",
+     "q": "Why is the second print better?",
+     "code": {
+      "py": "print(42)\nprint(\"Average score:\", 42)",
+      "java": "System.out.println(42);\nSystem.out.println(\"Average score: \" + 42);"
+     },
+     "c": [
+      "It runs faster",
+      "The output is labeled so the user knows what 42 means",
+      "It uses less memory",
+      "There's no difference"
+     ],
+     "a": 1,
+     "e": "Labeled output tells the user what each value represents."
+    },
+    {
+     "id": "u14q6",
+     "q": {
+      "py": "In turtle, what does t.circle(50) draw?",
+      "java": "What does g.drawOval(0, 0, 80, 80) draw?"
+     },
+     "c": {
+      "py": [
+       "A circle with radius 50",
+       "A circle with diameter 50",
+       "50 circles",
+       "A square"
+      ],
+      "java": [
+       "A circle 80 pixels wide",
+       "An oval 0 pixels wide",
+       "A rectangle",
+       "A line"
+      ]
+     },
+     "a": 0,
+     "e": {
+      "py": "turtle.circle takes a radius.",
+      "java": "When width and height are equal, drawOval draws a circle."
+     }
+    },
+    {
+     "id": "u14q7",
+     "q": "Which is a vector graphic shape?",
+     "c": [
+      "A JPEG photo",
+      "A rectangle drawn from coordinates",
+      "A screenshot",
+      "A video"
+     ],
+     "a": 1,
+     "e": "Vector graphics are built from shapes like lines, circles, and rectangles."
+    },
+    {
+     "id": "u14q8",
+     "q": "Consistent indentation mainly helps with:",
+     "c": [
+      "Readability and showing structure",
+      "Faster downloads",
+      "Making variables global",
+      "Avoiding comments"
+     ],
+     "a": 0,
+     "e": "Indentation shows which lines belong together. In Python, it's also required by the language."
+    }
+   ],
+   "teks": [
+    "1C",
+    "3A",
+    "3B",
+    "3C",
+    "3D",
+    "3E"
+   ]
+  },
+  {
+   "id": "u15",
+   "title": "Math, Random & Error Handling",
+   "blurb": "Math functions, random numbers, classic algorithms, and safe programs.",
+   "lesson": [
+    {
+     "h": "Math library",
+     "p": "Languages include ready-made math functions so you don't have to write them yourself.",
+     "code": {
+      "py": "import math\nprint(abs(-7))          # 7\nprint(round(3.14159, 2)) # 3.14\nprint(2 ** 5)           # 32 (power)\nprint(math.sqrt(49))    # 7.0\nprint(6 ** 2)           # 36 (square)",
+      "java": "System.out.println(Math.abs(-7));       // 7\nSystem.out.println(Math.round(3.6));    // 4\nSystem.out.println(Math.pow(2, 5));     // 32.0\nSystem.out.println(Math.sqrt(49));      // 7.0\nSystem.out.println(6 * 6);              // 36 (square)"
+     }
+    },
+    {
+     "h": "Random numbers",
+     "p": "Games, simulations, and quizzes use <mark>random numbers</mark>.",
+     "code": {
+      "py": "import random\ndie = random.randint(1, 6)    # 1 to 6, both included\ncoin = random.choice([\"H\", \"T\"])\nprint(die, coin)",
+      "java": "import java.util.Random;\n\nRandom rng = new Random();\nint die = rng.nextInt(6) + 1;   // 0-5, plus 1 gives 1-6\nSystem.out.println(die);"
+     },
+     "after": {
+      "py": "random.randint(a, b) includes both a and b.",
+      "java": "nextInt(6) gives 0 through 5, so add 1 for a die roll."
+     }
+    },
+    {
+     "h": "Classic algorithms",
+     "p": "These algorithms show up again and again in CS I.",
+     "list": [
+      "<mark>Largest of three</mark>: compare a to b, then the winner to c.",
+      "<mark>Average</mark>: add the values with an accumulator, then divide by the count.",
+      "<mark>Prime check</mark>: a number n > 1 is prime if no number from 2 up to the square root of n divides it evenly.",
+      "<mark>GCD</mark> (Euclid): replace (a, b) with (b, a % b) until b is 0. Then a is the GCD.",
+      "<mark>Making change</mark>: use integer division and % to count quarters, dimes, nickels, and pennies."
+     ],
+     "code": {
+      "py": "def gcd(a, b):\n    while b != 0:\n        a, b = b, a % b\n    return a\n\nprint(gcd(48, 18))   # 6\n\ncents = 68\nquarters = cents // 25   # 2\ncents = cents % 25       # 18 left",
+      "java": "public static int gcd(int a, int b) {\n    while (b != 0) {\n        int r = a % b;\n        a = b;\n        b = r;\n    }\n    return a;\n}\n// gcd(48, 18) returns 6\n\nint cents = 68;\nint quarters = cents / 25;  // 2\ncents = cents % 25;         // 18 left"
+     }
+    },
+    {
+     "h": "Handling errors",
+     "p": "Programs should not crash on bad input. Use <mark>exception handling</mark> to catch common errors like <mark>division by zero</mark> and <mark>type mismatch</mark> (letters typed where a number was expected).",
+     "code": {
+      "py": "try:\n    count = int(input(\"How many people? \"))\n    print(\"Each gets\", 12 / count, \"slices\")\nexcept ValueError:\n    print(\"Please type a whole number.\")\nexcept ZeroDivisionError:\n    print(\"The number of people can't be 0.\")",
+      "java": "try {\n    int count = Integer.parseInt(text);\n    System.out.println(\"Each gets \" + (12 / count));\n} catch (NumberFormatException e) {\n    System.out.println(\"Please type a whole number.\");\n} catch (ArithmeticException e) {\n    System.out.println(\"The number of people can't be 0.\");\n}"
+     }
+    },
+    {
+     "h": "Four kinds of errors",
+     "list": [
+      "<mark>Lexical error</mark>: a character or token the language doesn't recognize, such as an unclosed string.",
+      "<mark>Syntax error</mark>: the words are real, but the grammar is wrong, such as a missing colon or semicolon.",
+      "<mark>Run-time error</mark>: the program crashes while running, such as dividing by zero.",
+      "<mark>Logic error</mark>: the program runs but gives the wrong answer."
+     ]
+    }
+   ],
+   "terms": [
+    [
+     "Math library",
+     "Built-in functions like abs, round, pow, and sqrt"
+    ],
+    [
+     "Random number",
+     "An unpredictable value a program generates"
+    ],
+    [
+     "GCD",
+     "Greatest common divisor: the largest number that divides both values"
+    ],
+    [
+     "Prime number",
+     "A whole number above 1 divisible only by 1 and itself"
+    ],
+    [
+     "Exception",
+     "An error event that happens while a program runs"
+    ],
+    [
+     "Exception handling",
+     "Code that catches errors so the program doesn't crash"
+    ],
+    [
+     "Lexical error",
+     "A character or token the language doesn't recognize"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u15q1",
+     "q": "What is printed?",
+     "code": {
+      "py": "print(abs(-12) + 3)",
+      "java": "System.out.println(Math.abs(-12) + 3);"
+     },
+     "c": [
+      "-9",
+      "15",
+      "9",
+      "-15"
+     ],
+     "a": 1,
+     "e": "abs(-12) is 12, and 12 + 3 = 15."
+    },
+    {
+     "id": "u15q2",
+     "q": {
+      "py": "Which can random.randint(1, 6) return?",
+      "java": "Which can rng.nextInt(6) + 1 return?"
+     },
+     "c": [
+      "0 through 5",
+      "1 through 6",
+      "1 through 5",
+      "0 through 6"
+     ],
+     "a": 1,
+     "e": {
+      "py": "randint includes both ends, so 1 through 6.",
+      "java": "nextInt(6) gives 0-5. Adding 1 gives 1-6."
+     }
+    },
+    {
+     "id": "u15q3",
+     "q": "What is the GCD of 48 and 18?",
+     "c": [
+      "2",
+      "3",
+      "6",
+      "9"
+     ],
+     "a": 2,
+     "e": "48 % 18 = 12, 18 % 12 = 6, 12 % 6 = 0. The GCD is 6."
+    },
+    {
+     "id": "u15q4",
+     "q": "How many quarters are in 68 cents?",
+     "code": {
+      "py": "print(68 // 25)",
+      "java": "System.out.println(68 / 25);"
+     },
+     "c": [
+      "2",
+      "2.72",
+      "3",
+      "18"
+     ],
+     "a": 0,
+     "e": "Integer division drops the remainder: 68 divided by 25 is 2 whole quarters."
+    },
+    {
+     "id": "u15q5",
+     "q": "Which number is prime?",
+     "c": [
+      "21",
+      "27",
+      "29",
+      "33"
+     ],
+     "a": 2,
+     "e": "29 has no divisors besides 1 and 29. 21 = 3×7, 27 = 3×9, 33 = 3×11."
+    },
+    {
+     "id": "u15q6",
+     "q": "A user types \"ten\" when the program expects a number. What kind of problem is this?",
+     "c": [
+      "A type mismatch",
+      "A lexical error in the code",
+      "Integer overflow",
+      "A comment"
+     ],
+     "a": 0,
+     "e": "Text was entered where a number was expected. Handle it with try/except or try/catch."
+    },
+    {
+     "id": "u15q7",
+     "q": "Which error makes a program run but give the wrong answer?",
+     "c": [
+      "Syntax error",
+      "Lexical error",
+      "Run-time error",
+      "Logic error"
+     ],
+     "a": 3,
+     "e": "Logic errors don't crash the program. They produce wrong results."
+    },
+    {
+     "id": "u15q8",
+     "q": {
+      "py": "Which exception does 10 / 0 raise in Python?",
+      "java": "Which exception does 10 / 0 (int division) throw in Java?"
+     },
+     "c": {
+      "py": [
+       "ValueError",
+       "ZeroDivisionError",
+       "TypeError",
+       "IndexError"
+      ],
+      "java": [
+       "NumberFormatException",
+       "ArithmeticException",
+       "NullPointerException",
+       "IndexOutOfBoundsException"
+      ]
+     },
+     "a": 1,
+     "e": {
+      "py": "Dividing by zero raises ZeroDivisionError.",
+      "java": "Integer division by zero throws ArithmeticException."
+     }
+    },
+    {
+     "id": "u15q9",
+     "q": "Which algorithm finds the largest of three numbers a, b, c?",
+     "c": [
+      "Add them and divide by 3",
+      "Compare a and b, then compare the larger one to c",
+      "Sort them alphabetically",
+      "Pick one at random"
+     ],
+     "a": 1,
+     "e": "Two comparisons are enough: find the larger of a and b, then compare it to c."
+    }
+   ],
+   "teks": [
+    "4H",
+    "4K",
+    "4L",
+    "4O",
+    "4V"
+   ]
+  },
+  {
+   "id": "u16",
+   "title": "Digital Citizenship & Security",
+   "blurb": "Copyright, licenses, privacy, safe passwords, and tech's impact.",
+   "lesson": [
+    {
+     "h": "Intellectual property",
+     "p": "<mark>Intellectual property</mark> is creative work that belongs to someone, including code, music, images, and writing. <mark>Copyright</mark> protects it automatically when it's created.",
+     "list": [
+      "<mark>Proprietary</mark> software: you buy a license to use it, but can't copy or change it.",
+      "<mark>Open-source</mark> software: the code is shared, and its license says how you may use, change, and share it.",
+      "<mark>Public domain</mark>: no copyright restrictions remain.",
+      "Always credit sources and follow the license, even for free code you find online."
+     ]
+    },
+    {
+     "h": "Acceptable use and etiquette",
+     "p": "Schools and employers have an <mark>acceptable use policy</mark> (AUP) that explains how their devices and networks may be used. <mark>Digital etiquette</mark> means being respectful online: no harassment, no spam, and no sharing other people's information without permission."
+    },
+    {
+     "h": "Protecting accounts",
+     "list": [
+      "Use long <mark>passphrases</mark> like four random words with a number and symbol.",
+      "Never reuse one password across many sites.",
+      "Turn on <mark>two-factor authentication</mark> (2FA), which asks for a second proof like a code on your phone.",
+      "Watch for <mark>phishing</mark>: messages that pretend to be trusted senders to steal logins."
+     ]
+    },
+    {
+     "h": "Viruses and malware",
+     "p": "<mark>Malware</mark> is software designed to cause harm, including viruses, worms, ransomware, and spyware. Prevent it by keeping software updated, using antivirus protection, downloading only from trusted sources, and not opening unexpected attachments."
+    },
+    {
+     "h": "Privacy and data",
+     "p": "Apps collect data about what you do. Read privacy settings, share less personal information, and think before posting. Anything posted online can be copied and stay public."
+    },
+    {
+     "h": "Computing and society",
+     "p": "New technology like <mark>artificial intelligence</mark>, facial recognition, and self-driving cars brings benefits and risks. Ask: Who benefits? Who could be harmed? Is the data fair and private? Is it used ethically?"
+    }
+   ],
+   "terms": [
+    [
+     "Intellectual property",
+     "Creative work that legally belongs to its creator"
+    ],
+    [
+     "Copyright",
+     "Legal protection for original creative work"
+    ],
+    [
+     "Software license",
+     "Rules for how software may be used, changed, and shared"
+    ],
+    [
+     "Open source",
+     "Software whose code is shared under a license"
+    ],
+    [
+     "Acceptable use policy",
+     "Rules for using an organization's devices and network"
+    ],
+    [
+     "Two-factor authentication",
+     "Logging in with a password plus a second proof"
+    ],
+    [
+     "Malware",
+     "Software designed to harm a computer or steal data"
+    ],
+    [
+     "Phishing",
+     "A fake message that tricks people into revealing information"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u16q1",
+     "q": "You find code on a website with an open-source license. What should you do?",
+     "c": [
+      "Use it however you want",
+      "Follow the license and credit the author",
+      "Claim it as your own",
+      "Never use any online code"
+     ],
+     "a": 1,
+     "e": "Open-source licenses allow use under specific conditions, which usually include giving credit."
+    },
+    {
+     "id": "u16q2",
+     "q": "Which password is strongest?",
+     "c": [
+      "password1",
+      "Maya2009",
+      "Correct-Horse-Battery-77!",
+      "qwerty"
+     ],
+     "a": 2,
+     "e": "Long passphrases with mixed characters are much harder to guess."
+    },
+    {
+     "id": "u16q3",
+     "q": "What is two-factor authentication?",
+     "c": [
+      "Using two passwords",
+      "A password plus a second proof like a phone code",
+      "Logging in twice",
+      "Sharing your password with a friend"
+     ],
+     "a": 1,
+     "e": "2FA adds a second factor, so a stolen password alone isn't enough."
+    },
+    {
+     "id": "u16q4",
+     "q": "An email says it's from your school and asks for your password at a link. This is:",
+     "c": [
+      "Phishing",
+      "A firewall",
+      "Encryption",
+      "An AUP"
+     ],
+     "a": 0,
+     "e": "Phishing fakes a trusted sender to steal credentials."
+    },
+    {
+     "id": "u16q5",
+     "q": "What is an acceptable use policy?",
+     "c": [
+      "A software license for games",
+      "Rules for using an organization's computers and network",
+      "A type of virus",
+      "A privacy setting"
+     ],
+     "a": 1,
+     "e": "An AUP explains what you may and may not do on school or work technology."
+    },
+    {
+     "id": "u16q6",
+     "q": "Which action best prevents malware?",
+     "c": [
+      "Opening every attachment",
+      "Turning off updates",
+      "Downloading only from trusted sources and keeping software updated",
+      "Disabling antivirus"
+     ],
+     "a": 2,
+     "e": "Updates close security holes, and trusted sources reduce risk."
+    },
+    {
+     "id": "u16q7",
+     "q": "Copyright protects a song you wrote:",
+     "c": [
+      "Only after you register it",
+      "Automatically, as soon as it's created",
+      "Only if you sell it",
+      "Never"
+     ],
+     "a": 1,
+     "e": "In the U.S., copyright applies automatically once a work is created in fixed form."
+    },
+    {
+     "id": "u16q8",
+     "q": "A city wants to use facial recognition in schools. Which is an ethical question to ask?",
+     "c": [
+      "What color is the camera?",
+      "Is the data private and is the system fair to everyone?",
+      "How fast is the Wi-Fi?",
+      "Which font does the app use?"
+     ],
+     "a": 1,
+     "e": "Ethical review asks who benefits, who could be harmed, and whether data is fair and private."
+    }
+   ],
+   "teks": [
+    "5A",
+    "5B",
+    "5C",
+    "5D",
+    "5E"
+   ]
+  },
+  {
+   "id": "u17",
+   "title": "Careers & Teamwork in CS",
+   "blurb": "Jobs, college programs, portfolios, and working on a team.",
+   "lesson": [
+    {
+     "h": "Careers in computer science",
+     "p": "Computer science skills are used in almost every industry, including healthcare, energy, games, finance, and government.",
+     "list": [
+      "<mark>Software developer</mark>: designs and builds apps and systems.",
+      "<mark>Web developer</mark>: builds websites and web apps.",
+      "<mark>Data analyst / data scientist</mark>: finds patterns in data.",
+      "<mark>Cybersecurity analyst</mark>: protects systems and networks.",
+      "<mark>Product or project manager</mark>: plans what gets built and keeps teams on track.",
+      "<mark>Game developer</mark>, <mark>IT support specialist</mark>, and <mark>AI/machine learning engineer</mark>."
+     ]
+    },
+    {
+     "h": "Getting ready",
+     "list": [
+      "<mark>Internships</mark> give real work experience while you're still in school.",
+      "A <mark>resume</mark> is a one-page summary of your skills, experience, and education.",
+      "A <mark>portfolio</mark> shows your best projects, often on GitHub or a personal website.",
+      "<mark>Certifications</mark> (such as industry IT, cloud, or programming certificates) prove specific skills.",
+      "Compare <mark>university programs</mark> by courses offered, cost, internships, and outcomes like graduation and job placement."
+     ]
+    },
+    {
+     "h": "Working on a team",
+     "p": "Most software is built by teams. Good teammates communicate clearly, share the work, meet deadlines, and accept feedback.",
+     "list": [
+      "<mark>Technical writing</mark>: clear documentation, comments, and README files.",
+      "<mark>Code review</mark>: teammates check each other's code and suggest fixes.",
+      "Plan your time: break work into tasks and set deadlines.",
+      "Be a leader and a learner: help others, ask questions, and respond well to feedback."
+     ]
+    },
+    {
+     "h": "Legal and ethical responsibilities",
+     "p": "Professionals protect user data, respect copyright and licenses, test their work, and are honest about what their software can and can't do."
+    }
+   ],
+   "terms": [
+    [
+     "Internship",
+     "Short-term, real work experience while studying"
+    ],
+    [
+     "Resume",
+     "A one-page summary of skills, experience, and education"
+    ],
+    [
+     "Portfolio",
+     "A collection of your best projects to show employers"
+    ],
+    [
+     "Certification",
+     "A credential that proves a specific skill"
+    ],
+    [
+     "Code review",
+     "Teammates checking each other's code"
+    ],
+    [
+     "Technical writing",
+     "Clear documentation that explains how something works"
+    ],
+    [
+     "Software developer",
+     "A person who designs and builds software"
+    ]
+   ],
+   "qs": [
+    {
+     "id": "u17q1",
+     "q": "Which best shows an employer what you can build?",
+     "c": [
+      "A portfolio of projects",
+      "A list of your hobbies",
+      "Your phone number",
+      "Your favorite game"
+     ],
+     "a": 0,
+     "e": "A portfolio, such as a GitHub profile or website, shows real work."
+    },
+    {
+     "id": "u17q2",
+     "q": "Who protects systems and networks from attacks?",
+     "c": [
+      "Web designer",
+      "Cybersecurity analyst",
+      "Data entry clerk",
+      "Game tester"
+     ],
+     "a": 1,
+     "e": "Cybersecurity analysts defend systems and respond to threats."
+    },
+    {
+     "id": "u17q3",
+     "q": "What is an internship?",
+     "c": [
+      "A college degree",
+      "Short-term work experience while you're studying",
+      "A type of certification exam",
+      "A programming language"
+     ],
+     "a": 1,
+     "e": "Internships give real-world experience and connections."
+    },
+    {
+     "id": "u17q4",
+     "q": "A teammate suggests a fix in a code review. The best response is to:",
+     "c": [
+      "Ignore it",
+      "Consider it, ask questions, and apply it if it improves the code",
+      "Argue until they give up",
+      "Delete your code"
+     ],
+     "a": 1,
+     "e": "Seeking and responding to feedback improves the quality of your product."
+    },
+    {
+     "id": "u17q5",
+     "q": "Which is the best example of technical writing?",
+     "c": [
+      "A text message to a friend",
+      "A README that explains how to install and run a program",
+      "A poem",
+      "A game score"
+     ],
+     "a": 1,
+     "e": "Technical writing explains how something works clearly and accurately."
+    },
+    {
+     "id": "u17q6",
+     "q": "When comparing university computer science programs, which factor matters?",
+     "c": [
+      "The color of the campus buildings",
+      "Courses offered, cost, and internship opportunities",
+      "The mascot",
+      "How many vending machines there are"
+     ],
+     "a": 1,
+     "e": "Courses, cost, internships, and outcomes help you choose a program."
+    },
+    {
+     "id": "u17q7",
+     "q": "Your team has a project due in two weeks. What's the best plan?",
+     "c": [
+      "Start the night before",
+      "Break it into tasks with owners and deadlines",
+      "Let one person do everything",
+      "Skip testing"
+     ],
+     "a": 1,
+     "e": "Planning and time management keep teams on schedule."
+    },
+    {
+     "id": "u17q8",
+     "q": "A resume should usually be:",
+     "c": [
+      "Ten pages long",
+      "A clear, one-page summary of skills, experience, and education",
+      "Written in code",
+      "A list of passwords"
+     ],
+     "a": 1,
+     "e": "Early-career resumes are typically one page and easy to scan."
+    }
+   ],
+   "teks": [
+    "1A",
+    "1B",
+    "1C",
+    "1D",
+    "1E",
+    "1F",
+    "1G",
+    "1H",
+    "1I",
+    "2A",
+    "2B"
+   ]
+  }
+ ],
+ "BUGS": [
+  {
+   "goal": "Add up every number in the list. Should print 15.",
+   "py": [
+    "nums = [3, 5, 7]",
+    "total = 0",
+    "for i in range(1, len(nums)):",
+    "    total += nums[i]",
+    "print(total)"
+   ],
+   "java": [
+    "int[] nums = {3, 5, 7};",
+    "int total = 0;",
+    "for (int i = 1; i < nums.length; i++) {",
+    "    total += nums[i];",
+    "}",
+    "System.out.println(total);"
+   ],
+   "bug": {
+    "py": 2,
+    "java": 2
+   },
+   "fix": {
+    "py": "for i in range(len(nums)):",
+    "java": "for (int i = 0; i < nums.length; i++) {"
+   },
+   "e": "The loop starts at index 1, so it skips the first number. Start at 0."
+  },
+  {
+   "goal": "Print \"Perfect!\" when the score is 100.",
+   "py": [
+    "score = int(input(\"Score: \"))",
+    "if score = 100:",
+    "    print(\"Perfect!\")"
+   ],
+   "java": [
+    "int score = in.nextInt();",
+    "if (score = 100) {",
+    "    System.out.println(\"Perfect!\");",
+    "}"
+   ],
+   "bug": {
+    "py": 1,
+    "java": 1
+   },
+   "fix": {
+    "py": "if score == 100:",
+    "java": "if (score == 100) {"
+   },
+   "e": "= assigns a value. Use == to compare."
+  },
+  {
+   "goal": "Count from 1 up to 5.",
+   "py": [
+    "count = 1",
+    "while count <= 5:",
+    "    print(count)",
+    "    count -= 1"
+   ],
+   "java": [
+    "int count = 1;",
+    "while (count <= 5) {",
+    "    System.out.println(count);",
+    "    count--;",
+    "}"
+   ],
+   "bug": {
+    "py": 3,
+    "java": 3
+   },
+   "fix": {
+    "py": "    count += 1",
+    "java": "    count++;"
+   },
+   "e": "Subtracting makes count smaller forever, so the loop never ends. Add 1 instead."
+  },
+  {
+   "goal": "Average three test scores. Should print 85.",
+   "py": [
+    "a = 90",
+    "b = 85",
+    "c = 80",
+    "avg = a + b + c / 3",
+    "print(avg)"
+   ],
+   "java": [
+    "int a = 90;",
+    "int b = 85;",
+    "int c = 80;",
+    "double avg = a + b + c / 3;",
+    "System.out.println(avg);"
+   ],
+   "bug": {
+    "py": 3,
+    "java": 3
+   },
+   "fix": {
+    "py": "avg = (a + b + c) / 3",
+    "java": "double avg = (a + b + c) / 3.0;"
+   },
+   "e": {
+    "py": "Division happens before addition, so only c gets divided. Add parentheses.",
+    "java": "Division happens before addition, so only c gets divided. Add parentheses, and divide by 3.0 to keep decimals."
+   }
+  },
+  {
+   "goal": "Print the last letter of the word.",
+   "py": [
+    "word = \"CODE\"",
+    "last = word[len(word)]",
+    "print(last)"
+   ],
+   "java": [
+    "String word = \"CODE\";",
+    "char last = word.charAt(word.length());",
+    "System.out.println(last);"
+   ],
+   "bug": {
+    "py": 1,
+    "java": 1
+   },
+   "fix": {
+    "py": "last = word[len(word) - 1]",
+    "java": "char last = word.charAt(word.length() - 1);"
+   },
+   "e": "The last index is length − 1. Using length goes out of range."
+  },
+  {
+   "goal": "Find the highest temperature. Should print -2.",
+   "py": [
+    "temps = [-5, -2, -9]",
+    "high = 0",
+    "for t in temps:",
+    "    if t > high:",
+    "        high = t",
+    "print(high)"
+   ],
+   "java": [
+    "int[] temps = {-5, -2, -9};",
+    "int high = 0;",
+    "for (int t : temps) {",
+    "    if (t > high) {",
+    "        high = t;",
+    "    }",
+    "}",
+    "System.out.println(high);"
+   ],
+   "bug": {
+    "py": 1,
+    "java": 1
+   },
+   "fix": {
+    "py": "high = temps[0]",
+    "java": "int high = temps[0];"
+   },
+   "e": "Every temp is below 0, so nothing beats the starting value of 0. Start with the first element instead."
+  },
+  {
+   "goal": "square(4) + 1 should print 17.",
+   "py": [
+    "def square(n):",
+    "    result = n * n",
+    "",
+    "print(square(4) + 1)"
+   ],
+   "java": [
+    "public static int square(int n) {",
+    "    int result = n * n;",
+    "}",
+    "",
+    "System.out.println(square(4) + 1);"
+   ],
+   "bug": {
+    "py": 1,
+    "java": 1
+   },
+   "fix": {
+    "py": "    return n * n",
+    "java": "    return n * n;"
+   },
+   "e": {
+    "py": "The function calculates the answer but never returns it, so it gives back None.",
+    "java": "The method promises an int but never returns one, so it won't compile."
+   }
+  },
+  {
+   "goal": "A score of 95 should get an A.",
+   "py": [
+    "score = 95",
+    "if score >= 70:",
+    "    grade = \"C\"",
+    "elif score >= 90:",
+    "    grade = \"A\"",
+    "print(grade)"
+   ],
+   "java": [
+    "int score = 95;",
+    "String grade = \"\";",
+    "if (score >= 70) {",
+    "    grade = \"C\";",
+    "} else if (score >= 90) {",
+    "    grade = \"A\";",
+    "}",
+    "System.out.println(grade);"
+   ],
+   "bug": {
+    "py": 1,
+    "java": 2
+   },
+   "fix": {
+    "py": "Check score >= 90 first, then >= 70",
+    "java": "Check score >= 90 first, then >= 70"
+   },
+   "e": "95 >= 70 is true, so the first branch runs and stops. Put the higher cutoff first."
+  },
+  {
+   "goal": "Print \"Continuing\" when the user types yes.",
+   "py": [
+    "answer = input(\"Continue? \").lower()",
+    "if answer == \"YES\":",
+    "    print(\"Continuing\")"
+   ],
+   "java": [
+    "String answer = in.nextLine();",
+    "if (answer == \"yes\") {",
+    "    System.out.println(\"Continuing\");",
+    "}"
+   ],
+   "bug": {
+    "py": 1,
+    "java": 1
+   },
+   "fix": {
+    "py": "if answer == \"yes\":",
+    "java": "if (answer.equals(\"yes\")) {"
+   },
+   "e": {
+    "py": "The input was made lowercase, so it can never equal \"YES\".",
+    "java": "== checks whether two Strings are the same object. Use .equals() to compare the text."
+   }
+  },
+  {
+   "goal": "Print the numbers 1 to 3.",
+   "py": [
+    "for i in range(1, 3):",
+    "    print(i)"
+   ],
+   "java": [
+    "for (int i = 1; i < 3; i++) {",
+    "    System.out.println(i);",
+    "}"
+   ],
+   "bug": {
+    "py": 0,
+    "java": 0
+   },
+   "fix": {
+    "py": "for i in range(1, 4):",
+    "java": "for (int i = 1; i <= 3; i++) {"
+   },
+   "e": "The stop value isn't included, so this only prints 1 and 2."
+  }
+ ],
+ "ORDERS": [
+  {
+   "goal": "Ask for an age. Print \"You can drive\" if it's 16 or more, otherwise \"Not yet\".",
+   "py": [
+    "age = int(input(\"Age? \"))",
+    "if age >= 16:",
+    "    print(\"You can drive\")",
+    "else:",
+    "    print(\"Not yet\")"
+   ],
+   "java": [
+    "Scanner in = new Scanner(System.in);",
+    "int age = in.nextInt();",
+    "if (age >= 16) {",
+    "    System.out.println(\"You can drive\");",
+    "} else {",
+    "    System.out.println(\"Not yet\");",
+    "}"
+   ]
+  },
+  {
+   "goal": "Print every even number from 0 to 10.",
+   "py": [
+    "for i in range(0, 11):",
+    "    if i % 2 == 0:",
+    "        print(i)"
+   ],
+   "java": [
+    "for (int i = 0; i <= 10; i++) {",
+    "    if (i % 2 == 0) {",
+    "        System.out.println(i);",
+    "    }",
+    "}"
+   ]
+  },
+  {
+   "goal": "Print 3, 2, 1, then \"Liftoff!\"",
+   "py": [
+    "n = 3",
+    "while n > 0:",
+    "    print(n)",
+    "    n -= 1",
+    "print(\"Liftoff!\")"
+   ],
+   "java": [
+    "int n = 3;",
+    "while (n > 0) {",
+    "    System.out.println(n);",
+    "    n--;",
+    "}",
+    "System.out.println(\"Liftoff!\");"
+   ]
+  },
+  {
+   "goal": "Add the numbers 1 through 5 and print 15.",
+   "py": [
+    "total = 0",
+    "for i in range(1, 6):",
+    "    total += i",
+    "print(total)"
+   ],
+   "java": [
+    "int total = 0;",
+    "for (int i = 1; i <= 5; i++) {",
+    "    total += i;",
+    "}",
+    "System.out.println(total);"
+   ]
+  },
+  {
+   "goal": "Find and print the biggest number in the list.",
+   "py": [
+    "nums = [7, 3, 9]",
+    "best = nums[0]",
+    "for n in nums:",
+    "    if n > best:",
+    "        best = n",
+    "print(best)"
+   ],
+   "java": [
+    "int[] nums = {7, 3, 9};",
+    "int best = nums[0];",
+    "for (int n : nums) {",
+    "    if (n > best) {",
+    "        best = n;",
+    "    }",
+    "}",
+    "System.out.println(best);"
+   ]
+  },
+  {
+   "goal": "Define a function that returns a rectangle's area, then print area(3, 4).",
+   "py": [
+    "def area(w, h):",
+    "    return w * h",
+    "result = area(3, 4)",
+    "print(result)"
+   ],
+   "java": [
+    "public static int area(int w, int h) {",
+    "    return w * h;",
+    "}",
+    "int result = area(3, 4);",
+    "System.out.println(result);"
+   ]
+  },
+  {
+   "goal": "Print each letter of \"HI\" on its own line.",
+   "py": [
+    "word = \"HI\"",
+    "for i in range(len(word)):",
+    "    print(word[i])"
+   ],
+   "java": [
+    "String word = \"HI\";",
+    "for (int i = 0; i < word.length(); i++) {",
+    "    System.out.println(word.charAt(i));",
+    "}"
+   ]
+  }
+ ],
+ "TEKS": {
+  "Employability": {
+   "1A": "Explore CS jobs and internships",
+   "1B": "Certifications, resumes, and portfolios",
+   "1C": "Technical reading and writing",
+   "1D": "Verbal and non-verbal communication",
+   "1E": "Problem solving and critical thinking",
+   "1F": "Leadership and teamwork",
+   "1G": "Legal and ethical responsibilities",
+   "1H": "Planning and time management",
+   "1I": "Compare university CS programs"
+  },
+  "Communication and collaboration": {
+   "2A": "Learn and mentor in learning communities",
+   "2B": "Seek and use feedback on your work"
+  },
+  "Programming style and presentation": {
+   "3A": "Label and display output",
+   "3B": "Input interfaces with clear prompts",
+   "3C": "Readable style: names, comments, spacing",
+   "3D": "Format data displays",
+   "3E": "Simple vector graphics"
+  },
+  "Critical thinking and problem solving": {
+   "4A": "Flowcharts and pseudocode",
+   "4B": "High-level program plans",
+   "4C": "Tasks and subtasks",
+   "4D": "Data types and objects for a problem",
+   "4E": "Reusable components",
+   "4F": "Design a solution",
+   "4G": "Code from a design",
+   "4H": "Error types: syntax, lexical, run-time, logic",
+   "4I": "Test with valid and invalid data",
+   "4J": "Debug with messages and documentation",
+   "4K": "Common algorithms (GCD, primes, change, average)",
+   "4L": "Basic error handling",
+   "4M": "Choose the right construct",
+   "4N": "Arithmetic operators",
+   "4O": "Math library functions",
+   "4P": "Assignment",
+   "4Q": "Sequential algorithms",
+   "4R": "Branching",
+   "4S": "Iteration",
+   "4T": "Relational operators",
+   "4U": "Logical operators",
+   "4V": "Random numbers"
+  },
+  "Digital citizenship": {
+   "5A": "Intellectual property, copyright, licensing",
+   "5B": "Ethical use of digital information",
+   "5C": "Etiquette and acceptable use policies",
+   "5D": "Passwords, authentication, virus prevention",
+   "5E": "Social and ethical impact of computing"
+  },
+  "Technology operations and concepts": {
+   "6A": "Hardware: CPU, memory, peripherals",
+   "6B": "Programming languages and tools",
+   "6C": "Compiled vs. interpreted languages",
+   "6D": "Object-oriented design",
+   "6E": "Local vs. global variables",
+   "6F": "Encapsulation and abstract data types",
+   "6G": "Subroutines without return values",
+   "6H": "Subroutines that return values",
+   "6I": "Arguments matching parameters",
+   "6J": "Compare data with operators",
+   "6K": "Binary for numbers and text (ASCII, Unicode)",
+   "6L": "Limits of numeric data",
+   "6M": "Binary and decimal conversion",
+   "6N": "Integer, real, and Boolean types",
+   "6O": "Variables: primitives and objects",
+   "6P": "Strings and string functions",
+   "6Q": "One-dimensional arrays",
+   "6R": "Choose data structures",
+   "6S": "Strongly typed vs. untyped languages"
+  }
+ }
+}

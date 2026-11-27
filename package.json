@@ -1,0 +1,27 @@
+{
+  "name": "loop-legends",
+  "version": "2.0.0",
+  "description": "Loop Legends: Texas CS I student practice and TExES CS 241 teacher prep (Next.js + React + TypeScript)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve out",
+    "typecheck": "tsc --noEmit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^15.5.29",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.11",
+    "@types/react": "^19.3.3",
+    "@types/react-dom": "^19.3.0",
+    "postcss": "^8.5.33",
+    "postcss-prefix-selector": "^2.2.1",
+    "typescript": "^6.0.3"
+  },
+  "private": true
+}

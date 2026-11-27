@@ -1,0 +1,1285 @@
+{
+ "DOMAINS": {
+  "1": {
+   "name": "Technology Applications Core",
+   "short": "Tech Apps Core",
+   "pct": 12.5,
+   "color": "var(--d1)"
+  },
+  "2": {
+   "name": "Program Design & Development",
+   "short": "Design & Dev",
+   "pct": 35,
+   "color": "var(--d2)"
+  },
+  "3": {
+   "name": "Programming Language Topics",
+   "short": "Language Topics",
+   "pct": 40,
+   "color": "var(--d3)"
+  },
+  "4": {
+   "name": "Specialized Topics",
+   "short": "Specialized",
+   "pct": 12.5,
+   "color": "var(--d4)"
+  }
+ },
+ "Q": [
+  {
+   "id": "t1",
+   "d": 1,
+   "q": "Which of these is NOT one of the four factors courts weigh in a fair use analysis?",
+   "c": [
+    "Purpose and character of the use",
+    "Nature of the copyrighted work",
+    "Amount of the work used",
+    "Popularity of the original author"
+   ],
+   "a": 3,
+   "e": "The four factors are purpose/character, nature of the work, amount used, and effect on the market. Popularity isn't one."
+  },
+  {
+   "id": "t2",
+   "d": 1,
+   "q": "A student finds an image licensed CC BY-NC. What may the student do with it?",
+   "c": [
+    "Use it anywhere with no credit",
+    "Use it with attribution for noncommercial purposes",
+    "Sell it on a T-shirt with attribution",
+    "Nothing; CC images can't be reused"
+   ],
+   "a": 1,
+   "e": "BY = give attribution. NC = noncommercial only."
+  },
+  {
+   "id": "t3",
+   "d": 1,
+   "q": "Which federal law protects the privacy of student education records?",
+   "c": [
+    "COPPA",
+    "CIPA",
+    "FERPA",
+    "HIPAA"
+   ],
+   "a": 2,
+   "e": "FERPA covers education records. COPPA covers online data from kids under 13; CIPA requires internet filtering for E-rate schools."
+  },
+  {
+   "id": "t4",
+   "d": 1,
+   "q": "An email claims to be from the district IT office and asks students to 'verify' their passwords at a link. This is an example of:",
+   "c": [
+    "Phishing",
+    "Spoofing a firewall",
+    "Malware signature",
+    "Two-factor authentication"
+   ],
+   "a": 0,
+   "e": "Phishing uses a fake trusted sender to trick people into revealing credentials."
+  },
+  {
+   "id": "t5",
+   "d": 1,
+   "q": "Which file format uses LOSSLESS compression?",
+   "c": [
+    "JPEG",
+    "MP3",
+    "PNG",
+    "MPEG-4 video"
+   ],
+   "a": 2,
+   "e": "PNG (also GIF, FLAC, ZIP) is lossless. JPEG, MP3 and most video codecs are lossy."
+  },
+  {
+   "id": "t6",
+   "d": 1,
+   "q": "Which type of memory is volatile and loses its contents when power is off?",
+   "c": [
+    "ROM",
+    "RAM",
+    "SSD",
+    "Flash drive"
+   ],
+   "a": 1,
+   "e": "RAM is volatile working memory. ROM, SSDs and flash keep data without power."
+  },
+  {
+   "id": "t7",
+   "d": 1,
+   "q": "A teacher wants a quick check of whether each student understood today's loop lesson before tomorrow. Best choice?",
+   "c": [
+    "A unit summative exam",
+    "An exit ticket with one tracing problem",
+    "A semester portfolio",
+    "A standardized benchmark"
+   ],
+   "a": 1,
+   "e": "Exit tickets are fast formative assessment that inform the next day's instruction."
+  },
+  {
+   "id": "t8",
+   "d": 1,
+   "q": "Which is the BEST first step when judging whether a website is a credible source?",
+   "c": [
+    "Check how attractive the design is",
+    "Check the author's credentials and publication date",
+    "Count the number of ads",
+    "See if it appears first in search results"
+   ],
+   "a": 1,
+   "e": "Authority and currency are core credibility checks. Search rank and design say nothing about accuracy."
+  },
+  {
+   "id": "t9",
+   "d": 1,
+   "q": "A district document that defines how students may and may not use school computers and networks is called a(n):",
+   "c": [
+    "Acceptable Use Policy",
+    "End User License Agreement",
+    "Service Level Agreement",
+    "Terms of copyright"
+   ],
+   "a": 0,
+   "e": "An AUP sets rules for using school technology, including consequences for misuse."
+  },
+  {
+   "id": "t10",
+   "d": 1,
+   "q": "Everything a student posts, likes and shares online that can later be found is their:",
+   "c": [
+    "Digital footprint",
+    "Bandwidth",
+    "Metadata cache",
+    "IP address"
+   ],
+   "a": 0,
+   "e": "Digital footprint is a core digital citizenship concept."
+  },
+  {
+   "id": "t11",
+   "d": 1,
+   "q": "Which strategy best supports English language learners in a CS class?",
+   "c": [
+    "Avoid diagrams so they focus on text",
+    "Pair vocabulary with visuals and examples, and allow partner talk",
+    "Only lecture to keep pace",
+    "Grade spelling in code comments heavily"
+   ],
+   "a": 1,
+   "e": "Visuals, modeling, and structured peer talk are standard sheltered-instruction supports."
+  },
+  {
+   "id": "p1",
+   "d": 2,
+   "q": "A program compiles and runs but prints the wrong average because the loop skips the last element. What kind of error is this?",
+   "c": [
+    "Syntax error",
+    "Runtime error",
+    "Logic error",
+    "Compile-time type error"
+   ],
+   "a": 2,
+   "e": "It runs without crashing but gives the wrong result: a logic error (here, off-by-one)."
+  },
+  {
+   "id": "p2",
+   "d": 2,
+   "q": "A program crashes when it divides by a user-entered value of 0. What kind of error is this?",
+   "c": [
+    "Syntax error",
+    "Runtime error",
+    "Logic error",
+    "Linker error"
+   ],
+   "a": 1,
+   "e": "The code compiles, then fails while executing: a runtime error (ArithmeticException in Java)."
+  },
+  {
+   "id": "p3",
+   "d": 2,
+   "q": "Valid input is an integer from 1 to 100. Which set of test values best performs boundary testing?",
+   "c": [
+    "50, 51, 52",
+    "0, 1, 100, 101",
+    "1, 50, 100",
+    "-500, 500"
+   ],
+   "a": 1,
+   "e": "Test just inside and just outside each boundary: 0, 1, 100, 101."
+  },
+  {
+   "id": "p4",
+   "d": 2,
+   "q": "Testing a function only by comparing outputs to the specification, without looking at the code, is:",
+   "c": [
+    "White-box testing",
+    "Black-box testing",
+    "Unit coverage analysis",
+    "Regression refactoring"
+   ],
+   "a": 1,
+   "e": "Black-box = based on specs/inputs/outputs. White-box = based on the internal code paths."
+  },
+  {
+   "id": "p5",
+   "d": 2,
+   "q": "Which development model delivers working software in short, repeated iterations with frequent customer feedback?",
+   "c": [
+    "Waterfall",
+    "Agile",
+    "Big Bang",
+    "V-model"
+   ],
+   "a": 1,
+   "e": "Agile (e.g., Scrum sprints) is iterative and incremental. Waterfall runs phases once in sequence."
+  },
+  {
+   "id": "p6",
+   "d": 2,
+   "q": "In the software development life cycle, what normally comes FIRST?",
+   "c": [
+    "Testing",
+    "Implementation (coding)",
+    "Requirements analysis",
+    "Maintenance"
+   ],
+   "a": 2,
+   "e": "SDLC: requirements/analysis → design → implementation → testing → deployment → maintenance."
+  },
+  {
+   "id": "p7",
+   "d": 2,
+   "q": "About how many comparisons does binary search need, worst case, on a sorted list of 1,000 items?",
+   "c": [
+    "About 10",
+    "About 100",
+    "About 500",
+    "1,000"
+   ],
+   "a": 0,
+   "e": "Binary search is O(log n). log₂(1000) ≈ 10."
+  },
+  {
+   "id": "p8",
+   "d": 2,
+   "q": "What is the Big-O time of this code?",
+   "code": "for (int i = 0; i < n; i++)\n    for (int j = 0; j < n; j++)\n        total += grid[i][j];",
+   "c": [
+    "O(n)",
+    "O(n log n)",
+    "O(n²)",
+    "O(2ⁿ)"
+   ],
+   "a": 2,
+   "e": "Two nested loops that each run n times → n × n = O(n²)."
+  },
+  {
+   "id": "p9",
+   "d": 2,
+   "q": "Which sorting algorithm uses divide-and-conquer and runs in O(n log n) in every case?",
+   "c": [
+    "Bubble sort",
+    "Insertion sort",
+    "Merge sort",
+    "Selection sort"
+   ],
+   "a": 2,
+   "e": "Merge sort splits, sorts halves recursively, and merges: O(n log n) best, average, and worst."
+  },
+  {
+   "id": "p10",
+   "d": 2,
+   "q": "After ONE pass of selection sort (ascending), what is [5, 2, 9, 1]?",
+   "c": [
+    "[1, 2, 9, 5]",
+    "[2, 5, 9, 1]",
+    "[2, 5, 1, 9]",
+    "[1, 2, 5, 9]"
+   ],
+   "a": 0,
+   "e": "Selection sort finds the minimum (1) and swaps it into index 0: [1, 2, 9, 5]."
+  },
+  {
+   "id": "p11",
+   "d": 2,
+   "q": "After ONE pass of bubble sort (ascending), what is [5, 2, 9, 1]?",
+   "c": [
+    "[2, 5, 1, 9]",
+    "[1, 2, 9, 5]",
+    "[2, 5, 9, 1]",
+    "[1, 5, 2, 9]"
+   ],
+   "a": 0,
+   "e": "Swap 5/2 → [2,5,9,1]; 5/9 stays; swap 9/1 → [2,5,1,9]. The largest bubbles to the end."
+  },
+  {
+   "id": "p12",
+   "d": 2,
+   "q": "Which data structure is best for an 'Undo' feature?",
+   "c": [
+    "Queue",
+    "Stack",
+    "Hash table",
+    "Binary search tree"
+   ],
+   "a": 1,
+   "e": "Undo reverses the most recent action first: last in, first out = stack."
+  },
+  {
+   "id": "p13",
+   "d": 2,
+   "q": "A stack: push 1, push 2, pop, push 3, pop. What did the SECOND pop return?",
+   "c": [
+    "1",
+    "2",
+    "3",
+    "Nothing; the stack was empty"
+   ],
+   "a": 2,
+   "e": "After push 1, push 2, pop (→2), push 3, the top is 3, so the second pop returns 3."
+  },
+  {
+   "id": "p14",
+   "d": 2,
+   "q": "Breadth-first search of a graph typically uses which structure to track nodes to visit?",
+   "c": [
+    "Stack",
+    "Queue",
+    "Priority heap only",
+    "Linked list of edges"
+   ],
+   "a": 1,
+   "e": "BFS uses a FIFO queue. DFS uses a stack (or recursion)."
+  },
+  {
+   "id": "p15",
+   "d": 2,
+   "q": "In a UML class diagram, what does a minus sign (−) before an attribute mean?",
+   "c": [
+    "Public",
+    "Private",
+    "Protected",
+    "Static"
+   ],
+   "a": 1,
+   "e": "+ public, − private, # protected; underlined = static."
+  },
+  {
+   "id": "p16",
+   "d": 2,
+   "q": "Breaking a large problem into smaller subproblems that are each solved separately is called:",
+   "c": [
+    "Abstraction",
+    "Decomposition",
+    "Encryption",
+    "Iteration"
+   ],
+   "a": 1,
+   "e": "Decomposition (top-down design / stepwise refinement). Abstraction hides unneeded detail."
+  },
+  {
+   "id": "p17",
+   "d": 2,
+   "q": "Insertion sort's BEST case occurs when the input is already sorted. Its best-case time is:",
+   "c": [
+    "O(1)",
+    "O(log n)",
+    "O(n)",
+    "O(n²)"
+   ],
+   "a": 2,
+   "e": "Each element is compared once and never shifted: O(n)."
+  },
+  {
+   "id": "p18",
+   "d": 2,
+   "q": "Average-case lookup time for a key in a well-designed hash table is:",
+   "c": [
+    "O(1)",
+    "O(log n)",
+    "O(n)",
+    "O(n log n)"
+   ],
+   "a": 0,
+   "e": "Hashing jumps straight to the bucket: O(1) on average (O(n) worst case with many collisions)."
+  },
+  {
+   "id": "p19",
+   "d": 2,
+   "q": "A recursive method has no base case. When run, the most likely result is:",
+   "c": [
+    "It returns 0",
+    "A StackOverflowError",
+    "A syntax error",
+    "It runs once then stops"
+   ],
+   "a": 1,
+   "e": "Each call adds a stack frame until the call stack runs out."
+  },
+  {
+   "id": "p20",
+   "d": 2,
+   "q": "In pair programming, the person typing the code is the ____ and the person reviewing and guiding is the ____.",
+   "c": [
+    "navigator, driver",
+    "driver, navigator",
+    "pilot, tester",
+    "author, scrum master"
+   ],
+   "a": 1,
+   "e": "Driver types; navigator reviews and thinks ahead. Partners swap roles often."
+  },
+  {
+   "id": "p21",
+   "d": 2,
+   "q": "Testing that verifies separately built modules work correctly TOGETHER is:",
+   "c": [
+    "Unit testing",
+    "Integration testing",
+    "Alpha testing",
+    "Static analysis"
+   ],
+   "a": 1,
+   "e": "Unit tests check one piece alone; integration tests check how pieces interact."
+  },
+  {
+   "id": "p22",
+   "d": 2,
+   "q": "What is the main purpose of a version control system like Git?",
+   "c": [
+    "Compile code faster",
+    "Track changes and let a team merge and roll back work",
+    "Encrypt source code",
+    "Replace testing"
+   ],
+   "a": 1,
+   "e": "Version control records history, supports branching/merging, and allows reverting."
+  },
+  {
+   "id": "l1",
+   "d": 3,
+   "q": "What is printed? (Java)",
+   "code": "System.out.println(17 / 5 + 17 % 5);",
+   "c": [
+    "5",
+    "5.4",
+    "3",
+    "7"
+   ],
+   "a": 0,
+   "e": "Integer division 17 / 5 = 3, and 17 % 5 = 2. 3 + 2 = 5."
+  },
+  {
+   "id": "l2",
+   "d": 3,
+   "q": "What is printed? (Java)",
+   "code": "System.out.println((double) 7 / 2);",
+   "c": [
+    "3",
+    "3.0",
+    "3.5",
+    "4"
+   ],
+   "a": 2,
+   "e": "The cast applies to 7 first, so it's 7.0 / 2 = 3.5. (double)(7 / 2) would give 3.0."
+  },
+  {
+   "id": "l3",
+   "d": 3,
+   "q": "What is printed? (Java)",
+   "code": "String s = \"COMPUTER\";\nSystem.out.println(s.substring(2, 5));",
+   "c": [
+    "MPU",
+    "OMP",
+    "MPUT",
+    "PUT"
+   ],
+   "a": 0,
+   "e": "Indexes 2, 3, 4 (end is exclusive): M P U."
+  },
+  {
+   "id": "l4",
+   "d": 3,
+   "q": "How many times does the loop body run?",
+   "code": "for (int i = 0; i < 10; i += 3) {\n    count++;\n}",
+   "c": [
+    "3",
+    "4",
+    "10",
+    "Infinite"
+   ],
+   "a": 1,
+   "e": "i takes 0, 3, 6, 9, then 12 fails the test. Four iterations."
+  },
+  {
+   "id": "l5",
+   "d": 3,
+   "q": "What is printed? (Java)",
+   "code": "int[] a = {4, 8, 15, 16, 23};\nSystem.out.println(a[a.length - 2]);",
+   "c": [
+    "15",
+    "16",
+    "23",
+    "ArrayIndexOutOfBoundsException"
+   ],
+   "a": 1,
+   "e": "length is 5, so a[3] = 16."
+  },
+  {
+   "id": "l6",
+   "d": 3,
+   "q": "What does f(5) return?",
+   "code": "int f(int n) {\n    if (n <= 1) return 1;\n    return n * f(n - 1);\n}",
+   "c": [
+    "15",
+    "25",
+    "120",
+    "720"
+   ],
+   "a": 2,
+   "e": "Factorial: 5 × 4 × 3 × 2 × 1 = 120."
+  },
+  {
+   "id": "l7",
+   "d": 3,
+   "q": "What does mystery(482) return?",
+   "code": "int mystery(int n) {\n    if (n == 0) return 0;\n    return n % 10 + mystery(n / 10);\n}",
+   "c": [
+    "482",
+    "14",
+    "284",
+    "48"
+   ],
+   "a": 1,
+   "e": "It sums the digits: 2 + 8 + 4 = 14."
+  },
+  {
+   "id": "l8",
+   "d": 3,
+   "q": "Which expression is equivalent to !(a && b)?",
+   "c": [
+    "!a && !b",
+    "!a || !b",
+    "a || b",
+    "!(a || b)"
+   ],
+   "a": 1,
+   "e": "De Morgan's law: NOT (A AND B) = (NOT A) OR (NOT B)."
+  },
+  {
+   "id": "l9",
+   "d": 3,
+   "q": "What happens when x is 0?",
+   "code": "if (x != 0 && 10 / x > 1) {\n    System.out.println(\"big\");\n}",
+   "c": [
+    "Prints \"big\"",
+    "Throws ArithmeticException",
+    "Condition is false; nothing prints, no exception",
+    "Compile error"
+   ],
+   "a": 2,
+   "e": "Short-circuit: x != 0 is false, so && never evaluates 10 / x."
+  },
+  {
+   "id": "l10",
+   "d": 3,
+   "q": "What is printed? (Java)",
+   "code": "String s1 = new String(\"hi\");\nString s2 = new String(\"hi\");\nSystem.out.println((s1 == s2) + \" \" + s1.equals(s2));",
+   "c": [
+    "true true",
+    "false true",
+    "true false",
+    "false false"
+   ],
+   "a": 1,
+   "e": "== compares references (two different objects). equals compares contents."
+  },
+  {
+   "id": "l11",
+   "d": 3,
+   "q": "What is printed?",
+   "code": "class Animal { String speak() { return \"...\"; } }\nclass Dog extends Animal { String speak() { return \"Woof\"; } }\n\nAnimal a = new Dog();\nSystem.out.println(a.speak());",
+   "c": [
+    "...",
+    "Woof",
+    "Compile error",
+    "...Woof"
+   ],
+   "a": 1,
+   "e": "Polymorphism: the overridden method of the actual object type (Dog) runs at runtime."
+  },
+  {
+   "id": "l12",
+   "d": 3,
+   "q": "What is printed? (Java)",
+   "code": "static void bump(int n) { n = n + 5; }\n\nint x = 10;\nbump(x);\nSystem.out.println(x);",
+   "c": [
+    "10",
+    "15",
+    "5",
+    "Compile error"
+   ],
+   "a": 0,
+   "e": "Java passes a copy of a primitive. Changing n doesn't change x."
+  },
+  {
+   "id": "l13",
+   "d": 3,
+   "q": "What is printed? (Java)",
+   "code": "static void zero(int[] arr) { arr[0] = 0; }\n\nint[] a = {7, 8};\nzero(a);\nSystem.out.println(a[0]);",
+   "c": [
+    "7",
+    "0",
+    "8",
+    "Compile error"
+   ],
+   "a": 1,
+   "e": "The reference is copied, but both point to the same array, so the change is visible."
+  },
+  {
+   "id": "l14",
+   "d": 3,
+   "q": "Making fields private and exposing them through getter and setter methods demonstrates:",
+   "c": [
+    "Inheritance",
+    "Polymorphism",
+    "Encapsulation",
+    "Recursion"
+   ],
+   "a": 2,
+   "e": "Encapsulation hides internal data and controls access."
+  },
+  {
+   "id": "l15",
+   "d": 3,
+   "q": "Two methods in the same class share a name but have different parameter lists. This is:",
+   "c": [
+    "Overriding",
+    "Overloading",
+    "Shadowing",
+    "Casting"
+   ],
+   "a": 1,
+   "e": "Overloading = same name, different parameters (compile-time). Overriding = subclass redefines a superclass method."
+  },
+  {
+   "id": "l16",
+   "d": 3,
+   "q": "A class variable declared static is:",
+   "c": [
+    "Copied separately into every object",
+    "Shared by all objects of the class",
+    "Only usable inside constructors",
+    "Automatically private"
+   ],
+   "a": 1,
+   "e": "One static variable belongs to the class itself and is shared by every instance."
+  },
+  {
+   "id": "l17",
+   "d": 3,
+   "q": "What is the final value of n?",
+   "code": "int n = 1;\nwhile (n < 100) {\n    n *= 3;\n}",
+   "c": [
+    "81",
+    "99",
+    "243",
+    "100"
+   ],
+   "a": 2,
+   "e": "1 → 3 → 9 → 27 → 81 → 243. 81 < 100, so it multiplies once more."
+  },
+  {
+   "id": "l18",
+   "d": 3,
+   "q": "What is count after this runs?",
+   "code": "int count = 0;\nfor (int i = 0; i < 3; i++)\n    for (int j = 0; j <= i; j++)\n        count++;",
+   "c": [
+    "3",
+    "6",
+    "9",
+    "4"
+   ],
+   "a": 1,
+   "e": "Inner loop runs 1, then 2, then 3 times: 1 + 2 + 3 = 6."
+  },
+  {
+   "id": "l19",
+   "d": 3,
+   "q": "What does this Python code print?",
+   "code": "nums = [1, 2, 3, 4, 5]\nprint(nums[1:4])",
+   "c": [
+    "[1, 2, 3, 4]",
+    "[2, 3, 4]",
+    "[2, 3, 4, 5]",
+    "[1, 2, 3]"
+   ],
+   "a": 1,
+   "e": "Slices start at index 1 and stop before index 4."
+  },
+  {
+   "id": "l20",
+   "d": 3,
+   "q": "In Python, what is 7 // 2 + 2 ** 3?",
+   "c": [
+    "11",
+    "9.5",
+    "7",
+    "3.5"
+   ],
+   "a": 0,
+   "e": "// is floor division (3). ** is exponent (8). 3 + 8 = 11."
+  },
+  {
+   "id": "l21",
+   "d": 3,
+   "q": "Given int[][] g = new int[3][4]; what are g.length and g[0].length?",
+   "c": [
+    "3 and 4",
+    "4 and 3",
+    "12 and 4",
+    "3 and 3"
+   ],
+   "a": 0,
+   "e": "g.length = number of rows (3). g[0].length = columns in row 0 (4)."
+  },
+  {
+   "id": "l22",
+   "d": 3,
+   "q": "Which expression gives a random integer from 1 to 6 inclusive?",
+   "c": [
+    "(int)(Math.random() * 6)",
+    "(int)(Math.random() * 6) + 1",
+    "(int)(Math.random() * 7)",
+    "(int) Math.random() * 6 + 1"
+   ],
+   "a": 1,
+   "e": "Math.random() is in [0, 1). × 6 → [0, 6); cast → 0–5; + 1 → 1–6. The last option casts first and always yields 1."
+  },
+  {
+   "id": "l23",
+   "d": 3,
+   "q": "In a try / catch / finally block, when does the finally block run?",
+   "c": [
+    "Only if an exception is thrown",
+    "Only if no exception is thrown",
+    "Every time, whether or not an exception occurs",
+    "Only when the program exits"
+   ],
+   "a": 2,
+   "e": "finally always runs (cleanup like closing files)."
+  },
+  {
+   "id": "l24",
+   "d": 3,
+   "q": "What is printed? (Java)",
+   "code": "System.out.println((char)('A' + 2));",
+   "c": [
+    "A2",
+    "67",
+    "C",
+    "B"
+   ],
+   "a": 2,
+   "e": "'A' is 65. 65 + 2 = 67, cast to char = 'C'."
+  },
+  {
+   "id": "l25",
+   "d": 3,
+   "q": "Which statement about an abstract class in Java is TRUE?",
+   "c": [
+    "It can be instantiated with new",
+    "It cannot be instantiated, but it can have constructors and concrete methods",
+    "It can only contain abstract methods",
+    "It cannot be extended"
+   ],
+   "a": 1,
+   "e": "Abstract classes can't be created directly but can hold fields, constructors, and implemented methods."
+  },
+  {
+   "id": "l26",
+   "d": 3,
+   "q": "Which correctly describes Java versus Python execution?",
+   "c": [
+    "Both compile straight to machine code",
+    "Java compiles to bytecode run by the JVM; Python is typically interpreted",
+    "Python compiles to the JVM",
+    "Java is purely interpreted line by line"
+   ],
+   "a": 1,
+   "e": "javac → bytecode → JVM. CPython interprets (via its own bytecode) at runtime."
+  },
+  {
+   "id": "l27",
+   "d": 3,
+   "q": "What is printed? (Java)",
+   "code": "System.out.println(-7 % 3);",
+   "c": [
+    "2",
+    "-1",
+    "1",
+    "-2"
+   ],
+   "a": 1,
+   "e": "Java's % keeps the sign of the dividend: -7 = 3 × (-2) + (-1). (Python would print 2.)"
+  },
+  {
+   "id": "l28",
+   "d": 3,
+   "q": "What is the value of this Boolean expression?",
+   "code": "(true || false) && !true",
+   "c": [
+    "true",
+    "false",
+    "Compile error",
+    "null"
+   ],
+   "a": 1,
+   "e": "(true) && false = false."
+  },
+  {
+   "id": "l29",
+   "d": 3,
+   "q": "Which correctly describes a constructor?",
+   "c": [
+    "It has return type void",
+    "It has the same name as the class and no return type",
+    "It must be static",
+    "It can only be called once per program"
+   ],
+   "a": 1,
+   "e": "Constructors share the class name, have no return type, and run when new creates an object."
+  },
+  {
+   "id": "s1",
+   "d": 4,
+   "q": "What is binary 101101 in decimal?",
+   "c": [
+    "45",
+    "41",
+    "53",
+    "90"
+   ],
+   "a": 0,
+   "e": "32 + 8 + 4 + 1 = 45."
+  },
+  {
+   "id": "s2",
+   "d": 4,
+   "q": "What is hexadecimal 2F in decimal?",
+   "c": [
+    "32",
+    "47",
+    "215",
+    "31"
+   ],
+   "a": 1,
+   "e": "2 × 16 + 15 = 47."
+  },
+  {
+   "id": "s3",
+   "d": 4,
+   "q": "What is the 8-bit two's complement representation of −1?",
+   "c": [
+    "10000001",
+    "11111110",
+    "11111111",
+    "00000001"
+   ],
+   "a": 2,
+   "e": "Invert 00000001 → 11111110, then add 1 → 11111111."
+  },
+  {
+   "id": "s4",
+   "d": 4,
+   "q": "XOR outputs 1 when:",
+   "c": [
+    "Both inputs are 1",
+    "Exactly one input is 1",
+    "Both inputs are 0",
+    "At least one input is 1"
+   ],
+   "a": 1,
+   "e": "XOR = exclusive or: true when inputs differ. 1 XOR 1 = 0."
+  },
+  {
+   "id": "s5",
+   "d": 4,
+   "q": "Which gate is 'universal,' meaning any logic circuit can be built from it alone?",
+   "c": [
+    "AND",
+    "OR",
+    "XOR",
+    "NAND"
+   ],
+   "a": 3,
+   "e": "NAND (and NOR) are universal gates."
+  },
+  {
+   "id": "s6",
+   "d": 4,
+   "q": "|A| = 12, |B| = 9, |A ∩ B| = 4. What is |A ∪ B|?",
+   "c": [
+    "21",
+    "17",
+    "25",
+    "13"
+   ],
+   "a": 1,
+   "e": "Inclusion-exclusion: 12 + 9 − 4 = 17."
+  },
+  {
+   "id": "s7",
+   "d": 4,
+   "q": "How many ways can 2 students be chosen from 5 for a team (order doesn't matter)?",
+   "c": [
+    "10",
+    "20",
+    "25",
+    "7"
+   ],
+   "a": 0,
+   "e": "C(5,2) = 5! / (2! × 3!) = 10. If order mattered, P(5,2) = 20."
+  },
+  {
+   "id": "s8",
+   "d": 4,
+   "q": "In digital forensics, why is a hash (e.g., SHA-256) taken of a drive image?",
+   "c": [
+    "To compress the evidence",
+    "To prove the copy is identical and unaltered",
+    "To encrypt the suspect's files",
+    "To recover deleted files"
+   ],
+   "a": 1,
+   "e": "Matching hashes before and after show the evidence wasn't changed. Chain of custody documents who handled it."
+  },
+  {
+   "id": "s9",
+   "d": 4,
+   "q": "A device that lets an investigator read a drive without changing any data on it is a:",
+   "c": [
+    "Write blocker",
+    "Packet sniffer",
+    "Firewall",
+    "RAID controller"
+   ],
+   "a": 0,
+   "e": "A write blocker allows read-only access to preserve evidence."
+  },
+  {
+   "id": "s10",
+   "d": 4,
+   "q": "A robot reads a distance sensor, the program decides, and a motor turns. The motor is the:",
+   "c": [
+    "Sensor",
+    "Controller",
+    "Actuator",
+    "Encoder"
+   ],
+   "a": 2,
+   "e": "Sense (sensor) → think (controller) → act (actuator)."
+  },
+  {
+   "id": "s11",
+   "d": 4,
+   "q": "A robot continually adjusts its motor speed based on how far it is from a line it follows. This is:",
+   "c": [
+    "Open-loop control",
+    "Closed-loop (feedback) control",
+    "Hard-coded timing",
+    "Dead reckoning only"
+   ],
+   "a": 1,
+   "e": "Using sensor feedback to correct output is closed-loop control (PID is a common example)."
+  },
+  {
+   "id": "s12",
+   "d": 4,
+   "q": "The core loop of most video games repeats which steps each frame?",
+   "c": [
+    "Compile, link, run",
+    "Process input, update state, render",
+    "Load, save, quit",
+    "Sort, search, print"
+   ],
+   "a": 1,
+   "e": "Game loop: handle input → update game state (physics, collisions) → draw the frame."
+  },
+  {
+   "id": "s13",
+   "d": 4,
+   "q": "Which protocol translates a domain name like tea.texas.gov into an IP address?",
+   "c": [
+    "DHCP",
+    "DNS",
+    "FTP",
+    "SMTP"
+   ],
+   "a": 1,
+   "e": "DNS resolves names to IP addresses. DHCP assigns IP addresses to devices."
+  },
+  {
+   "id": "s14",
+   "d": 4,
+   "q": "Which transport protocol guarantees ordered, reliable delivery?",
+   "c": [
+    "UDP",
+    "TCP",
+    "IP",
+    "ARP"
+   ],
+   "a": 1,
+   "e": "TCP is connection-oriented and reliable. UDP is faster but connectionless (streaming, games)."
+  },
+  {
+   "id": "s15",
+   "d": 4,
+   "q": "What is decimal 255 in hexadecimal?",
+   "c": [
+    "FF",
+    "EF",
+    "F0",
+    "100"
+   ],
+   "a": 0,
+   "e": "255 = 15 × 16 + 15 = FF. It is also the max value of one unsigned byte."
+  },
+  {
+   "id": "s16",
+   "d": 4,
+   "q": "In propositional logic, p → q is FALSE only when:",
+   "c": [
+    "p is false and q is true",
+    "p is true and q is false",
+    "both are false",
+    "both are true"
+   ],
+   "a": 1,
+   "e": "An implication fails only when a true premise leads to a false conclusion."
+  }
+ ],
+ "CARDS": [
+  {
+   "d": 1,
+   "t": "Fair use (4 factors)",
+   "b": "Purpose/character · nature of work · amount used · effect on the market."
+  },
+  {
+   "d": 1,
+   "t": "Creative Commons BY / NC / ND / SA",
+   "b": "BY attribution · NC noncommercial · ND no derivatives · SA share-alike (same license)."
+  },
+  {
+   "d": 1,
+   "t": "FERPA",
+   "b": "Protects student education records."
+  },
+  {
+   "d": 1,
+   "t": "COPPA",
+   "b": "Limits collecting online data from children under 13 without parental consent."
+  },
+  {
+   "d": 1,
+   "t": "CIPA",
+   "b": "Schools/libraries taking E-rate funds must filter harmful internet content."
+  },
+  {
+   "d": 1,
+   "t": "Lossy vs lossless",
+   "b": "Lossy discards data (JPEG, MP3). Lossless restores exactly (PNG, GIF, ZIP, FLAC)."
+  },
+  {
+   "d": 1,
+   "t": "Formative vs summative",
+   "b": "Formative checks learning during instruction (exit ticket). Summative measures at the end (unit test)."
+  },
+  {
+   "d": 1,
+   "t": "Phishing",
+   "b": "Fake trusted message that tricks users into giving up credentials or info."
+  },
+  {
+   "d": 2,
+   "t": "Syntax / runtime / logic error",
+   "b": "Syntax: breaks language rules, won't compile. Runtime: crashes while running. Logic: runs, wrong result."
+  },
+  {
+   "d": 2,
+   "t": "Boundary testing",
+   "b": "Test values at and just beyond each edge of valid input (0, 1, 100, 101 for 1–100)."
+  },
+  {
+   "d": 2,
+   "t": "Black-box vs white-box",
+   "b": "Black-box: tests from specs only. White-box: tests designed from the code's internal paths."
+  },
+  {
+   "d": 2,
+   "t": "SDLC order",
+   "b": "Requirements → design → implementation → testing → deployment → maintenance."
+  },
+  {
+   "d": 2,
+   "t": "Agile vs Waterfall",
+   "b": "Agile: short iterative sprints, ongoing feedback. Waterfall: linear phases done once."
+  },
+  {
+   "d": 2,
+   "t": "Stack vs queue",
+   "b": "Stack LIFO (undo, recursion, DFS). Queue FIFO (print jobs, BFS)."
+  },
+  {
+   "d": 2,
+   "t": "Big-O cheat sheet",
+   "b": "Binary search O(log n) · linear search O(n) · merge sort O(n log n) · bubble/selection/insertion O(n²) · hash lookup O(1) avg."
+  },
+  {
+   "d": 2,
+   "t": "Binary search requirement",
+   "b": "The list must be sorted. Halves the search space each step."
+  },
+  {
+   "d": 2,
+   "t": "Selection vs bubble vs insertion",
+   "b": "Selection: swap the min into place. Bubble: swap adjacent pairs, largest sinks to end. Insertion: shift each item into the sorted left part."
+  },
+  {
+   "d": 2,
+   "t": "Decomposition vs abstraction",
+   "b": "Decomposition: break the problem into parts. Abstraction: hide details you don't need."
+  },
+  {
+   "d": 2,
+   "t": "UML visibility",
+   "b": "+ public · − private · # protected · underline = static."
+  },
+  {
+   "d": 2,
+   "t": "Unit vs integration testing",
+   "b": "Unit: one method/class alone. Integration: modules working together."
+  },
+  {
+   "d": 3,
+   "t": "Integer division & %",
+   "b": "In Java, int / int truncates (17/5 = 3). % gives the remainder and keeps the dividend's sign (-7 % 3 = -1)."
+  },
+  {
+   "d": 3,
+   "t": "Casting order",
+   "b": "(double) 7 / 2 = 3.5, but (double)(7 / 2) = 3.0."
+  },
+  {
+   "d": 3,
+   "t": "substring(a, b)",
+   "b": "Start index a inclusive, end b exclusive. Length = b − a."
+  },
+  {
+   "d": 3,
+   "t": "== vs .equals()",
+   "b": "== compares object references. .equals() compares string contents."
+  },
+  {
+   "d": 3,
+   "t": "Short-circuit evaluation",
+   "b": "&& stops at the first false; || stops at the first true. Right side may never run."
+  },
+  {
+   "d": 3,
+   "t": "De Morgan's laws",
+   "b": "!(a && b) == !a || !b   ·   !(a || b) == !a && !b"
+  },
+  {
+   "d": 3,
+   "t": "Pass by value (Java)",
+   "b": "Primitives: a copy, caller unchanged. Object refs: the reference is copied, so changes to the object are visible."
+  },
+  {
+   "d": 3,
+   "t": "Overloading vs overriding",
+   "b": "Overloading: same name, different parameters. Overriding: subclass replaces an inherited method."
+  },
+  {
+   "d": 3,
+   "t": "Four pillars of OOP",
+   "b": "Encapsulation · inheritance · polymorphism · abstraction."
+  },
+  {
+   "d": 3,
+   "t": "static",
+   "b": "Belongs to the class, shared by all instances. Static methods can't use instance fields directly."
+  },
+  {
+   "d": 3,
+   "t": "Abstract class vs interface",
+   "b": "Abstract class: can't instantiate, can have fields/constructors/code. Interface: a contract a class implements; a class can implement many."
+  },
+  {
+   "d": 3,
+   "t": "2D arrays",
+   "b": "g.length = rows. g[r].length = columns in row r."
+  },
+  {
+   "d": 3,
+   "t": "Recursion parts",
+   "b": "A base case that stops, and a recursive case that moves toward it. No base case → StackOverflowError."
+  },
+  {
+   "d": 3,
+   "t": "Python operators",
+   "b": "// floor division · ** power · slices [start:stop] stop is exclusive."
+  },
+  {
+   "d": 4,
+   "t": "Binary place values",
+   "b": "128 64 32 16 8 4 2 1. Example: 101101 = 32+8+4+1 = 45."
+  },
+  {
+   "d": 4,
+   "t": "Hex digits",
+   "b": "A=10 … F=15. Each hex digit = 4 bits. FF = 255."
+  },
+  {
+   "d": 4,
+   "t": "Two's complement",
+   "b": "Invert all bits, add 1. 8-bit range: −128 to 127."
+  },
+  {
+   "d": 4,
+   "t": "Logic gates",
+   "b": "AND both · OR either · XOR exactly one · NAND/NOR are universal."
+  },
+  {
+   "d": 4,
+   "t": "Permutation vs combination",
+   "b": "Order matters: P(n,r) = n!/(n−r)!. Order doesn't: C(n,r) = n!/(r!(n−r)!)."
+  },
+  {
+   "d": 4,
+   "t": "Inclusion–exclusion",
+   "b": "|A ∪ B| = |A| + |B| − |A ∩ B|."
+  },
+  {
+   "d": 4,
+   "t": "Chain of custody",
+   "b": "Documented record of who handled evidence and when. Paired with hashing and write blockers."
+  },
+  {
+   "d": 4,
+   "t": "Sensor → controller → actuator",
+   "b": "Robots sense input, decide in code, and act through motors/servos. Feedback = closed loop."
+  },
+  {
+   "d": 4,
+   "t": "Game loop",
+   "b": "Input → update → render, repeated every frame. Collisions often use bounding boxes."
+  },
+  {
+   "d": 4,
+   "t": "TCP vs UDP · DNS",
+   "b": "TCP reliable and ordered; UDP fast, no guarantees. DNS turns names into IP addresses."
+  }
+ ]
+}

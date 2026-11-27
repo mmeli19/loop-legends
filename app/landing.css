@@ -1,0 +1,10 @@
+.ll-home{min-height:100vh;background:#0f1222;color:#f4f1ea;font-family:Lexend,system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 18px;gap:28px}
+.ll-home h1{font-family:Unbounded,system-ui,sans-serif;font-size:clamp(2.2rem,7vw,3.6rem);margin:0;letter-spacing:-.02em}
+.ll-home p{margin:0;max-width:56ch;text-align:center;color:#b9b6c9;line-height:1.55}
+.ll-home .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;width:100%;max-width:760px}
+.ll-home a.card{display:flex;flex-direction:column;gap:8px;padding:22px;border-radius:18px;text-decoration:none;color:inherit;border:1.5px solid #2c3050;background:#171b31;transition:transform .15s,border-color .15s}
+.ll-home a.card:hover{transform:translateY(-2px);border-color:#ffd23f}
+.ll-home .tag{font-family:"Fira Code",monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#ffd23f}
+.ll-home .card b{font-family:Unbounded,system-ui,sans-serif;font-size:1.25rem}
+.ll-home .card span.d{color:#b9b6c9;font-size:.95rem;line-height:1.5}
+.ll-home small{color:#7d7a92}
